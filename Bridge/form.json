@@ -1,0 +1,75 @@
+{
+    "elements":
+    [
+      { "type": "ValidationTextBox", "name": "Topic", "caption": "Tasmota MQTT Topic" },
+      { "type": "ValidationTextBox", "name": "FullTopic", "caption": "Full Topic" },
+      { "type": "CheckBox", "name": "MessageRetain", "caption": "Retain (MQTT)" }
+    ],
+    "actions":
+    [
+      { 
+        "type": "RowLayout",
+        "items": [
+            {
+                "type": "Label",
+                "caption": "Paring Mode:"
+            },{
+                "type": "Label",
+                "name": "lblParingMode",
+                "caption": "Unknown"
+            },{
+              "type": "Button",
+              "caption": "Activate Pairing Mode",
+              "onClick": "T2Z_Paring($id,1);"
+          },{
+            "type": "Button",
+            "caption": "Deactivate Pairing Mode",
+            "onClick": "T2Z_Paring($id,0);"
+        }
+      ]
+    },
+    {
+      "type": "Configurator",
+      "name": "Configurator",
+      "caption": "Zigbee Devices",
+      "delete": false,
+      "sort": {
+        "column": "Device",
+        "direction": "ascending"
+      },
+      "columns": [
+        {
+          "caption": "Device",
+          "name": "Device",
+          "width": "150px"
+        },
+        {
+          "caption": "Devicename",
+          "name": "name",
+          "width": "150px"
+        },
+        {
+          "caption": "ModelID",
+          "name": "ModelID",
+          "width": "250px"
+        },
+        {
+          "caption": "Manufacturer",
+          "name": "Manufacturer",
+          "width": "250px"
+        },
+        {
+          "caption": "Endpoint",
+          "name": "Endpoint",
+          "width": "auto"
+        }
+      ],
+      "values": []
+    },
+    {
+      "type": "Button",
+      "caption": "Reload Device List",
+      "onClick": "T2Z_reloadDevices($id);"
+    }
+    ]
+}
