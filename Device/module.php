@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../libs/MQTTHelper.php';
+require_once __DIR__ . '/../libs/VariableProfileHelper.php';
 
 class Tasmota2ZigbeeDevice extends IPSModule
 {
-    use MQTTHelper;
+    use VariableProfileHelper;
 
     public function Create()
     {
@@ -14,6 +14,7 @@ class Tasmota2ZigbeeDevice extends IPSModule
         parent::Create();
         $this->BufferResponse = '';
         $this->ConnectParent('{D5C0D7CE-6A00-BDBE-C43E-678CF5CBE178}');
+        $this->registerVariables();
 
         //Anzahl die in der Konfirgurationsform angezeigt wird - Hier Standard auf 1
         $this->RegisterPropertyString('Device', '');
@@ -44,25 +45,26 @@ class Tasmota2ZigbeeDevice extends IPSModule
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
                     //$this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
                     $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device};
-                    IPS_LogMessage('test',print_r($Payload,true));
+                    IPS_LogMessage('test', print_r($Payload, true));
                     if (is_object($Payload)) {
                         if (property_exists($Payload, 'Power')) {
-                            $this->RegisterVariableBoolean('Power', $this->Translate('Power'), '~Switch');
-                            switch ($Payload->Power) {
-                                case 1:
-                                    SetValue($this->GetIDForIdent('Power'), true);
-                                    break;
-                                case 0:
-                                    SetValue($this->GetIDForIdent('Power'), false);
-                                    break;
-                                default:
-                                    $this->LogMessage('Invalid Value: '.$Payload->Power, KL_NOTIFY);
-                                    break;
-                            }
+                            $this->RegisterVariableInteger('Power', $this->Translate('Power'), 'T2M.Power');
+                            SetValue($this->GetIDForIdent('Power'), $Payload->Power);
                         }
                     }
                 }
             }
+        }
+    }
+
+    private function registerVariables()
+    {
+        if (!IPS_VariableProfileExists('T2M.Power')) {
+            $Associations = [];
+            $Associations[] = [0, $this->Translate('Off'), '', -1];
+            $Associations[] = [1, $this->Translate('On'), '', -1];
+            $Associations[] = [2, $this->Translate('Toggle'), '', -1];
+            $this->RegisterProfileIntegerEx('T2M.Power', '', '', '', $Associations);
         }
     }
 }
