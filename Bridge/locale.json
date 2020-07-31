@@ -10,7 +10,9 @@
       "Paring inactive": "Paring inaktiv",
       "Unkwnon Status Code": "Unbekannter Status Code",
       "Zigbee Devices": "Zigbee Geräte",
-      "Reload Device List": "Aktualisiere Geräteliste"
+      "Reload Device List": "Aktualisiere Geräteliste",
+      "Forget Device": "Lösche Gerät (Tasmota unpair)",
+      "Delete": "Löschen"
     }
   }
 }

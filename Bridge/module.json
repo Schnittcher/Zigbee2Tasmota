@@ -1,11 +1,16 @@
 {
-	"id": "{6B062FC6-1FC3-4362-99AE-8770B97C21ED}",
-	"name": "Tasmota2ZigbeeBridge",
-	"type": 4,
-	"vendor": "",
-	"aliases": ["Tasmota 2 Zigbee Bridge"],
-	"parentRequirements": ["{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}","{97475B04-67C3-A74D-C970-E9409B0EFA1D}"],
-	"childRequirements": [],
-	"implemented": ["{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}","{DBDA9DF7-5D04-F49D-370A-2B9153D00D9B}"],
-	"prefix": "T2Z"
+    "id": "{4A0D466C-45CF-B6C4-10B3-5A429B57A8D0}",
+    "name": "Tasmota2ZigbeeBridge",
+    "type": 4,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{EAC09CF4-0E77-C618-5C72-019417AE3CC8}"
+    ],
+    "prefix": "TZ",
+    "url": ""
 }

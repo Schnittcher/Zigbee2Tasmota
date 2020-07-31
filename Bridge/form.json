@@ -1,10 +1,4 @@
 {
-    "elements":
-    [
-      { "type": "ValidationTextBox", "name": "Topic", "caption": "Tasmota MQTT Topic" },
-      { "type": "ValidationTextBox", "name": "FullTopic", "caption": "Full Topic" },
-      { "type": "CheckBox", "name": "MessageRetain", "caption": "Retain (MQTT)" }
-    ],
     "actions":
     [
       { 
@@ -20,11 +14,11 @@
             },{
               "type": "Button",
               "caption": "Activate Pairing Mode",
-              "onClick": "T2Z_Paring($id,1);"
+              "onClick": "TZ_Paring($id,1);"
           },{
             "type": "Button",
             "caption": "Deactivate Pairing Mode",
-            "onClick": "T2Z_Paring($id,0);"
+            "onClick": "TZ_Paring($id,0);"
         }
       ]
     },
@@ -32,7 +26,7 @@
       "type": "Configurator",
       "name": "Configurator",
       "caption": "Zigbee Devices",
-      "delete": false,
+      "delete": true,
       "sort": {
         "column": "Device",
         "direction": "ascending"
@@ -69,7 +63,12 @@
     {
       "type": "Button",
       "caption": "Reload Device List",
-      "onClick": "T2Z_reloadDevices($id);"
+      "onClick": "TZ_reloadDevices($id);"
+    },
+    {
+      "type": "Button",
+      "caption": "Forget Device",
+      "onClick": "TZ_forgetDevice($id,$Configurator['Device']);"
     }
     ]
 }

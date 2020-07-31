@@ -13,7 +13,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
         //Never delete this line!
         parent::Create();
         $this->BufferResponse = '';
-        $this->ConnectParent('{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}');
+        $this->ConnectParent('{D5C0D7CE-6A00-BDBE-C43E-678CF5CBE178}');
 
         //Anzahl die in der Konfirgurationsform angezeigt wird - Hier Standard auf 1
         $this->RegisterPropertyString('Topic', '');
@@ -48,23 +48,23 @@ class Tasmota2ZigbeeBridge extends IPSModule
         foreach ($Devices as $Device) {
             $instanceID = 0; //$this->getAnelInstances($Device['IP']);
 
-            if (array_key_exists('Name',$Device)) {
+            if (array_key_exists('Name', $Device)) {
                 $Name = $Device['Name'];
             } else {
                 $Name = '';
             }
 
-            if (array_key_exists('ModelId',$Device)) {
+            if (array_key_exists('ModelId', $Device)) {
                 $ModelId = $Device['ModelId'];
             } else {
                 $ModelId = '';
             }
 
-            if (array_key_exists('Manufacturer',$Device)) {
+            if (array_key_exists('Manufacturer', $Device)) {
                 $Manufacturer = $Device['Manufacturer'];
             } else {
                 $Manufacturer = '';
-            }            
+            }
 
             $AddValue = [
                 'Device'                        => $Device['Device'],
@@ -77,10 +77,8 @@ class Tasmota2ZigbeeBridge extends IPSModule
 
             $AddValue['create'] = [
                 [
-                    'moduleID'      => '{13F0B37E-30C9-C043-A5AC-2D9B6A90E9F2}',
+                    'moduleID'      => '{7FB10079-784C-EC79-4425-2941D23EEAFA}',
                     'configuration' => [
-                        'Topic'     => $this->ReadPropertyString('Topic'),
-                        'FullTopic' => $this->ReadPropertyString('FullTopic'),
                         'Device'    => $Device['Device']
                     ]
                 ],
@@ -95,8 +93,10 @@ class Tasmota2ZigbeeBridge extends IPSModule
     public function ReceiveData($JSONString)
     {
         $this->SendDebug('JSON', $JSONString, 0);
-        if (!empty($this->ReadPropertyString('Topic'))) {
             $data = json_decode($JSONString);
+
+            $Buffer = $data->Buffer;
+/**
 
             switch ($data->DataID) {
                 case '{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}': // MQTT Server
@@ -106,10 +106,10 @@ class Tasmota2ZigbeeBridge extends IPSModule
                     $Buffer = json_decode($data->Buffer);
                     break;
                 default:
-                    $this->LogMessage('Invalid Parent', KL_ERROR);
+                    $this->LogMessage('Invalid Parent'. $this->data->DataID, KL_ERROR);
                     return;
             }
-
+ */
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/RESULT', $Buffer->Topic)) {
                     $this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
@@ -141,16 +141,37 @@ class Tasmota2ZigbeeBridge extends IPSModule
                     }
                 }
             }
-        }
     }
 
     public function reloadDevices()
     {
-        $this->sendMQTT('ZbStatus2', '');
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = 'ZbStatus2';
+        $Buffer['Payload'] = '';
+        $Data['Buffer'] = json_encode($Buffer);
+
+        $this->SendDebug('JSON Reload Devices',json_encode($Data),0);
+
+        $this->SendDataToParent(json_encode($Data));
     }
 
     public function Paring($Value)
     {
-        $this->sendMQTT('ZbPermitJoin', strval($Value));
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = 'ZbPermitJoin';
+        $Buffer['Payload'] = strval($Value);
+        $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
+
+        $this->SendDataToParent(json_encode($Data));
+    }
+
+    public function forgetDevice($Value) {
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = 'ZbForget';
+        $Buffer['Payload'] = strval($Value);
+        $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
+
+        IPS_LogMessage('test',print_r($Data,true));
+        $this->SendDataToParent(json_encode($Data));
     }
 }
