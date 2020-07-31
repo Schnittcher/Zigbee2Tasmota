@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../libs/MQTTHelper.php';
 
+if (!function_exists('fnmatch')) {
+    function fnmatch($pattern, $string)
+    {
+        return preg_match('#^' . strtr(preg_quote($pattern, '#'), ['\*' => '.*', '\?' => '.']) . '$#i', $string);
+    }
+}
+
 class Tasmota2ZigbeeBridge extends IPSModule
 {
     use MQTTHelper;

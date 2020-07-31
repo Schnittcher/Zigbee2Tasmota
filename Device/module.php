@@ -1,6 +1,14 @@
 <?php
 
+
 declare(strict_types=1);
+
+if (!function_exists('fnmatch')) {
+    function fnmatch($pattern, $string)
+    {
+        return preg_match('#^' . strtr(preg_quote($pattern, '#'), ['\*' => '.*', '\?' => '.']) . '$#i', $string);
+    }
+}
 
 require_once __DIR__ . '/../libs/VariableProfileHelper.php';
 

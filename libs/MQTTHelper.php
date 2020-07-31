@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-define('MQTT_GROUP_TOPIC', 'shellies');
 trait MQTTHelper
 {
     protected function sendMQTT($Topic, $Payload)
