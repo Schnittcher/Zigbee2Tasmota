@@ -1,0 +1,16 @@
+{
+    "id": "{7FB10079-784C-EC79-4425-2941D23EEAFA}",
+    "name": "Tasmota2ZigbeeDevice",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{EAC09CF4-0E77-C618-5C72-019417AE3CC8}"
+    ],
+    "prefix": "TZ",
+    "url": ""
+}
