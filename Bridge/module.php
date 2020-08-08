@@ -50,8 +50,6 @@ class Tasmota2ZigbeeBridge extends IPSModule
 
         $Values = [];
 
-        IPS_LogMessage('debug', print_r($Devices, true));
-
         foreach ($Devices as $Device) {
             $instanceID = 0; //$this->getAnelInstances($Device['IP']);
 
@@ -103,20 +101,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
             $data = json_decode($JSONString);
 
             $Buffer = $data->Buffer;
-/**
 
-            switch ($data->DataID) {
-                case '{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}': // MQTT Server
-                    $Buffer = $data;
-                    break;
-                case '{DBDA9DF7-5D04-F49D-370A-2B9153D00D9B}': //MQTT Client
-                    $Buffer = json_decode($data->Buffer);
-                    break;
-                default:
-                    $this->LogMessage('Invalid Parent'. $this->data->DataID, KL_ERROR);
-                    return;
-            }
- */
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/RESULT', $Buffer->Topic)) {
                     $this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
@@ -178,7 +163,6 @@ class Tasmota2ZigbeeBridge extends IPSModule
         $Buffer['Payload'] = strval($Value);
         $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
 
-        IPS_LogMessage('test',print_r($Data,true));
         $this->SendDataToParent(json_encode($Data));
     }
 }

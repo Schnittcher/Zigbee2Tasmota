@@ -53,11 +53,14 @@ class Tasmota2ZigbeeDevice extends IPSModule
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
                     //$this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
                     $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device};
-                    IPS_LogMessage('test', print_r($Payload, true));
                     if (is_object($Payload)) {
                         if (property_exists($Payload, 'Power')) {
                             $this->RegisterVariableInteger('Power', $this->Translate('Power'), 'T2M.Power');
                             SetValue($this->GetIDForIdent('Power'), $Payload->Power);
+                        }
+                        if (property_exist($Payload,'0006!42')) {
+                            $this->RegisterVariableInteger('Power', $this->Translate('Power'), 'T2M.Power');
+                            SetValue($this->GetIDForIdent('Power'), 1);
                         }
                     }
                 }
