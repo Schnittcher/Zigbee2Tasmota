@@ -148,6 +148,8 @@ class Tasmota2ZigbeeBridge extends IPSModule
 
     public function reloadDevices()
     {
+        $this->SetBuffer('pairedDevices', '{}');
+
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbStatus';
         $Buffer['Payload'] = '';
