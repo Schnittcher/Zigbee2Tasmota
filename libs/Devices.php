@@ -66,8 +66,8 @@ class Devices extends IPSModule
             ],
             'LUMI lumi.sensor_wleak.aq1' => [
                 'Alarm ' => [
-                    'Name'                   => '~Alert',
-                    'VariableProfile'        => '',
+                    'Name'                   => 'Alarm',
+                    'VariableProfile'        => '~Alert',
                     'VariableType'           => IPSVarType::vtBoolean,
                     'Action'                 => false,
                     'ActionCommand'          => '',
@@ -76,8 +76,8 @@ class Devices extends IPSModule
             ],
             'LUMI lumi.sensor_magnet' => [
                 'Alarm ' => [
-                    'Name'                   => '~Window',
-                    'VariableProfile'        => '',
+                    'Name'                   => 'Window',
+                    'VariableProfile'        => '~Window',
                     'VariableType'           => IPSVarType::vtBoolean,
                     'Action'                 => false,
                     'ActionCommand'          => '',
