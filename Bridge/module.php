@@ -3,13 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../libs/MQTTHelper.php';
-
-if (!function_exists('fnmatch')) {
-    function fnmatch($pattern, $string)
-    {
-        return preg_match('#^' . strtr(preg_quote($pattern, '#'), ['\*' => '.*', '\?' => '.']) . '$#i', $string);
-    }
-}
+require_once __DIR__ . '/../libs/Functions.php';
 
 class Tasmota2ZigbeeBridge extends IPSModule
 {
@@ -84,7 +78,8 @@ class Tasmota2ZigbeeBridge extends IPSModule
                 [
                     'moduleID'      => '{7FB10079-784C-EC79-4425-2941D23EEAFA}',
                     'configuration' => [
-                        'Device'    => $Device['Device']
+                        'Device'    => $Device['Device'],
+                        'Model'     => $Manufacturer . ' ' . $ModelId
                     ]
                 ],
             ];
@@ -98,19 +93,19 @@ class Tasmota2ZigbeeBridge extends IPSModule
     public function ReceiveData($JSONString)
     {
         $this->SendDebug('JSON', $JSONString, 0);
-            $data = json_decode($JSONString);
+        $data = json_decode($JSONString);
 
-            $Buffer = $data->Buffer;
+        $Buffer = $data->Buffer;
 
-            if (property_exists($Buffer, 'Topic')) {
-                if (fnmatch('*/RESULT', $Buffer->Topic)) {
-                    $this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
-                    $Payload = json_decode($Buffer->Payload);
+        if (property_exists($Buffer, 'Topic')) {
+            if (fnmatch('*/RESULT', $Buffer->Topic)) {
+                $this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
+                $Payload = json_decode($Buffer->Payload);
 
-                    if (property_exists($Payload, 'ZbState')) {
-                        $this->SendDebug('Topic: Result ZbState', $Payload->ZbState->Status, 0);
+                if (property_exists($Payload, 'ZbState')) {
+                    $this->SendDebug('Topic: Result ZbState', $Payload->ZbState->Status, 0);
 
-                        switch ($Payload->ZbState->Status) {
+                    switch ($Payload->ZbState->Status) {
                             case 21:
                                 $this->UpdateFormField('lblParingMode', 'caption', 'Paring active');
                                 break;
@@ -125,24 +120,40 @@ class Tasmota2ZigbeeBridge extends IPSModule
                                 break;
 
                         }
+                }
+                if (property_exists($Payload, 'ZbStatus1')) {
+                    $this->SendDebug('Paired Devices without Informations', json_encode($Payload->ZbStatus1), 0);
+                    //$this->SetBuffer('pairedDevices', json_encode($Payload->ZbStatus1));
+                    $devicesCount = count($Payload->ZbStatus1);
+                    $this->getDetailedDeviceInformations($devicesCount);
+                }
+                if (property_exists($Payload, 'ZbStatus2')) {
+                    $this->SendDebug('Detailed Device Information', json_encode($Payload->ZbStatus2), 0);
+                    $Devices = json_decode($this->GetBuffer('pairedDevices'), true);
+
+                    if (!fnmatch('*' . $Payload->ZbStatus2[0]->Device . '*', $this->GetBuffer('pairedDevices'))) {
+                        $Device['Device'] = $Payload->ZbStatus2[0]->Device;
+                        $Device['ModelId'] = $Payload->ZbStatus2[0]->ModelId;
+                        $Device['Manufacturer'] = $Payload->ZbStatus2[0]->Manufacturer;
+                        array_push($Devices, $Device);
+
+                        $this->SetBuffer('pairedDevices', json_encode($Devices));
                     }
-                    if (property_exists($Payload, 'ZbStatus2')) {
-                        $this->SendDebug('Paired Devices', json_encode($Payload->ZbStatus2), 0);
-                        $this->SetBuffer('pairedDevices', json_encode($Payload->ZbStatus2));
-                        $this->ReloadForm();
-                    }
+                    $this->SendDebug('Paired Devices', json_encode($Devices), 0);
+                    $this->ReloadForm();
                 }
             }
+        }
     }
 
     public function reloadDevices()
     {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
-        $Buffer['Topic'] = 'ZbStatus2';
+        $Buffer['Topic'] = 'ZbStatus';
         $Buffer['Payload'] = '';
         $Data['Buffer'] = json_encode($Buffer);
 
-        $this->SendDebug('JSON Reload Devices',json_encode($Data),0);
+        $this->SendDebug('JSON Reload Devices', json_encode($Data), 0);
 
         $this->SendDataToParent(json_encode($Data));
     }
@@ -157,12 +168,28 @@ class Tasmota2ZigbeeBridge extends IPSModule
         $this->SendDataToParent(json_encode($Data));
     }
 
-    public function forgetDevice($Value) {
+    public function forgetDevice($Value)
+    {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbForget';
         $Buffer['Payload'] = strval($Value);
         $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
 
         $this->SendDataToParent(json_encode($Data));
+    }
+
+    private function getDetailedDeviceInformations($Devices)
+    {
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = 'ZbStatus2';
+
+        for ($i = 1; $i <= $Devices; $i++) {
+            $Buffer['Payload'] = strval($i);
+            $Data['Buffer'] = json_encode($Buffer);
+
+            $this->SendDebug('JSON Get Detailed Device Informations', json_encode($Data), 0);
+
+            $this->SendDataToParent(json_encode($Data));
+        }
     }
 }
