@@ -1,6 +1,7 @@
 {
     "elements":
     [
-      { "type": "ValidationTextBox", "name": "Device", "caption": "Device" }
+      { "type": "ValidationTextBox", "name": "Device", "caption": "Device" },
+      { "type": "ValidationTextBox", "name": "Model", "caption": "Model","enabled": false}
     ]
 }
