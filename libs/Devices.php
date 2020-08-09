@@ -23,7 +23,7 @@ class Devices extends IPSModule
                 'VariableType'           => IPSVarType::vtBoolean,
                 'Action'                 => true,
                 'ActionCommand'          => 'Power',
-                'SearchString'           => ''
+                'SearchString'           => 'Power'
             ]
         ],
         'IKEA of Sweden TRADFRI bulb E27 CWS opal 600lm' => [
