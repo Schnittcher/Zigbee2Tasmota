@@ -65,7 +65,7 @@ class Devices extends IPSModule
                 ]
             ],
             'LUMI lumi.sensor_wleak.aq1' => [
-                'Alarm ' => [
+                'ZoneStatusChange' => [
                     'Name'                   => 'Alarm',
                     'VariableProfile'        => '~Alert',
                     'VariableType'           => IPSVarType::vtBoolean,
@@ -75,7 +75,17 @@ class Devices extends IPSModule
                 ]
             ],
             'LUMI lumi.sensor_magnet' => [
-                'Alarm ' => [
+                'Power' => [
+                    'Name'                   => 'Window',
+                    'VariableProfile'        => '~Window',
+                    'VariableType'           => IPSVarType::vtBoolean,
+                    'Action'                 => false,
+                    'ActionCommand'          => '',
+                    'SearchString'           => 'Power'
+                ]
+            ],
+            'LUMI lumi.sensor_magnet.aq2' => [
+                'Power' => [
                     'Name'                   => 'Window',
                     'VariableProfile'        => '~Window',
                     'VariableType'           => IPSVarType::vtBoolean,
