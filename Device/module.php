@@ -3,12 +3,14 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../libs/VariableProfileHelper.php';
+require_once __DIR__ . '/../libs/ColorHelper.php';
 require_once __DIR__ . '/../libs/Functions.php';
 require_once __DIR__ . '/../libs/Devices.php';
 
 class Tasmota2ZigbeeDevice extends Devices
 {
     use VariableProfileHelper;
+    use ColorHelper;
 
     public function Create()
     {
@@ -40,16 +42,16 @@ class Tasmota2ZigbeeDevice extends Devices
         if (array_key_exists($model, self::$Devices)) {
             foreach (self::$Devices[$model] as $key => $device) {
                 switch ($device['VariableType']) {
-                case IPSVarType::vtBoolean:
+                case VARIABLETYPE_BOOLEAN:
                     $this->RegisterVariableBoolean($key, $this->Translate($device['Name']), $device['VariableProfile']);
                     break;
-                case IPSVarType::vtInteger:
+                case VARIABLETYPE_INTEGER:
                     $this->RegisterVariableInteger($key, $this->Translate($device['Name']), $device['VariableProfile']);
                     break;
-                case IPSVarType::vtFloat:
+                case VARIABLETYPE_FLOAT:
                     $this->RegisterVariableFloat($key, $this->Translate($device['Name']), $device['VariableProfile']);
                     break;
-                case IPSVarType::vtString:
+                case VARIABLETYPE_STRING:
                     $this->RegisterVariableString($key, $this->Translate($device['Name']), $device['VariableProfile']);
                     break;
                 default:
@@ -74,7 +76,6 @@ class Tasmota2ZigbeeDevice extends Devices
 
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
-                    //$this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
                     $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device};
                     if (is_object($Payload)) {
                         $model = $this->ReadPropertyString('Model');
@@ -84,22 +85,12 @@ class Tasmota2ZigbeeDevice extends Devices
                                     $this->SetValue($key, $Payload->{$key});
                                 } else {
                                     switch ($device['VariableType']) {
-                                        case IPSVarType::vtBoolean:
+                                        case VARIABLETYPE_BOOLEAN:
                                             $this->SetValue($key, true);
                                     }
                                 }
                             }
                         }
-
-                        /**                         if (property_exists($Payload, 'Power')) {
-                         * SetValue($this->GetIDForIdent('Power'), $Payload->Power);
-                         * }
-                         *
-                         * if (property_exist($Payload, '0006!42')) {
-                         * $this->RegisterVariableInteger('Power', $this->Translate('Power'), 'T2M.Power');
-                         * SetValue($this->GetIDForIdent('Power'), 1);
-                         * }
-                         */
                     }
                 }
             }
@@ -115,6 +106,14 @@ class Tasmota2ZigbeeDevice extends Devices
         $Buffer['Topic'] = 'ZbSend';
 
         $ZbSend['device'] = $this->ReadPropertyString('Device');
+
+        switch ($Ident) {
+            case 'Color':
+                $RGB = $this->HexToRGB($Value);
+                $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2],true);
+                $Value = strval($cie['x'].'.'.$cie['y']);
+        }
+        
         $ZbSend['send'][$Ident] = $Value;
 
         $Buffer['Payload'] = json_encode($ZbSend);

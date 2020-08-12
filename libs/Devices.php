@@ -20,7 +20,7 @@ class Devices extends IPSModule
             'Power' => [
                 'Name'                   => 'Power',
                 'VariableProfile'        => '~Switch',
-                'VariableType'           => IPSVarType::vtBoolean,
+                'VariableType'           => VARIABLETYPE_BOOLEAN,
                 'Action'                 => true,
                 'ActionCommand'          => 'Power',
                 'SearchString'           => 'Power'
@@ -30,7 +30,7 @@ class Devices extends IPSModule
             'Power' => [
                 'Name'                   => 'Power',
                 'VariableProfile'        => '~Switch',
-                'VariableType'           => IPSVarType::vtBoolean,
+                'VariableType'           => VARIABLETYPE_BOOLEAN,
                 'Action'                 => true,
                 'ActionCommand'          => 'Power',
                 'SearchString'           => 'Power'
@@ -38,7 +38,7 @@ class Devices extends IPSModule
             'Dimmer' => [
                 'Name'                   => 'Brightness',
                 'VariableProfile'        => '~Intensity.100',
-                'VariableType'           => IPSVarType::vtInteger,
+                'VariableType'           => VARIABLETYPE_INTEGER,
                 'Action'                 => true,
                 'ActionCommand'          => 'Dimmer',
                 'SearchString'           => 'Dimmer'
@@ -48,7 +48,7 @@ class Devices extends IPSModule
                 'Power' => [
                     'Name'                   => 'Power',
                     'VariableProfile'        => 'T2M.TogglePower',
-                    'VariableType'           => IPSVarType::vtInteger,
+                    'VariableType'           => VARIABLETYPE_INTEGER,
                     'Action'                 => false,
                     'ActionCommand'          => '',
                     'SearchString'           => 'Power'
@@ -58,7 +58,7 @@ class Devices extends IPSModule
                 'Motion' => [
                     'Name'                   => 'Motion',
                     'VariableProfile'        => '~Motion',
-                    'VariableType'           => IPSVarType::vtBoolean,
+                    'VariableType'           => VARIABLETYPE_BOOLEAN,
                     'Action'                 => false,
                     'ActionCommand'          => '',
                     'SearchString'           => '0006!42'
@@ -68,7 +68,7 @@ class Devices extends IPSModule
                 'ZoneStatusChange' => [
                     'Name'                   => 'Alarm',
                     'VariableProfile'        => '~Alert',
-                    'VariableType'           => IPSVarType::vtBoolean,
+                    'VariableType'           => VARIABLETYPE_BOOLEAN,
                     'Action'                 => false,
                     'ActionCommand'          => '',
                     'SearchString'           => 'ZoneStatusChange'
@@ -78,7 +78,7 @@ class Devices extends IPSModule
                 'Power' => [
                     'Name'                   => 'Window',
                     'VariableProfile'        => '~Window',
-                    'VariableType'           => IPSVarType::vtBoolean,
+                    'VariableType'           => VARIABLETYPE_BOOLEAN,
                     'Action'                 => false,
                     'ActionCommand'          => '',
                     'SearchString'           => 'Power'
@@ -88,10 +88,36 @@ class Devices extends IPSModule
                 'Power' => [
                     'Name'                   => 'Window',
                     'VariableProfile'        => '~Window',
-                    'VariableType'           => IPSVarType::vtBoolean,
+                    'VariableType'           => VARIABLETYPE_BOOLEAN,
                     'Action'                 => false,
                     'ActionCommand'          => '',
                     'SearchString'           => 'Power'
+                ]
+            ],
+            'Philips LCT015' => [
+                'Power' => [
+                    'Name'                   => 'Power',
+                    'VariableProfile'        => '~Switch',
+                    'VariableType'           => VARIABLETYPE_BOOLEAN,
+                    'Action'                 => true,
+                    'ActionCommand'          => 'Power',
+                    'SearchString'           => 'Power'
+                ],
+                'Dimmer' => [
+                    'Name'                   => 'Brightness',
+                    'VariableProfile'        => '~Intensity.100',
+                    'VariableType'           => VARIABLETYPE_INTEGER,
+                    'Action'                 => true,
+                    'ActionCommand'          => 'Dimmer',
+                    'SearchString'           => 'Dimmer'
+                ],
+                'Color' => [
+                    'Name'                   => 'Color',
+                    'VariableProfile'        => 'HexColor',
+                    'VariableType'           => VARIABLETYPE_INTEGER,
+                    'Action'                 => true,
+                    'ActionCommand'          => 'Color',
+                    'SearchString'           => 'Color'
                 ]
             ],
     ];
