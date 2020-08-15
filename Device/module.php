@@ -111,7 +111,7 @@ class Tasmota2ZigbeeDevice extends Devices
             case 'Color':
                 $RGB = $this->HexToRGB($Value);
                 $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2],true);
-                $Value = strval($cie['x'].'.'.$cie['y']);
+                $Value = strval($cie['x'].','.$cie['y']);
         }
         
         $ZbSend['send'][$Ident] = $Value;
@@ -123,6 +123,16 @@ class Tasmota2ZigbeeDevice extends Devices
         $this->SendDataToParent(json_encode($Data));
 
         $this->SendDebug('Action', $Command, 0);
+    }
+
+    public function RequestState($Command) {
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = $Command;
+        $Buffer['Payload'] = $this->ReadPropertyString('Device');
+
+        $Data['Buffer'] = json_encode($Buffer);
+        $this->SendDebug('RequestState JSON', json_encode($Data), 0);
+        $this->SendDataToParent(json_encode($Data));
     }
 
     private function registerVariables()
