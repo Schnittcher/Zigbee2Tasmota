@@ -37,11 +37,19 @@ class Devices extends IPSModule
             ],
             'Dimmer' => [
                 'Name'                   => 'Brightness',
-                'VariableProfile'        => '~Intensity.100',
+                'VariableProfile'        => '~Intensity.255',
                 'VariableType'           => VARIABLETYPE_INTEGER,
                 'Action'                 => true,
                 'ActionCommand'          => 'Dimmer',
                 'SearchString'           => 'Dimmer'
+            ],
+            'Color' => [
+                'Name'                   => 'Color',
+                'VariableProfile'        => 'HexColor',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => true,
+                'ActionCommand'          => 'Color',
+                'SearchString'           => 'Color'
             ]
             ],
             'IKEA of Sweden TRADFRI on/off switch' => [
@@ -55,13 +63,13 @@ class Devices extends IPSModule
                 ]
             ],
             'IKEA of Sweden TRADFRI motion sensor' => [
-                'Motion' => [
+                'Power' => [
                     'Name'                   => 'Motion',
                     'VariableProfile'        => '~Motion',
                     'VariableType'           => VARIABLETYPE_BOOLEAN,
                     'Action'                 => false,
                     'ActionCommand'          => '',
-                    'SearchString'           => '0006!42'
+                    'SearchString'           => 'Power'
                 ]
             ],
             'LUMI lumi.sensor_wleak.aq1' => [
@@ -105,7 +113,7 @@ class Devices extends IPSModule
                 ],
                 'Dimmer' => [
                     'Name'                   => 'Brightness',
-                    'VariableProfile'        => '~Intensity.100',
+                    'VariableProfile'        => '~Intensity.255',
                     'VariableType'           => VARIABLETYPE_INTEGER,
                     'Action'                 => true,
                     'ActionCommand'          => 'Dimmer',
