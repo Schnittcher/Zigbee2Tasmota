@@ -40,22 +40,17 @@
         {
           "caption": "Devicename",
           "name": "name",
-          "width": "150px"
+          "width": "auto"
         },
         {
           "caption": "ModelID",
           "name": "ModelID",
-          "width": "250px"
+          "width": "550px"
         },
         {
           "caption": "Manufacturer",
           "name": "Manufacturer",
           "width": "250px"
-        },
-        {
-          "caption": "Endpoint",
-          "name": "Endpoint",
-          "width": "auto"
         }
       ],
       "values": []
