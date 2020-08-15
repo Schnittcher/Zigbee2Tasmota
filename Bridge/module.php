@@ -45,7 +45,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
         $Values = [];
 
         foreach ($Devices as $Device) {
-            $instanceID = 0; //$this->getAnelInstances($Device['IP']);
+            $instanceID = $this->getDeviceInstances($Device['Device']); //0; $this->getAnelInstances($Device['IP']);
 
             if (array_key_exists('Name', $Device)) {
                 $Name = $Device['Name'];
@@ -132,7 +132,12 @@ class Tasmota2ZigbeeBridge extends IPSModule
                     $Devices = json_decode($this->GetBuffer('pairedDevices'), true);
 
                     if (!fnmatch('*' . $Payload->ZbStatus2[0]->Device . '*', $this->GetBuffer('pairedDevices'))) {
+                        $Name = '';
                         $Device['Device'] = $Payload->ZbStatus2[0]->Device;
+                        if (property_exists($Payload->ZbStatus2[0], 'Name')) {
+                            $Name = $Payload->ZbStatus2[0]->Name;
+                        }
+                        $Device['Name'] = $Name;
                         $Device['ModelId'] = $Payload->ZbStatus2[0]->ModelId;
                         $Device['Manufacturer'] = $Payload->ZbStatus2[0]->Manufacturer;
                         array_push($Devices, $Device);
@@ -193,5 +198,16 @@ class Tasmota2ZigbeeBridge extends IPSModule
 
             $this->SendDataToParent(json_encode($Data));
         }
+    }
+
+    private function getDeviceInstances($Device)
+    {
+        $InstanceIDs = IPS_GetInstanceListByModuleID('{7FB10079-784C-EC79-4425-2941D23EEAFA}');
+        foreach ($InstanceIDs as $id) {
+            if (IPS_GetProperty($id, 'Device') == $Device) {
+                return $id;
+            }
+        }
+        return 0;
     }
 }
