@@ -1,6 +1,5 @@
-# IPS-Tasmota
-Mit dem IPS-Tasmota Modul ist es möglich, Geräte abzubilden, die Standard Funktionen der Tasmota Firmware beinhalten.
-Zum Beispiel: Sonoff Switch, Sonoff POW, Sonoff 4CH, Sonoff TH
+# Birdge
+Mit dieser Instanz werden die Geräte gesucht und können in IPS angelegt werden, desweiteren ist es möglich über diese Instanz Geräte mit der Tasmota2Zigbee Bridge zu pairen oder zu löschen.
 
 ## Inhaltverzeichnis
 1. [Konfiguration](#1-konfiguration)
@@ -10,45 +9,31 @@ Zum Beispiel: Sonoff Switch, Sonoff POW, Sonoff 4CH, Sonoff TH
 
 Feld | Beschreibung
 ------------ | -------------
-Tasmota MQTT Topic | Name des Tasmota Gerätes, ist in den MQTT Einstellungen in der Tasmota Firmware zu finden
-Power On| 1 oder ON - Je nachdem wie das Tasmota Gerät geflasht wurde
-Power Off| 0 oder OFF - Je nachdem wie das Tasmota Gerät geflasht wurde
-Full Topic| Full Topic des Tasmota Gerätes, ist in den MQTT Einstellungen der Tasmota Firmware zu finden
-Multi Switch| aktivieren, wenn mehr als ein Swtich an dem Gerät verfügbar ist
-System Variables| aktivieren, wenn die System Variablen vom Tasmota als Variablen in IP-Symocn angelegt werden sollen
-
-Wenn die einzelnen Haken des Debug Modus aktiviert werden, sind im Debug Fenster weitere Meldungen zu finden.
-
-Die Übergeordnete Instanz sollte immer der MQTT Server sein, dieser sollte normalerweise direkt gesetzt werden, wenn das Modul angelegt wird.
+Aktiviere Pairing Modus | Mit diesem Button kann der Piaring Modus der Bridge aktiviert werden.
+Deaktviere Pairing Modus | Mit diesem Button kann der Piaring Modus der Bridge deaktiviert werden.
+Zigbee Geräte| In dem Konfigurator werden alle Geräte angezeigt, welche mit der Bridge gepairt sind.
+Aktualisiere Geräte| Mit diesem Button kann die Liste aktualisiert werden, dadurch werden die Geräte erneut eingelesen.
+Lösche Gerät (Tasmota Uupair)| Mit diesem Gerät kann ein Gerät von der Tasmota Zigbee Bridge entfernt werden. Das Gerät müsste also erneut angelernt werden, wenn dies wieder genutzt werden soll.
 
 ## 2. Funktionen
 
-### Tasmota_restart($InstanceID)
-Mit dieser Funktion kann das Tasmota Gerät neugestartet werden.
+### TZ_Pairing($InstanceID)
+Mit dieser Funktion kann der Piaring Modus aktiviert werden.
 
 ```php
-Tasmota_Restart(25537);
+TZ_Pairing(12345);
 ```
 
-### Tasmota_setPower($InstanceID, $power, $Value)
-Mit dieser Funktion können einzelne Relais geschaltet werden.
+### TZ_forgetDevice($InstanceID, $Device)
+Mit dieser Funktion kann ein Gerät von der Tasmota Zigbee Bridge entfernt werden.
 
-Einfach Switch:
 ```php
-Tasmota_setPower(25537, 0, false);  //Power Variable
+TZ_forgetDevice(12345, '0x2D3F);
 ```
-Mehrfach Switch (z.B Sonoff 4CH):
-```php
-Tasmota_setPower(25537, 1, false);  //Power Variable 1
-Tasmota_setPower(25537, 2, false);  //Power Variable 2
-Tasmota_setPower(25537, 3, false);  //Power Variable 3
-Tasmota_setPower(25537, 4, false);  //Power Variable 4
-```
-### Tasmota_sendMQTTCommand($InstanceID, $command, $msg)
-Mit dieser Funktion kann jedes MQTT Command abgeschickt werden.
-Als Rückgabewert wird JSON geliefert.
 
-Beispiel:
+### TZ_relaodDevices($InstanceID)
+Mit dieser Funktion können die Gerät neu eingelesen werden.
+
 ```php
-Tasmota_sendMQTTCommand(25537, "POWER "ON");
+TZ_relaodDevices(12345);
 ```

@@ -43,11 +43,11 @@ class Tasmota2ZigbeeConnect extends IPSModule
         $this->SetReceiveDataFilter('.*' . $topic . '.*');
     }
 
-    public function ReceiveData($JSONString) {
+    public function ReceiveData($JSONString)
+    {
  
         // Empfangene Daten vom I/O
         $data = json_decode($JSONString);
-        IPS_LogMessage("ReceiveData", print_r($data,true));
 
         switch ($data->DataID) {
             case '{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}': // MQTT Server
@@ -65,17 +65,17 @@ class Tasmota2ZigbeeConnect extends IPSModule
         // Hier werden die Daten verarbeitet
      
         // Weiterleitung zu allen Gerät-/Device-Instanzen
-        $this->SendDataToChildren(json_encode(Array("DataID" => "{EAC09CF4-0E77-C618-5C72-019417AE3CC8}", "Buffer" => $Buffer)));
+        $this->SendDataToChildren(json_encode(array("DataID" => "{EAC09CF4-0E77-C618-5C72-019417AE3CC8}", "Buffer" => $Buffer)));
     }
 
-    public function ForwardData($JSONString) {
+    public function ForwardData($JSONString)
+    {
  
         // Empfangene Daten von der Device Instanz
         $data = json_decode($JSONString);
         $buffer = json_decode($data->Buffer);
-        IPS_LogMessage("ForwardData", utf8_decode($data->Buffer));
 
-        $this->sendMQTT($buffer->Topic,$buffer->Payload);
+        $this->sendMQTT($buffer->Topic, $buffer->Payload);
      
         // Hier würde man den Buffer im Normalfall verarbeiten
         // z.B. CRC prüfen, in Einzelteile zerlegen
@@ -85,6 +85,5 @@ class Tasmota2ZigbeeConnect extends IPSModule
      
         // Weiterverarbeiten und durchreichen
         return '';
-     
     }
 }

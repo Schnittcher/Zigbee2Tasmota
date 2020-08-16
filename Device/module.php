@@ -84,9 +84,12 @@ class Tasmota2ZigbeeDevice extends Devices
                                 if ($key == $device['SearchString']) {
                                     $this->SetValue($key, $Payload->{$key});
                                 } else {
-                                    switch ($device['VariableType']) {
-                                        case VARIABLETYPE_BOOLEAN:
-                                            $this->SetValue($key, true);
+                                    switch ($key) {
+                                        case 'Color':
+                                          $this->LogMessage(print_r($Payload, true), KL_NOTIFY);
+                                          $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
+                                          $this->SetValue('Color', hexdec($RGB));
+                                        break;
                                     }
                                 }
                             }
@@ -101,37 +104,44 @@ class Tasmota2ZigbeeDevice extends Devices
     {
         $model = $this->ReadPropertyString('Model');
         $Command = self::$Devices[$model][$Ident]['ActionCommand'];
-
-        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
-        $Buffer['Topic'] = 'ZbSend';
-
-        $ZbSend['device'] = $this->ReadPropertyString('Device');
+        $this->SendDebug('Action', $Command, 0);
 
         switch ($Ident) {
             case 'Color':
                 $RGB = $this->HexToRGB($Value);
-                $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2],true);
+                $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2], true);
                 $Value = strval($cie['x'].','.$cie['y']);
+                $this->sendCommand($Command, $Value);
+                $this->sendCommand('Power', true);
+                break;
+            default:
+                $this->sendCommand($Command, $Value);
         }
-        
-        $ZbSend['send'][$Ident] = $Value;
-
-        $Buffer['Payload'] = json_encode($ZbSend);
-        $Data['Buffer'] = json_encode($Buffer);
-
-        $this->SendDebug('JSON Reload Devices', json_encode($Data), 0);
-        $this->SendDataToParent(json_encode($Data));
-
-        $this->SendDebug('Action', $Command, 0);
     }
 
-    public function RequestState($Command) {
+    public function RequestLightState()
+    {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
-        $Buffer['Topic'] = $Command;
+        $Buffer['Topic'] = 'ZbLight';
         $Buffer['Payload'] = $this->ReadPropertyString('Device');
 
         $Data['Buffer'] = json_encode($Buffer);
         $this->SendDebug('RequestState JSON', json_encode($Data), 0);
+        $this->SendDataToParent(json_encode($Data));
+    }
+
+    private function sendCommand($Command, $Value)
+    {
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = 'ZbSend';
+
+        $ZbSend['device'] = $this->ReadPropertyString('Device');
+        $ZbSend['send'][$Command] = $Value;
+
+        $Buffer['Payload'] = json_encode($ZbSend);
+        $Data['Buffer'] = json_encode($Buffer);
+
+        $this->SendDebug('JSON sendCommand', json_encode($Data), 0);
         $this->SendDataToParent(json_encode($Data));
     }
 

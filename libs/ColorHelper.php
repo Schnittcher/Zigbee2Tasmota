@@ -28,7 +28,6 @@ trait ColorHelper
 
     protected function CIEToRGB($x, $y, $brightness = 255, $opt = false)
     {
-
         if ($opt) {
             $x = $x / 65536;
             $y = $y / 65536;
@@ -78,6 +77,4 @@ trait ColorHelper
         $this->SendDebug('HexToRGB', 'R: ' . $RGB[0] . ' G: ' . $RGB[1] . ' B: ' . $RGB[2], 0);
         return $RGB;
     }
-
-
 }

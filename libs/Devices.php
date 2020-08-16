@@ -2,16 +2,6 @@
 
 declare(strict_types=1);
 
-class IPSVarType
-{
-    const vtNone = -1;
-    const vtBoolean = 0;
-    const vtInteger = 1;
-    const vtFloat = 2;
-    const vtString = 3;
-    const vtDualInteger = 10;
-}
-
 class Devices extends IPSModule
 {
     protected static $Devices = [
@@ -49,7 +39,7 @@ class Devices extends IPSModule
                 'VariableType'           => VARIABLETYPE_INTEGER,
                 'Action'                 => true,
                 'ActionCommand'          => 'Color',
-                'SearchString'           => 'Color'
+                'SearchString'           => 'X'
             ]
             ],
             'IKEA of Sweden TRADFRI on/off switch' => [
@@ -125,7 +115,7 @@ class Devices extends IPSModule
                     'VariableType'           => VARIABLETYPE_INTEGER,
                     'Action'                 => true,
                     'ActionCommand'          => 'Color',
-                    'SearchString'           => 'Color'
+                    'SearchString'           => 'X'
                 ]
             ],
     ];
