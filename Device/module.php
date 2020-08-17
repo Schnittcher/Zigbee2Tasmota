@@ -86,7 +86,6 @@ class Tasmota2ZigbeeDevice extends Devices
                                 } else {
                                     switch ($key) {
                                         case 'Color':
-                                          $this->LogMessage(print_r($Payload, true), KL_NOTIFY);
                                           $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
                                           $this->SetValue('Color', hexdec($RGB));
                                         break;
