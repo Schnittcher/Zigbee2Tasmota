@@ -3,13 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../libs/MQTTHelper.php';
-
-if (!function_exists('fnmatch')) {
-    function fnmatch($pattern, $string)
-    {
-        return preg_match('#^' . strtr(preg_quote($pattern, '#'), ['\*' => '.*', '\?' => '.']) . '$#i', $string);
-    }
-}
+require_once __DIR__ . '/../libs/Functions.php';
 
 class Tasmota2ZigbeeConnect extends IPSModule
 {
@@ -19,7 +13,6 @@ class Tasmota2ZigbeeConnect extends IPSModule
     {
         //Never delete this line!
         parent::Create();
-        $this->BufferResponse = '';
         $this->ConnectParent('{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}');
 
         //Anzahl die in der Konfirgurationsform angezeigt wird - Hier Standard auf 1
@@ -33,7 +26,6 @@ class Tasmota2ZigbeeConnect extends IPSModule
     {
         //Never delete this line!
         parent::ApplyChanges();
-        $this->BufferResponse = '';
 
         //Setze Filter fÃ¼r ReceiveData
         $this->SendDebug(__FUNCTION__ . ' FullTopic', $this->ReadPropertyString('FullTopic'), 0);
@@ -62,9 +54,6 @@ class Tasmota2ZigbeeConnect extends IPSModule
                 return;
         }
 
-        // Hier werden die Daten verarbeitet
-
-        // Weiterleitung zu allen Gerät-/Device-Instanzen
         $this->SendDataToChildren(json_encode(['DataID' => '{EAC09CF4-0E77-C618-5C72-019417AE3CC8}', 'Buffer' => $Buffer]));
     }
 
@@ -77,13 +66,6 @@ class Tasmota2ZigbeeConnect extends IPSModule
 
         $this->sendMQTT($buffer->Topic, $buffer->Payload);
 
-        // Hier würde man den Buffer im Normalfall verarbeiten
-        // z.B. CRC prüfen, in Einzelteile zerlegen
-
-        // Weiterleiten zur I/O Instanz
-        //$resultat = $this->SendDataToParent(json_encode(Array("DataID" => "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}", "Buffer" => $data->Buffer)));
-
-        // Weiterverarbeiten und durchreichen
         return '';
     }
 }
