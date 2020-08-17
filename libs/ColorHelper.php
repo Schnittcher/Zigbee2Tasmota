@@ -32,7 +32,7 @@ trait ColorHelper
             $x = $x / 65536;
             $y = $y / 65536;
         }
-        
+
         $z = 1.0 - $x - $y;
         $Y = $brightness / 255;
         $X = ($Y / $y) * $x;

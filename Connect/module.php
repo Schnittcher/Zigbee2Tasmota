@@ -45,7 +45,7 @@ class Tasmota2ZigbeeConnect extends IPSModule
 
     public function ReceiveData($JSONString)
     {
- 
+
         // Empfangene Daten vom I/O
         $data = json_decode($JSONString);
 
@@ -61,28 +61,28 @@ class Tasmota2ZigbeeConnect extends IPSModule
                 $this->LogMessage('Invalid Parent', KL_ERROR);
                 return;
         }
-     
+
         // Hier werden die Daten verarbeitet
-     
+
         // Weiterleitung zu allen Gerät-/Device-Instanzen
-        $this->SendDataToChildren(json_encode(array("DataID" => "{EAC09CF4-0E77-C618-5C72-019417AE3CC8}", "Buffer" => $Buffer)));
+        $this->SendDataToChildren(json_encode(['DataID' => '{EAC09CF4-0E77-C618-5C72-019417AE3CC8}', 'Buffer' => $Buffer]));
     }
 
     public function ForwardData($JSONString)
     {
- 
+
         // Empfangene Daten von der Device Instanz
         $data = json_decode($JSONString);
         $buffer = json_decode($data->Buffer);
 
         $this->sendMQTT($buffer->Topic, $buffer->Payload);
-     
+
         // Hier würde man den Buffer im Normalfall verarbeiten
         // z.B. CRC prüfen, in Einzelteile zerlegen
-     
+
         // Weiterleiten zur I/O Instanz
         //$resultat = $this->SendDataToParent(json_encode(Array("DataID" => "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}", "Buffer" => $data->Buffer)));
-     
+
         // Weiterverarbeiten und durchreichen
         return '';
     }

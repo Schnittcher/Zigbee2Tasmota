@@ -110,7 +110,7 @@ class Tasmota2ZigbeeDevice extends Devices
             case 'Color':
                 $RGB = $this->HexToRGB($Value);
                 $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2], true);
-                $Value = strval($cie['x'].','.$cie['y']);
+                $Value = strval($cie['x'] . ',' . $cie['y']);
                 $this->sendCommand($Command, $Value);
                 $this->sendCommand('Power', true);
                 break;
