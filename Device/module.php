@@ -16,11 +16,9 @@ class Tasmota2ZigbeeDevice extends Devices
     {
         //Never delete this line!
         parent::Create();
-        $this->BufferResponse = '';
         $this->ConnectParent('{D5C0D7CE-6A00-BDBE-C43E-678CF5CBE178}');
-        $this->registerVariables();
+        $this->registerVariableProfiles();
 
-        //Anzahl die in der Konfirgurationsform angezeigt wird - Hier Standard auf 1
         $this->RegisterPropertyString('Device', '');
         $this->RegisterPropertyString('Model', '');
     }
@@ -29,12 +27,10 @@ class Tasmota2ZigbeeDevice extends Devices
     {
         //Never delete this line!
         parent::ApplyChanges();
-        $this->BufferResponse = '';
 
-        //Setze Filter fÃ¼r ReceiveData
+        //Setze Filter für ReceiveData
         $device = $this->ReadPropertyString('Device');
         $this->SendDebug('SetReceiveDataFilter - Device', $device, 0);
-
         $this->SetReceiveDataFilter('.*' . $device . '.*');
 
         $model = $this->ReadPropertyString('Model');
@@ -76,18 +72,21 @@ class Tasmota2ZigbeeDevice extends Devices
 
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
-                    $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device};
+                    $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
                     if (is_object($Payload)) {
                         $model = $this->ReadPropertyString('Model');
                         foreach (self::$Devices[$model] as $key => $device) {
                             if (property_exists($Payload, $device['SearchString'])) {
-                                if ($key == $device['SearchString']) {
+                                if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
                                     $this->SetValue($key, $Payload->{$key});
                                 } else {
                                     switch ($key) {
                                         case 'Color':
                                           $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
                                           $this->SetValue('Color', hexdec($RGB));
+                                        break;
+                                    default:
+                                        $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
                                         break;
                                     }
                                 }
@@ -144,7 +143,7 @@ class Tasmota2ZigbeeDevice extends Devices
         $this->SendDataToParent(json_encode($Data));
     }
 
-    private function registerVariables()
+    private function registerVariableProfiles()
     {
         if (!IPS_VariableProfileExists('T2M.TogglePower')) {
             $Associations = [];
