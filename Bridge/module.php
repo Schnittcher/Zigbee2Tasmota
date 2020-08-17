@@ -13,7 +13,6 @@ class Tasmota2ZigbeeBridge extends IPSModule
     {
         //Never delete this line!
         parent::Create();
-        $this->BufferResponse = '';
         $this->ConnectParent('{D5C0D7CE-6A00-BDBE-C43E-678CF5CBE178}');
 
         //Anzahl die in der Konfirgurationsform angezeigt wird - Hier Standard auf 1
@@ -27,7 +26,6 @@ class Tasmota2ZigbeeBridge extends IPSModule
     {
         //Never delete this line!
         parent::ApplyChanges();
-        $this->BufferResponse = '';
 
         //Setze Filter fÃ¼r ReceiveData
         $this->SendDebug(__FUNCTION__ . ' FullTopic', $this->ReadPropertyString('FullTopic'), 0);
@@ -123,12 +121,11 @@ class Tasmota2ZigbeeBridge extends IPSModule
                 }
                 if (property_exists($Payload, 'ZbStatus1')) {
                     $this->SendDebug('Paired Devices without Informations', json_encode($Payload->ZbStatus1), 0);
-                    //$this->SetBuffer('pairedDevices', json_encode($Payload->ZbStatus1));
                     $devicesCount = count($Payload->ZbStatus1);
                     $this->getDetailedDeviceInformations($devicesCount);
                 }
                 if (property_exists($Payload, 'ZbStatus2')) {
-                    $this->SendDebug('Detailed Device Information', json_encode($Payload->ZbStatus2), 0);
+                    $this->SendDebug('ZbStatus2 Result', json_encode($Payload->ZbStatus2), 0);
                     $Devices = json_decode($this->GetBuffer('pairedDevices'), true);
 
                     if (!fnmatch('*' . $Payload->ZbStatus2[0]->Device . '*', $this->GetBuffer('pairedDevices'))) {
