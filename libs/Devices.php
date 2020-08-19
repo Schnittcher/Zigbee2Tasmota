@@ -92,6 +92,24 @@ class Devices extends IPSModule
                 'SearchString'           => 'Power'
             ]
         ],
+        'LUMI lumi.sensor_cube' => [
+            'AqaraCubeAction' => [
+                'Name'                   => 'Action',
+                'VariableProfile'        => 'T2M.AqaraCube',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'AqaraCube'
+            ],
+            'AqaraCubeSide' => [
+                'Name'                   => 'Side',
+                'VariableProfile'        => '',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'AqaraCubeSide'
+            ]
+        ],        
         'Philips LCT015' => [
             'Power' => [
                 'Name'                   => 'Power',

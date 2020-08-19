@@ -85,6 +85,28 @@ class Tasmota2ZigbeeDevice extends Devices
                                           $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
                                           $this->SetValue('Color', hexdec($RGB));
                                         break;
+                                        case 'AqaraCubeAction':
+                                            switch ($Payload->AqaraCube) {
+                                                case 'wakeup':
+                                                    $this->SetValue('AqaraCubeAction', 0);
+                                                    break;
+                                                case 'slide':
+                                                    $this->SetValue('AqaraCubeAction', 1);
+                                                    break;
+                                                case 'flip90':
+                                                    $this->SetValue('AqaraCubeAction', 2);
+                                                    break;
+                                                case 'flip180':
+                                                    $this->SetValue('AqaraCubeAction', 3);
+                                                    break;
+                                                case 'tap':
+                                                    $this->SetValue('AqaraCubeAction', 4);
+                                                    break;
+                                                case 'shake':
+                                                    $this->SetValue('AqaraCubeAction', 5);
+                                                    break;
+                                            }
+                                          break;
                                     default:
                                         $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
                                         break;
@@ -151,6 +173,16 @@ class Tasmota2ZigbeeDevice extends Devices
             $Associations[] = [1, $this->Translate('On'), '', -1];
             $Associations[] = [2, $this->Translate('Toggle'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.TogglePower', '', '', '', $Associations);
+        }
+        if (!IPS_VariableProfileExists('T2M.AqaraCube')) {
+            $Associations = [];
+            $Associations[] = [0, $this->Translate('wakeup'), '', -1];
+            $Associations[] = [1, $this->Translate('slide'), '', -1];
+            $Associations[] = [2, $this->Translate('flip90'), '', -1];
+            $Associations[] = [3, $this->Translate('flip180'), '', -1];
+            $Associations[] = [4, $this->Translate('tap'), '', -1];
+            $Associations[] = [5, $this->Translate('shake'), '', -1];
+            $this->RegisterProfileIntegerEx('T2M.AqaraCube', '', '', '', $Associations);
         }
     }
 }
