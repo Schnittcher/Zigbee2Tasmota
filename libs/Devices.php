@@ -72,6 +72,24 @@ class Devices extends IPSModule
                 'SearchString'           => 'ZoneStatusChange'
             ]
         ],
+        'LUMI lumi.weather' => [
+            'Temperature' => [
+                'Name'                   => 'Temperature',
+                'VariableProfile'        => '~Temperature',
+                'VariableType'           => VARIABLETYPE_FLOAT,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Temperature'
+            ],
+            'Humidity' => [
+                'Name'                   => 'Humidity',
+                'VariableProfile'        => '~Humidity.F',
+                'VariableType'           => VARIABLETYPE_FLOAT,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Humidity'
+            ]
+        ],
         'LUMI lumi.sensor_magnet' => [
             'Power' => [
                 'Name'                   => 'Window',
@@ -108,7 +126,15 @@ class Devices extends IPSModule
                 'Action'                 => false,
                 'ActionCommand'          => '',
                 'SearchString'           => 'AqaraCubeSide'
-            ]
+            ],
+            'AqaraCubeFromSide' => [
+                'Name'                   => 'From Side',
+                'VariableProfile'        => '',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'AqaraCubeFromSide'
+            ],
         ],        
         'Philips LCT015' => [
             'Power' => [
