@@ -135,7 +135,17 @@ class Devices extends IPSModule
                 'ActionCommand'          => '',
                 'SearchString'           => 'AqaraCubeFromSide'
             ],
-        ],        
+        ],
+        "LUMI lumi.sen_ill.mgl01" => [
+            'Illuminance' => [
+                'Name'                   => 'Illuminance',
+                'VariableProfile'        => '~Illumination',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Illuminance'
+            ],
+        ],
         'Philips LCT015' => [
             'Power' => [
                 'Name'                   => 'Power',
