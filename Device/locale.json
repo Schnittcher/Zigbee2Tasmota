@@ -13,7 +13,19 @@
       "Reload Device List": "Aktualisiere Geräteliste",
       "Off": "Aus",
       "On": "An",
-      "Toggle": "Toggle"
+      "Toggle": "Toggle",
+      "State": "Status",
+      "Brightness": "Helligkeit",
+      "Color": "Farbe",
+      "Motion": "Bewegung",
+      "Alarm": "Alarm",
+      "Temperature": "Temperatur",
+      "Humidity": "Feuchtigkeit",
+      "Window": "Fenster",
+      "Action": "Aktion",
+      "Side": "Seite",
+      "From Side": "Von Seite",
+      "Illuminance": "Beleuchtungsstärke"
     }
   }
 }

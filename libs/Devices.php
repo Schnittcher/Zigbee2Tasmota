@@ -8,7 +8,7 @@ class Devices extends IPSModule
 
         'OSRAM Plug 01' => [
             'Power' => [
-                'Name'                   => 'Power',
+                'Name'                   => 'State',
                 'VariableProfile'        => '~Switch',
                 'VariableType'           => VARIABLETYPE_BOOLEAN,
                 'Action'                 => true,
@@ -18,7 +18,7 @@ class Devices extends IPSModule
         ],
         'IKEA of Sweden TRADFRI bulb E27 CWS opal 600lm' => [
             'Power' => [
-                'Name'                   => 'Power',
+                'Name'                   => 'State',
                 'VariableProfile'        => '~Switch',
                 'VariableType'           => VARIABLETYPE_BOOLEAN,
                 'Action'                 => true,
@@ -44,7 +44,7 @@ class Devices extends IPSModule
         ],
         'IKEA of Sweden TRADFRI on/off switch' => [
             'Power' => [
-                'Name'                   => 'Power',
+                'Name'                   => 'State',
                 'VariableProfile'        => 'T2M.TogglePower',
                 'VariableType'           => VARIABLETYPE_INTEGER,
                 'Action'                 => false,
@@ -136,7 +136,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'AqaraCubeFromSide'
             ],
         ],
-        "LUMI lumi.sen_ill.mgl01" => [
+        'LUMI lumi.sen_ill.mgl01' => [
             'Illuminance' => [
                 'Name'                   => 'Illuminance',
                 'VariableProfile'        => '~Illumination',
@@ -148,7 +148,7 @@ class Devices extends IPSModule
         ],
         'Philips LCT015' => [
             'Power' => [
-                'Name'                   => 'Power',
+                'Name'                   => 'State',
                 'VariableProfile'        => '~Switch',
                 'VariableType'           => VARIABLETYPE_BOOLEAN,
                 'Action'                 => true,
