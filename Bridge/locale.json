@@ -12,7 +12,8 @@
       "Zigbee Devices": "Zigbee Geräte",
       "Reload Device List": "Aktualisiere Geräteliste",
       "Forget Device": "Lösche Gerät (Tasmota unpair)",
-      "Delete": "Löschen"
+      "Delete": "Löschen",
+      "Devicename": "Gerätename"
     }
   }
 }

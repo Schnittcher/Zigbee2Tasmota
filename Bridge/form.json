@@ -60,6 +60,20 @@
       "caption": "Reload Device List",
       "onClick": "TZ_reloadDevices($id);"
     },
+    { 
+      "type": "RowLayout",
+      "items": [
+          {
+              "type": "ValidationTextBox",
+              "name": "DeviceName",
+              "caption": "Devicename"
+          },{
+              "type": "Button",
+              "caption": "Ändern",
+              "onClick": "TZ_UpdateName($id,$DeviceName, $Configurator['Device'])"
+          }
+      ]
+  },
     {
       "type": "Button",
       "caption": "Forget Device",
