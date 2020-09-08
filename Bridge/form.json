@@ -70,7 +70,7 @@
           },{
               "type": "Button",
               "caption": "Ändern",
-              "onClick": "TZ_UpdateName($id,$DeviceName, $Configurator['Device'])"
+              "onClick": "TZ_UpdateName($id,$Configurator['Device'],$DeviceName);"
           }
       ]
   },
