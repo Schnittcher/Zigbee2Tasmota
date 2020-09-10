@@ -77,7 +77,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
                     'moduleID'      => '{7FB10079-784C-EC79-4425-2941D23EEAFA}',
                     'configuration' => [
                         'Device'    => $Device['Device'],
-                        'Model'     => $Manufacturer . ' ' . $ModelId
+                        'Model'     => $ModelId
                     ]
                 ],
             ];
@@ -186,7 +186,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
     {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbName';
-        $Buffer['Payload'] = strval($OldName .','. $NewName);
+        $Buffer['Payload'] = strval($OldName . ',' . $NewName);
         $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
 
         $this->SendDataToParent(json_encode($Data));

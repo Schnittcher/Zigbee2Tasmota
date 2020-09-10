@@ -6,7 +6,7 @@ class Devices extends IPSModule
 {
     protected static $Devices = [
 
-        'OSRAM Plug 01' => [
+        'Plug 01' => [
             'Power' => [
                 'Name'                   => 'State',
                 'VariableProfile'        => '~Switch',
@@ -16,7 +16,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Power'
             ]
         ],
-        'IKEA of Sweden TRADFRI bulb E27 CWS opal 600lm' => [
+        'TRADFRI bulb E27 CWS opal 600lm' => [
             'Power' => [
                 'Name'                   => 'State',
                 'VariableProfile'        => '~Switch',
@@ -42,7 +42,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'X'
             ]
         ],
-        'IKEA of Sweden TRADFRI on/off switch' => [
+        'TRADFRI on/off switch' => [
             'Power' => [
                 'Name'                   => 'State',
                 'VariableProfile'        => 'T2M.TogglePower',
@@ -52,7 +52,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Power'
             ]
         ],
-        'IKEA of Sweden TRADFRI motion sensor' => [
+        'TRADFRI motion sensor' => [
             'Power' => [
                 'Name'                   => 'Motion',
                 'VariableProfile'        => '~Motion',
@@ -62,7 +62,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Power'
             ]
         ],
-        'LUMI lumi.sensor_wleak.aq1' => [
+        'lumi.sensor_wleak.aq1' => [
             'ZoneStatusChange' => [
                 'Name'                   => 'Alarm',
                 'VariableProfile'        => '~Alert',
@@ -72,7 +72,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'ZoneStatusChange'
             ]
         ],
-        'LUMI lumi.weather' => [
+        'lumi.weather' => [
             'Temperature' => [
                 'Name'                   => 'Temperature',
                 'VariableProfile'        => '~Temperature',
@@ -90,7 +90,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Humidity'
             ]
         ],
-        'LUMI lumi.sensor_magnet' => [
+        'lumi.sensor_magnet' => [
             'Power' => [
                 'Name'                   => 'Window',
                 'VariableProfile'        => '~Window',
@@ -100,7 +100,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Power'
             ]
         ],
-        'LUMI lumi.sensor_magnet.aq2' => [
+        'lumi.sensor_magnet.aq2' => [
             'Power' => [
                 'Name'                   => 'Window',
                 'VariableProfile'        => '~Window',
@@ -110,7 +110,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Power'
             ]
         ],
-        'LUMI lumi.sensor_cube' => [
+        'lumi.sensor_cube' => [
             'AqaraCubeAction' => [
                 'Name'                   => 'Action',
                 'VariableProfile'        => 'T2M.AqaraCube',
@@ -136,7 +136,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'AqaraCubeFromSide'
             ],
         ],
-        'LUMI lumi.sen_ill.mgl01' => [
+        'lumi.sen_ill.mgl01' => [
             'Illuminance' => [
                 'Name'                   => 'Illuminance',
                 'VariableProfile'        => '~Illumination',
@@ -146,7 +146,7 @@ class Devices extends IPSModule
                 'SearchString'           => 'Illuminance'
             ],
         ],
-        'Philips LCT015' => [
+        'LCT015' => [
             'Power' => [
                 'Name'                   => 'State',
                 'VariableProfile'        => '~Switch',
