@@ -172,5 +172,15 @@ class Devices extends IPSModule
                 'SearchString'           => 'X'
             ]
         ],
+        'lumi.sensor_motion' => [
+            'Occupancy' => [
+                'Name'                   => 'Occupancy',
+                'VariableProfile'        => '~Motion',
+                'VariableType'           => VARIABLETYPE_BOOLEAN,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Occupancy'
+            ],
+        ],
     ];
 }
