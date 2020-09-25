@@ -25,7 +25,10 @@
       "Action": "Aktion",
       "Side": "Seite",
       "From Side": "Von Seite",
-      "Illuminance": "Beleuchtungsstärke"
+      "Illuminance": "Beleuchtungsstärke",
+      "DimmeMove": "DimmeMove",
+      "Up": "Hoch",
+      "Down": "Runter"
     }
   }
 }

@@ -50,6 +50,14 @@ class Devices extends IPSModule
                 'Action'                 => false,
                 'ActionCommand'          => '',
                 'SearchString'           => 'Power'
+            ],
+            'DimmerMove' => [
+                'Name'                   => 'DimmeMove',
+                'VariableProfile'        => 'T2M.IKEA.DimmerMove',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'DimmeMove'
             ]
         ],
         'TRADFRI motion sensor' => [
