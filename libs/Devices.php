@@ -188,7 +188,25 @@ class Devices extends IPSModule
                 'Action'                 => false,
                 'ActionCommand'          => '',
                 'SearchString'           => 'Occupancy'
+            ]
+        ],
+        'lumi.sensor_motion.aq2' => [
+            'Occupancy' => [
+                'Name'                   => 'Occupancy',
+                'VariableProfile'        => '~Motion',
+                'VariableType'           => VARIABLETYPE_BOOLEAN,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Occupancy'
             ],
+            'Illuminance' => [
+                'Name'                   => 'Illuminance',
+                'VariableProfile'        => '~Illumination',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Illuminance'
+            ]
         ],
         'TRADFRI transformer 30W' => [
             'Power' => [
