@@ -28,7 +28,8 @@
       "Illuminance": "Beleuchtungsstärke",
       "DimmeMove": "DimmeMove",
       "Up": "Hoch",
-      "Down": "Runter"
+      "Down": "Runter",
+      "Occupancy": "Bewegung" 
     }
   }
 }

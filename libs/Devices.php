@@ -244,5 +244,69 @@ class Devices extends IPSModule
                 'SearchString'           => 'Dimmer'
             ],
         ],
+        'lumi.sensor_swit' => [
+            'MultiInValue' => [
+                'Name'                   => 'State',
+                'VariableProfile'        => '',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'MultiInValue'
+            ]
+        ],
+        'lumi.sensor_smoke' => [
+            'SmokeDensity' => [
+                'Name'                   => 'Smoke Density',
+                'VariableProfile'        => '',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'SmokeDensity'
+            ],
+            'Occupancy' => [
+                'Name'                   => 'Occupancy',
+                'VariableProfile'        => '~Motion',
+                'VariableType'           => VARIABLETYPE_BOOLEAN,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Occupancy'
+            ],
+        ],
+        'lumi.lock.v1' => [
+            'SmokeDensity' => [
+                'Name'                   => 'Smoke Density',
+                'VariableProfile'        => '',
+                'VariableType'           => VARIABLETYPE_INTEGER,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'SmokeDensity'
+            ],
+            'Occupancy' => [
+                'Name'                   => 'Occupancy',
+                'VariableProfile'        => '~Motion',
+                'VariableType'           => VARIABLETYPE_BOOLEAN,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Occupancy'
+            ],
+        ],
+        'lumi.sens' => [
+            'Temperature' => [
+                'Name'                   => 'Temperature',
+                'VariableProfile'        => '~Temperature',
+                'VariableType'           => VARIABLETYPE_FLOAT,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Temperature'
+            ],
+            'Humidity' => [
+                'Name'                   => 'Humidity',
+                'VariableProfile'        => '~Humidity.F',
+                'VariableType'           => VARIABLETYPE_FLOAT,
+                'Action'                 => false,
+                'ActionCommand'          => '',
+                'SearchString'           => 'Humidity'
+            ]
+        ],
     ];
 }
