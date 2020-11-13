@@ -125,7 +125,7 @@ class Tasmota2ZigbeeDevice extends Devices
     public function RequestAction($Ident, $Value)
     {
         $model = $this->ReadPropertyString('Model');
-        $Command = $this->$Devices[$model][$Ident]['ActionCommand'];
+        $Command = $this->Devices[$model][$Ident]['ActionCommand'];
         $this->SendDebug('Action', $Command, 0);
 
         switch ($Ident) {
