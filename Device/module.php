@@ -33,10 +33,12 @@ class Tasmota2ZigbeeDevice extends Devices
         $this->SendDebug('SetReceiveDataFilter - Device', $device, 0);
         $this->SetReceiveDataFilter('.*' . $device . '.*');
 
+        $this->LogMessage(print_r($this->Devices, true), KL_NOTIFY);
+
         $model = $this->ReadPropertyString('Model');
 
-        if (array_key_exists($model, self::$Devices)) {
-            foreach (self::$Devices[$model] as $key => $device) {
+        if (array_key_exists($model, $this->Devices)) {
+            foreach ($this->Devices[$model] as $key => $device) {
                 switch ($device['VariableType']) {
                 case VARIABLETYPE_BOOLEAN:
                     $this->RegisterVariableBoolean($key, $this->Translate($device['Name']), $device['VariableProfile']);
@@ -75,7 +77,7 @@ class Tasmota2ZigbeeDevice extends Devices
                     $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
                     if (is_object($Payload)) {
                         $model = $this->ReadPropertyString('Model');
-                        foreach (self::$Devices[$model] as $key => $device) {
+                        foreach ($this->Devices[$model] as $key => $device) {
                             if (property_exists($Payload, $device['SearchString'])) {
                                 if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
                                     $this->SetValue($key, $Payload->{$key});
@@ -123,7 +125,7 @@ class Tasmota2ZigbeeDevice extends Devices
     public function RequestAction($Ident, $Value)
     {
         $model = $this->ReadPropertyString('Model');
-        $Command = self::$Devices[$model][$Ident]['ActionCommand'];
+        $Command = $this->$Devices[$model][$Ident]['ActionCommand'];
         $this->SendDebug('Action', $Command, 0);
 
         switch ($Ident) {
