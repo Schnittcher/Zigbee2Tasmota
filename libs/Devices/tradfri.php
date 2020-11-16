@@ -21,6 +21,48 @@ return [
             'SearchString'           => 'DimmerMove'
         ]
     ],
+    'TRADFRI remote control' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => 'T2M.TogglePower',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Power'
+        ],
+        'DimmerUp' => [
+            'Name'                   => 'DimmerUp',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerUp'
+        ],
+        'DimmerStepDown' => [
+            'Name'                   => 'DimmerStepDown',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStepDown'
+        ],
+        'ArrowClick' => [
+            'Name'                   => 'Arrow Click',
+            'VariableProfile'        => 'T2M.IKEA.ArrowClick',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'ArrowClick'
+        ],
+        'DimmerMove' => [
+            'Name'                   => 'DimmerMove',
+            'VariableProfile'        => 'T2M.IKEA.DimmerMove',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerMove'
+        ]
+    ],
     'TRADFRI motion sensor' => [
         'Power' => [
             'Name'                   => 'Motion',

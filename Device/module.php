@@ -193,6 +193,12 @@ class Tasmota2ZigbeeDevice extends Devices
             $Associations[] = [1, $this->Translate('Down'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.IKEA.DimmerMove', '', '', '', $Associations);
         }
+        if (!IPS_VariableProfileExists('T2M.IKEA.ArrowClick')) {
+            $Associations = [];
+            $Associations[] = [0, $this->Translate('Right'), '', -1];
+            $Associations[] = [1, $this->Translate('Left'), '', -1];
+            $this->RegisterProfileIntegerEx('T2M.IKEA.ArrowClick', '', '', '', $Associations);
+        }
         if (!IPS_VariableProfileExists('T2M.AqaraCube')) {
             $Associations = [];
             $Associations[] = [0, $this->Translate('wakeup'), '', -1];

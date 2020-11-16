@@ -29,7 +29,10 @@
       "DimmeMove": "DimmeMove",
       "Up": "Hoch",
       "Down": "Runter",
-      "Occupancy": "Bewegung" 
+      "Occupancy": "Bewegung" ,
+      "Left": "Links",
+      "Right": "Rechts",
+      "Arrow Click": "Pfeil Klick"
     }
   }
 }
