@@ -32,7 +32,7 @@ return [
     ],
     'lumi.sensor_magnet' => [
         'Power' => [
-            'Name'                   => 'Window',
+            'Name'                   => 'State',
             'VariableProfile'        => '~Window',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
@@ -42,7 +42,7 @@ return [
     ],
     'lumi.sensor_magnet.aq2' => [
         'Power' => [
-            'Name'                   => 'Window',
+            'Name'                   => 'State',
             'VariableProfile'        => '~Window',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
