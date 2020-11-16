@@ -79,14 +79,27 @@ class Tasmota2ZigbeeDevice extends Devices
                         $model = $this->ReadPropertyString('Model');
                         foreach ($this->Devices[$model] as $key => $device) {
                             if (property_exists($Payload, $device['SearchString'])) {
-                                if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
-                                    $this->SetValue($key, $Payload->{$key});
-                                } else {
-                                    switch ($key) {
+                                //if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
+//                                    $this->SetValue($key, $Payload->{$key});
+                                //} else {
+                                switch ($key) {
                                         case 'Color':
                                           $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
                                           $this->SetValue('Color', hexdec($RGB));
                                         break;
+                                        case 'AqaraVibrationMode':
+                                            switch ($Payload->AqaraVibrationMode) {
+                                                case 'vibrate':
+                                                    $this->SetValue('AqaraVibrationMode', 0);
+                                                    break;
+                                                case 'tilt':
+                                                    $this->SetValue('AqaraVibrationMode', 1);
+                                                    break;
+                                                case 'drop':
+                                                    $this->SetValue('AqaraVibrationMode', 2);
+                                                    break;
+                                            }
+                                            break;
                                         case 'AqaraCubeAction':
                                             switch ($Payload->AqaraCube) {
                                                 case 'wakeup':
@@ -110,10 +123,13 @@ class Tasmota2ZigbeeDevice extends Devices
                                             }
                                           break;
                                     default:
-                                        $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
+                                        if ($this->GetIDForIdent($key)) {
+                                            $this->SetValue($key, $Payload->{$key});
+                                        } else {
+                                            $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
+                                        }
                                         break;
                                     }
-                                }
                             }
                         }
                     }
@@ -121,6 +137,7 @@ class Tasmota2ZigbeeDevice extends Devices
             }
         }
     }
+    //}
 
     public function RequestAction($Ident, $Value)
     {
@@ -198,6 +215,13 @@ class Tasmota2ZigbeeDevice extends Devices
             $Associations[] = [0, $this->Translate('Right'), '', -1];
             $Associations[] = [1, $this->Translate('Left'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.IKEA.ArrowClick', '', '', '', $Associations);
+        }
+        if (!IPS_VariableProfileExists('T2M.AqaraVibrationMode')) {
+            $Associations = [];
+            $Associations[] = [0, $this->Translate('Vibrate'), '', -1];
+            $Associations[] = [1, $this->Translate('Tilt'), '', -1];
+            $Associations[] = [2, $this->Translate('Drop'), '', -1];
+            $this->RegisterProfileIntegerEx('T2M.AqaraVibrationMode', '', '', '', $Associations);
         }
         if (!IPS_VariableProfileExists('T2M.AqaraCube')) {
             $Associations = [];
