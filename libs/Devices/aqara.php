@@ -195,5 +195,15 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'Humidity'
         ]
+    ],
+    'lumi.vibration.aq1' => [
+        'AqaraVibrationMode' => [
+            'Name'                   => 'Vibration',
+            'VariableProfile'        => 'T2M.AqaraVibrationMode',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'AqaraVibrationMode'
+        ]
     ]
 ];

@@ -32,7 +32,11 @@
       "Occupancy": "Bewegung" ,
       "Left": "Links",
       "Right": "Rechts",
-      "Arrow Click": "Pfeil Klick"
+      "Arrow Click": "Pfeil Klick",
+      "Vibration": "Vibration",
+      "Vibrate": "Vibrieren",
+      "Tilt": "Neigung",
+      "Drop": "Fallen"
     }
   }
 }
