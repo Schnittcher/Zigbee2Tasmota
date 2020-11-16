@@ -151,7 +151,7 @@ class Tasmota2ZigbeeDevice extends Devices
                 $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2], true);
                 $Value = strval($cie['x'] . ',' . $cie['y']);
                 $this->sendCommand($Command, $Value);
-                $this->sendCommand('Power', true);
+                $this->sendCommand('Power', 'ON');
                 break;
             case 'Power':
                 switch ($Value) {
