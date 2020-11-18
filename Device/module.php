@@ -195,6 +195,11 @@ class Tasmota2ZigbeeDevice extends Devices
         $this->SendDataToParent(json_encode($Data));
     }
 
+    private function MiredToKelvin($Value)
+    {
+        return 1000000 / $Value;
+    }
+
     private function registerVariableProfiles()
     {
         if (!IPS_VariableProfileExists('T2M.TogglePower')) {
@@ -233,5 +238,12 @@ class Tasmota2ZigbeeDevice extends Devices
             $Associations[] = [5, $this->Translate('shake'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.AqaraCube', '', '', '', $Associations);
         }
+        if (!IPS_VariableProfileExists('T2M.ColorTemperature')) {
+            IPS_CreateVariableProfile('T2M.ColorTemperature', 1);
+        }
+        IPS_SetVariableProfileDigits('T2M.ColorTemperature', 0);
+        IPS_SetVariableProfileIcon('T2M.ColorTemperature', 'Bulb');
+        IPS_SetVariableProfileText('T2M.ColorTemperature', '', ' Mired');
+        IPS_SetVariableProfileValues('T2M.ColorTemperature', 153, 500, 1);
     }
 }
