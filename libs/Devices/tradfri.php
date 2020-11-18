@@ -108,5 +108,31 @@ return [
             'ActionCommand'          => 'Dimmer',
             'SearchString'           => 'Dimmer'
         ],
-    ]
+    ],
+    "TRADFRI bulb E14 WS 470lm"=> [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => true,
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+        'Dimmer' => [
+            'Name'                   => 'Brightness',
+            'VariableProfile'        => '~Intensity.255',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => true,
+            'ActionCommand'          => 'Dimmer',
+            'SearchString'           => 'Dimmer'
+        ],
+        'CT' => [
+            'Name'                   => 'CT',
+            'VariableProfile'        => 'T2M.ColorTemperature',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => true,
+            'ActionCommand'          => 'CT',
+            'SearchString'           => 'CT'
+        ],
+    ],
 ];
