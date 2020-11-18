@@ -27,6 +27,14 @@ return [
             'Action'                 => true,
             'ActionCommand'          => 'Color',
             'SearchString'           => 'X'
-        ]
+        ],
+        'CT' => [
+            'Name'                   => 'Color Temperature',
+            'VariableProfile'        => 'T2M.ColorTemperature',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => true,
+            'ActionCommand'          => 'CT',
+            'SearchString'           => 'CT'
+        ],
     ]
 ];
