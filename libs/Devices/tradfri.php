@@ -109,7 +109,7 @@ return [
             'SearchString'           => 'Dimmer'
         ],
     ],
-    "TRADFRI bulb E14 WS 470lm"=> [
+    'TRADFRI bulb E14 WS 470lm'=> [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
