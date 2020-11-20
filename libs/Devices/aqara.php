@@ -31,23 +31,23 @@ return [
         ]
     ],
     'lumi.sensor_magnet' => [
-        'Power' => [
+        'Contact' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Window',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'Power'
+            'SearchString'           => 'Contact'
         ]
     ],
     'lumi.sensor_magnet.aq2' => [
-        'Power' => [
+        'Contact' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Window',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'Power'
+            'SearchString'           => 'Contact'
         ]
     ],
     'lumi.sensor_cube' => [
