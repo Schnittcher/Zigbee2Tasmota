@@ -13,7 +13,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
     {
         //Never delete this line!
         parent::Create();
-        $this->ConnectParent('{D5C0D7CE-6A00-BDBE-C43E-678CF5CBE178}');
+        $this->RequireParent('{D5C0D7CE-6A00-BDBE-C43E-678CF5CBE178}');
 
         //Anzahl die in der Konfirgurationsform angezeigt wird - Hier Standard auf 1
         $this->RegisterPropertyString('Topic', '');
