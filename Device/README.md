@@ -4,7 +4,7 @@ Diese Instanz stellt die Geräte dar, welche mit der Bridge gepairt sind.
 ## Inhaltverzeichnis
 1. [Konfiguration](#1-konfiguration)
 2. [Funktionen](#2-funktionen)
-3. [Unterstützte Geräte](#2-unterstuetzte-geraete)
+3. [Unterstützte Geräte](3-unterstützte-geräte)
 
 ## 1. Konfiguration
 
