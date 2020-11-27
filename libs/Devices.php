@@ -13,7 +13,8 @@ class Devices extends IPSModule
             include('Devices/osram.php'),
             include('Devices/philips.php'),
             include('Devices/tradfri.php'),
-            include('Devices/tuya.php')
+            include('Devices/tuya.php'),
+            include('Devices/sonoff.php')
         );
     }
 }

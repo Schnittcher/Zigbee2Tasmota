@@ -53,6 +53,7 @@ IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Stat
 IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Status, Helligkeit
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
+Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
