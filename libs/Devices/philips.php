@@ -172,7 +172,7 @@ return [
             'ActionCommand'          => 'CT',
             'SearchString'           => 'CT'
         ],
-    ].
+    ],
     'LWB010' => [
         'Power' => [
             'Name'                   => 'State',
