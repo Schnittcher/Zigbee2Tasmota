@@ -47,6 +47,7 @@ Philips HUE | LCD014 | Hue White and Color Ambiance (2016) | Status, Helligkeit,
 Philips HUE | LCD010 | Hue White and Color Ambiance (2016) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCT007 | Hue White and Color Ambiance (2015) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCT001 | Hue White and Color Ambiance (2012) | Status, Helligkeit, Farbe, Farbtemperatur
+Philips HUE | LWB010 | Hue White | Status, Helligkeit
 IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
