@@ -190,5 +190,57 @@ return [
             'ActionCommand'          => 'Dimmer',
             'SearchString'           => 'Dimmer'
         ]
+    ],
+    'LTW012' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => true,
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+        'Dimmer' => [
+            'Name'                   => 'Brightness',
+            'VariableProfile'        => '~Intensity.255',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => true,
+            'ActionCommand'          => 'Dimmer',
+            'SearchString'           => 'Dimmer'
+        ],
+        'CT' => [
+            'Name'                   => 'Color Temperature',
+            'VariableProfile'        => 'T2M.ColorTemperature',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => true,
+            'ActionCommand'          => 'CT',
+            'SearchString'           => 'CT'
+        ]
+    ],
+    'RWL021' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+        'DimmerStepDown' => [
+            'Name'                   => 'DimmerStepDown',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStepDown'
+        ],
+        'DimmerStepUp' => [
+            'Name'                   => 'DimmerStepUp',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStepUp'
+        ]
     ]
 ];
