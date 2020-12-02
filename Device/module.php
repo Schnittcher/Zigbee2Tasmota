@@ -100,6 +100,38 @@ class Tasmota2ZigbeeDevice extends Devices
                                                     break;
                                             }
                                             break;
+                                        case 'action':
+                                            switch ($Payload->action) {
+                                                case 'hold':
+                                                    $this->SetValue('action', 0);
+                                                    break;
+                                                case 'release':
+                                                    $this->SetValue('action', 1);
+                                                    break;
+                                                default:
+                                                    $this->SendDebug('Invalid Action', $Payload->action, 0);
+                                                    break;
+                                            }
+                                            break;
+                                        case 'click':
+                                            switch ($Payload->click) {
+                                                case 'single':
+                                                    $this->SetValue('click', 0);
+                                                    break;
+                                                case 'double':
+                                                    $this->SetValue('click', 1);
+                                                    break;
+                                                case 'triple':
+                                                    $this->SetValue('click', 2);
+                                                    break;
+                                                case 'quad':
+                                                    $this->SetValue('click', 4);
+                                                    break;
+                                                default:
+                                                    $this->SendDebug('Invalid Click', $Payload->click, 0);
+                                                    break;
+                                            }
+                                            break;
                                         case 'AqaraCubeAction':
                                             switch ($Payload->AqaraCube) {
                                                 case 'wakeup':
@@ -227,6 +259,20 @@ class Tasmota2ZigbeeDevice extends Devices
             $Associations[] = [1, $this->Translate('Tilt'), '', -1];
             $Associations[] = [2, $this->Translate('Drop'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.AqaraVibrationMode', '', '', '', $Associations);
+        }
+        if (!IPS_VariableProfileExists('T2M.Aqara.Click')) {
+            $Associations = [];
+            $Associations[] = [0, $this->Translate('Single'), '', -1];
+            $Associations[] = [1, $this->Translate('Double'), '', -1];
+            $Associations[] = [2, $this->Translate('Triple'), '', -1];
+            $Associations[] = [3, $this->Translate('Quad'), '', -1];
+            $this->RegisterProfileIntegerEx('T2M.Aqara.Click', '', '', '', $Associations);
+        }
+        if (!IPS_VariableProfileExists('T2M.Aqara.Action')) {
+            $Associations = [];
+            $Associations[] = [0, $this->Translate('Hold'), '', -1];
+            $Associations[] = [1, $this->Translate('Release'), '', -1];
+            $this->RegisterProfileIntegerEx('T2M.Aqara.Action', '', '', '', $Associations);
         }
         if (!IPS_VariableProfileExists('T2M.AqaraCube')) {
             $Associations = [];

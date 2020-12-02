@@ -40,6 +40,7 @@ Xiaomi | lumi.lock.v1 | Vima Smart Lock Cylinder |
 Xiaomi | lumi.sens | Mijia Temperature & Humidity Sensor | Temperatur, Luftfeuchte
 Xiaomi | lumi.sensor_ht | Mijia Temperature & Humidity Sensor | Temperatur, Luftfeuchte
 Xiaomi | lumi.vibration.aq1 | Aqara Vibration Sensor | Vibration
+Xiaomi | lumi.remote.b1acn01 | Aqara Wireless Mini Switch | Klick, Aktion
 OSRAM | Plug 01 | Smart+ Plug | Status
 OSRAM | Gardenpole RGBW-Lightify | LIGHTIFY Gardenpole | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCT015 | Hue White and Color Ambiance (2017) | Status, Helligkeit, Farbe, Farbtemperatur
