@@ -36,7 +36,20 @@
       "Vibration": "Vibration",
       "Vibrate": "Vibrieren",
       "Tilt": "Neigung",
-      "Drop": "Fallen"
+      "Drop": "Fallen",
+      "Single": "Einmal",
+      "Double": "Zweimal",
+      "Triple": "Dreimal",
+      "Quad": "Viermal",
+      "Hold": "Halten",
+      "Release": "Loslassen",
+      "Click": "Klick",
+      "Expert settings": "Experteneinstellungen",
+      "Show Battery": "Zeige Batterie",
+      "Show Link Quality": "Zeige Verbindungsqualität",
+      "Link Quality": "Verbindungsqualität",
+      "Battery": "Batterie",
+      "Battery Voltage": "Batteriespannung"
     }
   }
 }

@@ -21,6 +21,9 @@ class Tasmota2ZigbeeDevice extends Devices
 
         $this->RegisterPropertyString('Device', '');
         $this->RegisterPropertyString('Model', '');
+
+        $this->RegisterPropertyBoolean('showbattery', false);
+        $this->RegisterPropertyBoolean('showlinkquality', false);
     }
 
     public function ApplyChanges()
@@ -33,7 +36,9 @@ class Tasmota2ZigbeeDevice extends Devices
         $this->SendDebug('SetReceiveDataFilter - Device', $device, 0);
         $this->SetReceiveDataFilter('.*' . $device . '.*');
 
-        $this->LogMessage(print_r($this->Devices, true), KL_NOTIFY);
+        $this->MaintainVariable('BatteryPercentage', $this->Translate('Battery'), 1, '~Intensity.100', 0, $this->ReadPropertyBoolean('showbattery') == true);
+        $this->MaintainVariable('BatteryVoltage', $this->Translate('Battery Voltage'), 2, '~Volt', 0, $this->ReadPropertyBoolean('showbattery') == true);
+        $this->MaintainVariable('LinkQuality', $this->Translate('Link Quality'), 1, '', 0, $this->ReadPropertyBoolean('showlinkquality') == true);
 
         $model = $this->ReadPropertyString('Model');
 
@@ -76,6 +81,16 @@ class Tasmota2ZigbeeDevice extends Devices
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
                     $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
                     if (is_object($Payload)) {
+                        if (property_exists($Payload, 'BatteryVoltage') && ($this->ReadPropertyBoolean('showbattery'))) {
+                            $this->SetValue('BatteryVoltage', $Payload->BatteryVoltage);
+                        }
+                        if (property_exists($Payload, 'BatteryPercentage') && ($this->ReadPropertyBoolean('showbattery'))) {
+                            $this->SetValue('BatteryPercentage', $Payload->BatteryPercentage);
+                        }
+                        if (property_exists($Payload, 'LinkQuality') && ($this->ReadPropertyBoolean('showlinkquality'))) {
+                            $this->SetValue('LinkQuality', $Payload->LinkQuality);
+                        }
+
                         $model = $this->ReadPropertyString('Model');
                         foreach ($this->Devices[$model] as $key => $device) {
                             if (property_exists($Payload, $device['SearchString'])) {
