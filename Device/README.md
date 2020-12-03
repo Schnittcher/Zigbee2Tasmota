@@ -43,6 +43,7 @@ Xiaomi | lumi.vibration.aq1 | Aqara Vibration Sensor | Vibration
 Xiaomi | lumi.remote.b1acn01 | Aqara Wireless Mini Switch | Klick, Aktion
 OSRAM | Plug 01 | Smart+ Plug | Status
 OSRAM | Gardenpole RGBW-Lightify | LIGHTIFY Gardenpole | Status, Helligkeit, Farbe, Farbtemperatur
+OSRAM | Classic A60 W clear - LIGHTIFY | Classic A60 W clear - LIGHTIFY | Status, Helligkeit
 Philips HUE | LCT015 | Hue White and Color Ambiance (2017) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCD014 | Hue White and Color Ambiance (2016) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCD010 | Hue White and Color Ambiance (2016) | Status, Helligkeit, Farbe, Farbtemperatur
