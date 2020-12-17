@@ -79,25 +79,27 @@ class Tasmota2ZigbeeDevice extends Devices
 
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
-                    $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
-                    if (is_object($Payload)) {
-                        if (property_exists($Payload, 'BatteryVoltage') && ($this->ReadPropertyBoolean('showbattery'))) {
-                            $this->SetValue('BatteryVoltage', $Payload->BatteryVoltage);
-                        }
-                        if (property_exists($Payload, 'BatteryPercentage') && ($this->ReadPropertyBoolean('showbattery'))) {
-                            $this->SetValue('BatteryPercentage', $Payload->BatteryPercentage);
-                        }
-                        if (property_exists($Payload, 'LinkQuality') && ($this->ReadPropertyBoolean('showlinkquality'))) {
-                            $this->SetValue('LinkQuality', $Payload->LinkQuality);
-                        }
+                    $Payload = json_decode($Buffer->Payload);
+                    if (property_exists($Payload, 'ZbReceived')) {
+                        $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
+                        if (is_object($Payload)) {
+                            if (property_exists($Payload, 'BatteryVoltage') && ($this->ReadPropertyBoolean('showbattery'))) {
+                                $this->SetValue('BatteryVoltage', $Payload->BatteryVoltage);
+                            }
+                            if (property_exists($Payload, 'BatteryPercentage') && ($this->ReadPropertyBoolean('showbattery'))) {
+                                $this->SetValue('BatteryPercentage', $Payload->BatteryPercentage);
+                            }
+                            if (property_exists($Payload, 'LinkQuality') && ($this->ReadPropertyBoolean('showlinkquality'))) {
+                                $this->SetValue('LinkQuality', $Payload->LinkQuality);
+                            }
 
-                        $model = $this->ReadPropertyString('Model');
-                        foreach ($this->Devices[$model] as $key => $device) {
-                            if (property_exists($Payload, $device['SearchString'])) {
-                                //if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
+                            $model = $this->ReadPropertyString('Model');
+                            foreach ($this->Devices[$model] as $key => $device) {
+                                if (property_exists($Payload, $device['SearchString'])) {
+                                    //if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
 //                                    $this->SetValue($key, $Payload->{$key});
-                                //} else {
-                                switch ($key) {
+                                    //} else {
+                                    switch ($key) {
                                         case 'Color':
                                           $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
                                           $this->SetValue('Color', hexdec($RGB));
@@ -177,6 +179,7 @@ class Tasmota2ZigbeeDevice extends Devices
                                         }
                                         break;
                                     }
+                                }
                             }
                         }
                     }
