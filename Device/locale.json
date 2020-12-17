@@ -49,7 +49,9 @@
       "Show Link Quality": "Zeige Verbindungsqualität",
       "Link Quality": "Verbindungsqualität",
       "Battery": "Batterie",
-      "Battery Voltage": "Batteriespannung"
+      "Battery Voltage": "Batteriespannung",
+      "Target Temperature": "Solltemperatur",
+      "Tamper": "Manipuliert"
     }
   }
 }
