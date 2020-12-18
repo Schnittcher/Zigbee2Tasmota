@@ -126,7 +126,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
             if (fnmatch('*/RESULT', $Buffer->Topic)) {
                 $this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
                 $Payload = json_decode($Buffer->Payload);
-                
+
                 if (is_object($Payload)) {
                     if (property_exists($Payload, 'ZbState')) {
                         $this->SendDebug('Topic: Result ZbState', $Payload->ZbState->Status, 0);
@@ -147,31 +147,6 @@ class Tasmota2ZigbeeBridge extends IPSModule
 
                         }
                     }
-                    if (property_exists($Payload, 'ZbStatus1')) {
-                        $this->SendDebug('Paired Devices without Informations', json_encode($Payload->ZbStatus1), 0);
-                        $devicesCount = count($Payload->ZbStatus1);
-                        //$this->getDetailedDeviceInformations($devicesCount); //Test für ZbInfo
-                    }
-                    if (property_exists($Payload, 'ZbStatus2')) {
-                        $this->SendDebug('ZbStatus2 Result', json_encode($Payload->ZbStatus2), 0);
-                        $Devices = json_decode($this->GetBuffer('pairedDevices'), true);
-
-                        if (!fnmatch('*' . $Payload->ZbStatus2[0]->Device . '*', $this->GetBuffer('pairedDevices'))) {
-                            $Name = '';
-                            $Device['Device'] = $Payload->ZbStatus2[0]->Device;
-                            if (property_exists($Payload->ZbStatus2[0], 'Name')) {
-                                $Name = $Payload->ZbStatus2[0]->Name;
-                            }
-                            $Device['Name'] = $Name;
-                            $Device['ModelId'] = $Payload->ZbStatus2[0]->ModelId;
-                            $Device['Manufacturer'] = $Payload->ZbStatus2[0]->Manufacturer;
-                            array_push($Devices, $Device);
-
-                            //$this->SetBuffer('pairedDevices', json_encode($Devices)); //Test für ZbInfo
-                        }
-                        $this->SendDebug('Paired Devices', json_encode($Devices), 0);
-                        //$this->ReloadForm(); //Test für ZbInfo
-                    }
                 }
             }
         }
@@ -180,16 +155,13 @@ class Tasmota2ZigbeeBridge extends IPSModule
     public function reloadDevices()
     {
         $this->SetBuffer('pairedDevices', '{}');
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
 
-        //$Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
-        //$Buffer['Topic'] = 'ZbStatus';
-        //$Buffer['Payload'] = '';
-        //$Data['Buffer'] = json_encode($Buffer);
+        $Buffer['Topic'] = 'Zbinfo';
+        $Buffer['Payload'] = '';
 
-        //$this->SendDebug('JSON Reload Devices', json_encode($Data), 0);
-
-        //$this->SendDataToParent(json_encode($Data));
-        $this->getAllDetailedDeviceInformations();
+        $Data['Buffer'] = json_encode($Buffer);
+        $this->SendDataToParent(json_encode($Data));
     }
 
     public function Paring($Value)
@@ -220,40 +192,6 @@ class Tasmota2ZigbeeBridge extends IPSModule
         $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
 
         $this->SendDataToParent(json_encode($Data));
-    }
-
-    public function getAllDetailedDeviceInformations()
-    {
-        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
-
-        $Buffer['Topic'] = 'Zbinfo';
-        $Buffer['Payload'] = '';
-
-        $Data['Buffer'] = json_encode($Buffer);
-        $this->SendDataToParent(json_encode($Data));
-        //for ($i = 1; $i <= 32; $i++) { //32 Devices
-        //    $Buffer['Payload'] = strval($i);
-        //    $Data['Buffer'] = json_encode($Buffer);
-
-        //    $this->SendDebug('JSON Get All Detailed Device Informations', json_encode($Data), 0);
-
-        //    $this->SendDataToParent(json_encode($Data));
-        //}
-    }
-
-    private function getDetailedDeviceInformations($Devices)
-    {
-        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
-        $Buffer['Topic'] = 'ZbStatus2';
-
-        for ($i = 1; $i <= $Devices; $i++) {
-            $Buffer['Payload'] = strval($i);
-            $Data['Buffer'] = json_encode($Buffer);
-
-            $this->SendDebug('JSON Get Detailed Device Informations', json_encode($Data), 0);
-
-            $this->SendDataToParent(json_encode($Data));
-        }
     }
 
     private function getDeviceInstances($Device)
