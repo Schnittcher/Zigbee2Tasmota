@@ -141,7 +141,7 @@ class Tasmota2ZigbeeBridge extends IPSModule
                                 $this->reloadDevices();
                                 break;
                             default:
-                                $this->LogMessage($this->Translate('Unkwnon Status Code') . ': ' . $Payload->ZbState->Status, KL_NOTIFY);
+                                $this->SendDebug('Unknown Status Code', $Payload->ZbState->Status, 0);
                                 break;
 
                         }
