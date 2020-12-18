@@ -126,11 +126,12 @@ class Tasmota2ZigbeeBridge extends IPSModule
             if (fnmatch('*/RESULT', $Buffer->Topic)) {
                 $this->SendDebug('Topic: Result Payload', $Buffer->Payload, 0);
                 $Payload = json_decode($Buffer->Payload);
+                
+                if (is_object($Payload)) {
+                    if (property_exists($Payload, 'ZbState')) {
+                        $this->SendDebug('Topic: Result ZbState', $Payload->ZbState->Status, 0);
 
-                if (property_exists($Payload, 'ZbState')) {
-                    $this->SendDebug('Topic: Result ZbState', $Payload->ZbState->Status, 0);
-
-                    switch ($Payload->ZbState->Status) {
+                        switch ($Payload->ZbState->Status) {
                             case 21:
                                 $this->UpdateFormField('lblParingMode', 'caption', 'Paring active');
                                 break;
@@ -145,31 +146,32 @@ class Tasmota2ZigbeeBridge extends IPSModule
                                 break;
 
                         }
-                }
-                if (property_exists($Payload, 'ZbStatus1')) {
-                    $this->SendDebug('Paired Devices without Informations', json_encode($Payload->ZbStatus1), 0);
-                    $devicesCount = count($Payload->ZbStatus1);
-                    //$this->getDetailedDeviceInformations($devicesCount); //Test für ZbInfo
-                }
-                if (property_exists($Payload, 'ZbStatus2')) {
-                    $this->SendDebug('ZbStatus2 Result', json_encode($Payload->ZbStatus2), 0);
-                    $Devices = json_decode($this->GetBuffer('pairedDevices'), true);
-
-                    if (!fnmatch('*' . $Payload->ZbStatus2[0]->Device . '*', $this->GetBuffer('pairedDevices'))) {
-                        $Name = '';
-                        $Device['Device'] = $Payload->ZbStatus2[0]->Device;
-                        if (property_exists($Payload->ZbStatus2[0], 'Name')) {
-                            $Name = $Payload->ZbStatus2[0]->Name;
-                        }
-                        $Device['Name'] = $Name;
-                        $Device['ModelId'] = $Payload->ZbStatus2[0]->ModelId;
-                        $Device['Manufacturer'] = $Payload->ZbStatus2[0]->Manufacturer;
-                        array_push($Devices, $Device);
-
-                        //$this->SetBuffer('pairedDevices', json_encode($Devices)); //Test für ZbInfo
                     }
-                    $this->SendDebug('Paired Devices', json_encode($Devices), 0);
-                    //$this->ReloadForm(); //Test für ZbInfo
+                    if (property_exists($Payload, 'ZbStatus1')) {
+                        $this->SendDebug('Paired Devices without Informations', json_encode($Payload->ZbStatus1), 0);
+                        $devicesCount = count($Payload->ZbStatus1);
+                        //$this->getDetailedDeviceInformations($devicesCount); //Test für ZbInfo
+                    }
+                    if (property_exists($Payload, 'ZbStatus2')) {
+                        $this->SendDebug('ZbStatus2 Result', json_encode($Payload->ZbStatus2), 0);
+                        $Devices = json_decode($this->GetBuffer('pairedDevices'), true);
+
+                        if (!fnmatch('*' . $Payload->ZbStatus2[0]->Device . '*', $this->GetBuffer('pairedDevices'))) {
+                            $Name = '';
+                            $Device['Device'] = $Payload->ZbStatus2[0]->Device;
+                            if (property_exists($Payload->ZbStatus2[0], 'Name')) {
+                                $Name = $Payload->ZbStatus2[0]->Name;
+                            }
+                            $Device['Name'] = $Name;
+                            $Device['ModelId'] = $Payload->ZbStatus2[0]->ModelId;
+                            $Device['Manufacturer'] = $Payload->ZbStatus2[0]->Manufacturer;
+                            array_push($Devices, $Device);
+
+                            //$this->SetBuffer('pairedDevices', json_encode($Devices)); //Test für ZbInfo
+                        }
+                        $this->SendDebug('Paired Devices', json_encode($Devices), 0);
+                        //$this->ReloadForm(); //Test für ZbInfo
+                    }
                 }
             }
         }
