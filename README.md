@@ -1,10 +1,10 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-![Version](https://img.shields.io/badge/Symcon%20Version-5.2%20%3E-blue.svg)
+![Version](https://img.shields.io/badge/Symcon%20Version-5.5%20%3E-blue.svg)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Check Style](https://github.com/Schnittcher/Tasmota2Zigbee/workflows/Check%20Style/badge.svg)](https://github.com/Schnittcher/Tasmota2Zigbee/actions)
 
 # Tasmota2Zigbee
-Dieses Gerät baut eine Verbidnfung zwichen IP-Symcon und einer Tasmota Zigbee Bridge auf.
+Dieses Gerät baut eine Verbindung zwischen IP-Symcon und einer Tasmota Zigbee Bridge auf.
 
 ## Inhaltverzeichnis
 1. [Voraussetzungen](#1-voraussetzungen)
