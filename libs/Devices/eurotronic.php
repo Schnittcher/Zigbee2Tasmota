@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 return [
     'SPZB0001' => [
-        'Temperature' => [
+        'LocalTemperature' => [
             'Name'                   => 'Temperature',
             'VariableProfile'        => '~Temperature',
             'VariableType'           => VARIABLETYPE_FLOAT,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'Temperature'
+            'SearchString'           => 'LocalTemperature'
         ],
         'TempTarget' => [
             'Name'                   => 'Target Temperature',
@@ -20,5 +20,6 @@ return [
             'ActionCommand'          => 'TempTarget',
             'SearchString'           => 'TempTarget'
         ],
+
     ]
 ];
