@@ -3,7 +3,7 @@
 	"author": "Kai Schnittcher",
 	"name": "Tasmota 2 Zigbee",
 	"url": "https://github.com/Schnittcher/Tasmota2Zigbee",
-	"version": "1.0",
+	"version": "1.0.1",
 	"build": 0,
 	"date": 0
 }
