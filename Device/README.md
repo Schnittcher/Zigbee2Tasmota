@@ -62,6 +62,7 @@ TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
 Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur
+SCHWAIGER | SMOK_YDLV10 | Schwaiger ZigBee Rauchmelder | Feuer, Manipuliert, Batterie schwach, Batterie
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
