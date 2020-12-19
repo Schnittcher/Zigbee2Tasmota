@@ -17,7 +17,7 @@ return [
             'VariableProfile'        => '~Temperature',
             'VariableType'           => VARIABLETYPE_FLOAT,
             'Action'                 => false,
-            'ActionCommand'          => 'TempTarget',
+            'ActionCommand'          => 'OccupiedHeatingSetpoint',
             'SearchString'           => 'TempTarget'
         ],
 
