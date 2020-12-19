@@ -51,7 +51,10 @@
       "Battery": "Batterie",
       "Battery Voltage": "Batteriespannung",
       "Target Temperature": "Solltemperatur",
-      "Tamper": "Manipuliert"
+      "Tamper": "Manipuliert",
+      "Tampered": "Manipuliert",
+      "Fire": "Feueralarm",
+      "Low Battery": "Batterie schwach"
     }
   }
 }
