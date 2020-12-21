@@ -8,7 +8,7 @@ return [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ]
@@ -18,7 +18,7 @@ return [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ],
@@ -26,7 +26,7 @@ return [
             'Name'                   => 'Brightness',
             'VariableProfile'        => '~Intensity.255',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Dimmer',
             'SearchString'           => 'Dimmer'
         ],
@@ -34,7 +34,7 @@ return [
             'Name'                   => 'Color',
             'VariableProfile'        => 'HexColor',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Color',
             'SearchString'           => 'X'
         ],
@@ -42,7 +42,7 @@ return [
             'Name'                   => 'Color Temperature',
             'VariableProfile'        => 'T2M.ColorTemperature',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'CT',
             'SearchString'           => 'CT'
         ]
@@ -52,7 +52,7 @@ return [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ],
@@ -60,7 +60,7 @@ return [
             'Name'                   => 'Brightness',
             'VariableProfile'        => '~Intensity.255',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Dimmer',
             'SearchString'           => 'Dimmer'
         ]
@@ -70,7 +70,7 @@ return [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ],
@@ -78,7 +78,7 @@ return [
             'Name'                   => 'Brightness',
             'VariableProfile'        => '~Intensity.255',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Dimmer',
             'SearchString'           => 'Dimmer'
         ],
@@ -86,7 +86,7 @@ return [
             'Name'                   => 'Color',
             'VariableProfile'        => 'HexColor',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Color',
             'SearchString'           => 'X'
         ],
@@ -94,7 +94,7 @@ return [
             'Name'                   => 'Color Temperature',
             'VariableProfile'        => 'T2M.ColorTemperature',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'CT',
             'SearchString'           => 'CT'
         ]

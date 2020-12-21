@@ -60,7 +60,7 @@ class Tasmota2ZigbeeDevice extends Devices
                 default:
                     $this->SendDebug('unknown VariableType', $model . ': ' . $key, 0);
                }
-                if ($device['Action']) {
+                if (($device['Action'] == 'attribute') || ($device['Action'] == 'tasmota')) {
                     $this->EnableAction($key);
                 }
             }
@@ -193,15 +193,30 @@ class Tasmota2ZigbeeDevice extends Devices
     {
         $model = $this->ReadPropertyString('Model');
         $Command = $this->Devices[$model][$Ident]['ActionCommand'];
+        $Type = $this->Devices[$model][$Ident]['Type'];
         $this->SendDebug('Action', $Command, 0);
+
+        $SendType = '';
+
+        switch ($Type) {
+            case 'attribute':
+                $SendType = 'write';
+                break;
+            case 'tasmota':
+                $SendType = 'send';
+                break;
+            default:
+                $this->LogMessage('Error - Wrong Command Type', KL_ERROR);
+                return;
+        }
 
         switch ($Ident) {
             case 'Color':
                 $RGB = $this->HexToRGB($Value);
                 $cie = $this->RGBToCIE($RGB[0], $RGB[1], $RGB[2], true);
                 $Value = strval($cie['x'] . ',' . $cie['y']);
-                $this->sendCommand($Command, $Value);
-                $this->sendCommand('Power', 'ON');
+                $this->sendCommand($SendType, $Command, $Value);
+                $this->sendCommand('send', 'Power', 'ON');
                 break;
             case 'Power':
                 switch ($Value) {
@@ -212,10 +227,10 @@ class Tasmota2ZigbeeDevice extends Devices
                         $Value = 'OFF';
                         break;
                 }
-                $this->sendCommand($Command, $Value);
+                $this->sendCommand($SendType, $Command, $Value);
                 break;
             default:
-                $this->sendCommand($Command, $Value);
+                $this->sendCommand($SendType, $Command, $Value);
         }
     }
 
@@ -230,13 +245,13 @@ class Tasmota2ZigbeeDevice extends Devices
         $this->SendDataToParent(json_encode($Data));
     }
 
-    private function sendCommand($Command, $Value)
+    private function sendCommand($Type, $Command, $Value)
     {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbSend';
 
         $ZbSend['device'] = $this->ReadPropertyString('Device');
-        $ZbSend['send'][$Command] = $Value;
+        $ZbSend[$Type][$Command] = $Value;
 
         $Buffer['Payload'] = json_encode($ZbSend);
         $Data['Buffer'] = json_encode($Buffer);

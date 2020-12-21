@@ -6,7 +6,7 @@ return [
     'SPZB0001' => [
         'LocalTemperature' => [
             'Name'                   => 'Temperature',
-            'VariableProfile'        => '~Temperature',
+            'VariableProfile'        => '~Temperature.Room',
             'VariableType'           => VARIABLETYPE_FLOAT,
             'Action'                 => false,
             'ActionCommand'          => '',
@@ -14,12 +14,19 @@ return [
         ],
         'TempTarget' => [
             'Name'                   => 'Target Temperature',
-            'VariableProfile'        => '~Temperature',
+            'VariableProfile'        => '~Temperature.Room',
             'VariableType'           => VARIABLETYPE_FLOAT,
-            'Action'                 => false,
+            'Action'                 => 'attribute',
             'ActionCommand'          => 'OccupiedHeatingSetpoint',
             'SearchString'           => 'TempTarget'
         ],
-
+        'Valve' => [
+            'Name'                   => 'Valve',
+            'VariableProfile'        => '~Valve',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'PIHeatingDemand'
+        ],
     ]
 ];
