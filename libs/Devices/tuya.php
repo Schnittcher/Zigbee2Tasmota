@@ -11,7 +11,7 @@ return [
             'Action'                 => true,
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
-        ]
+            ]
         ],
     'TS0601' => [
         'Temperature' => [
