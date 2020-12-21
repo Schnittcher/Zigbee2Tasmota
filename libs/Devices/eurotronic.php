@@ -20,7 +20,7 @@ return [
             'ActionCommand'          => 'OccupiedHeatingSetpoint',
             'SearchString'           => 'OccupiedHeatingSetpoint'
         ],
-        'Valve' => [
+        'PIHeatingDemand' => [
             'Name'                   => 'Valve',
             'VariableProfile'        => '~Valve',
             'VariableType'           => VARIABLETYPE_INTEGER,
