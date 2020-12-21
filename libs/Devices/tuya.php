@@ -30,6 +30,5 @@ return [
             'ActionCommand'          => 'TuyaTempTarget',
             'SearchString'           => 'TuyaTempTarget'
         ],
-
     ]
 ];
