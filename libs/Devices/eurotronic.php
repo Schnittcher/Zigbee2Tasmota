@@ -12,13 +12,13 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'LocalTemperature'
         ],
-        'TempTarget' => [
+        'OccupiedHeatingSetpoint' => [
             'Name'                   => 'Target Temperature',
             'VariableProfile'        => '~Temperature.Room',
             'VariableType'           => VARIABLETYPE_FLOAT,
             'Action'                 => 'attribute',
             'ActionCommand'          => 'OccupiedHeatingSetpoint',
-            'SearchString'           => 'TempTarget'
+            'SearchString'           => 'OccupiedHeatingSetpoint'
         ],
         'Valve' => [
             'Name'                   => 'Valve',
