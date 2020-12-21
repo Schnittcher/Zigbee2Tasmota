@@ -193,12 +193,12 @@ class Tasmota2ZigbeeDevice extends Devices
     {
         $model = $this->ReadPropertyString('Model');
         $Command = $this->Devices[$model][$Ident]['ActionCommand'];
-        $Type = $this->Devices[$model][$Ident]['Action'];
+        $Action = $this->Devices[$model][$Ident]['Action'];
         $this->SendDebug('Action', $Command, 0);
 
         $SendType = '';
 
-        switch ($Type) {
+        switch ($Action) {
             case 'attribute':
                 $SendType = 'write';
                 break;
