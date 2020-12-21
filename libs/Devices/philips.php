@@ -8,7 +8,7 @@ return [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
-            'Action'                 => true,
+            'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ],
