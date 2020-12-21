@@ -18,7 +18,7 @@ return [
             'VariableType'           => VARIABLETYPE_FLOAT,
             'Action'                 => 'attribute',
             'ActionCommand'          => 'OccupiedHeatingSetpoint',
-            'SearchString'           => 'OccupiedHeatingSetpoint'
+            'SearchString'           => 'TempTarget'
         ],
         'Valve' => [
             'Name'                   => 'Valve',
