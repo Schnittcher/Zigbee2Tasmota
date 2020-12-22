@@ -3,13 +3,13 @@
 declare(strict_types=1);
 return [
     'DS01' => [
-        'Occupancy' => [
-            'Name'                   => 'Occupancy',
-            'VariableProfile'        => '~Motion',
+        'Contact' => [
+            'Name'                   => 'Contact',
+            'VariableProfile'        => '~Window',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'Occupancy'
+            'SearchString'           => 'Contact'
         ]
     ],
 ];
