@@ -20,6 +20,16 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'Humidity'
         ],
-    ]
+    ],
+    'DS01' => [
+        'Contact' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Window',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Contact'
+        ]
+    ],
 ];
 

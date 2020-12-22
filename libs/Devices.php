@@ -17,7 +17,7 @@ class Devices extends IPSModule
             include('Devices/sonoff.php'),
             include('Devices/lidl.php'),
             include('Devices/eurotronic.php'),
-            include('Devices/ewelink.php')
+            include('Devices/heiman.php')
         );
     }
 }
