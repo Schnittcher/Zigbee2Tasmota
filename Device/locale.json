@@ -51,7 +51,8 @@
       "Battery": "Batterie",
       "Battery Voltage": "Batteriespannung",
       "Target Temperature": "Solltemperatur",
-      "Tamper": "Manipuliert"
+      "Tamper": "Manipuliert",
+      "Pressure": "Luftdruck"
     }
   }
 }

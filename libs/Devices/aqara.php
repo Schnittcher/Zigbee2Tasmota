@@ -28,6 +28,14 @@ return [
             'Action'                 => false,
             'ActionCommand'          => '',
             'SearchString'           => 'Humidity'
+        ],
+        'Pressure' => [
+            'Name'                   => 'Pressure',
+            'VariableProfile'        => '~AirPressure',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Pressure'
         ]
     ],
     'lumi.sensor_magnet' => [
