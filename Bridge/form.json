@@ -14,11 +14,11 @@
             },{
               "type": "Button",
               "caption": "Activate Pairing Mode",
-              "onClick": "TZ_Paring($id,1);"
+              "onClick": "Z2T_Paring($id,1);"
           },{
             "type": "Button",
             "caption": "Deactivate Pairing Mode",
-            "onClick": "TZ_Paring($id,0);"
+            "onClick": "Z2T_Paring($id,0);"
         }
       ]
     },
@@ -58,7 +58,7 @@
     {
       "type": "Button",
       "caption": "Reload Device List",
-      "onClick": "TZ_reloadDevices($id);"
+      "onClick": "Z2T_reloadDevices($id);"
     },
     { 
       "type": "RowLayout",
@@ -70,14 +70,14 @@
           },{
               "type": "Button",
               "caption": "Ändern",
-              "onClick": "TZ_UpdateName($id,$Configurator['Device'],$DeviceName);"
+              "onClick": "Z2T_UpdateName($id,$Configurator['Device'],$DeviceName);"
           }
       ]
   },
     {
       "type": "Button",
       "caption": "Forget Device",
-      "onClick": "TZ_forgetDevice($id,$Configurator['Device']);"
+      "onClick": "Z2T_forgetDevice($id,$Configurator['Device']);"
     }
     ]
 }
