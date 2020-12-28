@@ -60,7 +60,8 @@ IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Stat
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
-Sonoff | DS01 | SNZB-04 | Status
+Sonoff | MS01 | SNZB-03 | Status
+Sonoff | DS01 | SNZB-04 | Bewegung
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
 Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status

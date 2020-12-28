@@ -31,5 +31,14 @@ return [
             'SearchString'           => 'Contact'
         ]
     ],
+    'MS01' => [
+        'Occupancy' => [
+            'Name'                   => 'Occupancy',
+            'VariableProfile'        => '~Motion',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Occupancy'
+        ],
+    ],
 ];
-
