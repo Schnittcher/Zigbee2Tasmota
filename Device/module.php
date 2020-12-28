@@ -7,7 +7,7 @@ require_once __DIR__ . '/../libs/ColorHelper.php';
 require_once __DIR__ . '/../libs/Functions.php';
 require_once __DIR__ . '/../libs/Devices.php';
 
-class Tasmota2ZigbeeDevice extends Devices
+class Zigbee2TasmotaDevice extends Devices
 {
     use VariableProfileHelper;
     use ColorHelper;
