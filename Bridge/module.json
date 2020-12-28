@@ -1,9 +1,9 @@
 {
     "id": "{4A0D466C-45CF-B6C4-10B3-5A429B57A8D0}",
-    "name": "Tasmota2ZigbeeBridge",
+    "name": "Zigbee2TasmotaBridge",
     "type": 4,
     "vendor": "",
-    "aliases": [],
+    "aliases": ["Zigbee2Tasmota Bridge"],
     "parentRequirements": [
         "{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}"
     ],
@@ -11,6 +11,6 @@
     "implemented": [
         "{EAC09CF4-0E77-C618-5C72-019417AE3CC8}"
     ],
-    "prefix": "TZ",
+    "prefix": "Z2T",
     "url": ""
 }

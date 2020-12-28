@@ -5,7 +5,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../libs/MQTTHelper.php';
 require_once __DIR__ . '/../libs/Functions.php';
 
-class Tasmota2ZigbeeBridge extends IPSModule
+class Zigbee2TasmotaBridge extends IPSModule
 {
     use MQTTHelper;
 
