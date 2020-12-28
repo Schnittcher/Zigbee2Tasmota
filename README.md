@@ -22,7 +22,7 @@ Dieses Gerät baut eine Verbindung zwischen IP-Symcon und einer Tasmota Zigbee B
 ## 2. Enthaltene Module
 
 ### Bridge
-Mit dieser Instanz werden die Geräte gesucht und können in IPS angelegt werden, desweiteren ist es möglich über diese Instanz Geräte mit der Tasmota2Zigbee Bridge zu pairen oder zu löschen.
+Mit dieser Instanz werden die Geräte gesucht und können in IPS angelegt werden, desweiteren ist es möglich über diese Instanz Geräte mit der Zigbee2Tasmota Bridge zu pairen oder zu löschen.
 
 ### Connect
 Diese Instanz stellt die Verbindung zwischen MQTT Server / Client und den Instanzen her.
