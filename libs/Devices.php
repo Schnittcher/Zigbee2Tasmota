@@ -14,7 +14,8 @@ class Devices extends IPSModule
             include('Devices/philips.php'),
             include('Devices/tradfri.php'),
             include('Devices/tuya.php'),
-            include('Devices/sonoff.php')
+            include('Devices/sonoff.php'),
+            include('Devices/linkind.php')
         );
     }
 }
