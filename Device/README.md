@@ -60,7 +60,7 @@ IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Stat
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
-Linkind | ZBT-CCTLight-D0106 | 9W A19 Bulb, Dimmable & Tunable | Status, Helligkeit | Farbtemperatur
+Linkind | ZBT-CCTLight-D0106 | 9W A19 Bulb, Dimmable & Tunable | Status, Helligkeit, Farbtemperatur
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
