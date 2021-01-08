@@ -135,30 +135,30 @@ return [
             'SearchString'           => 'CT'
         ],
     ],
-    'TS0502A' => [
+    'SYMFONISK Sound Controller' => [
         'Power' => [
             'Name'                   => 'State',
-            'VariableProfile'        => '~Switch',
-            'VariableType'           => VARIABLETYPE_BOOLEAN,
-            'Action'                 => 'tasmota',
-            'ActionCommand'          => 'Power',
+            'VariableProfile'        => 'T2M.TogglePower',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
             'SearchString'           => 'Power'
         ],
-        'Dimmer' => [
-            'Name'                   => 'Brightness',
-            'VariableProfile'        => '~Intensity.255',
+        'DimmerMove' => [
+            'Name'                   => 'DimmerMove',
+            'VariableProfile'        => 'T2M.IKEA.DimmerMove',
             'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => 'tasmota',
-            'ActionCommand'          => 'Dimmer',
-            'SearchString'           => 'Dimmer'
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerMove'
         ],
-        'CT' => [
-            'Name'                   => 'Color Temperature',
-            'VariableProfile'        => 'T2M.ColorTemperature',
-            'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => 'tasmota',
-            'ActionCommand'          => 'CT',
-            'SearchString'           => 'CT'
+        'DimmerStop' => [
+            'Name'                   => 'DimmerStop',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => '',
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStop'
         ],
     ]
 ];
