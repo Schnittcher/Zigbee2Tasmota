@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'LINKIND bulb E27 9W A19 800lm'=> [
+    'ZBT-CCTLight-D0106'=> [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
