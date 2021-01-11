@@ -69,6 +69,7 @@ Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
 Blitzwolf | TS0121 | Blitzwolf SHP13 | Status
+LINKIND | LINKIND bulb E27 9W A19 800lm | LINKIND bulb E27 9W A19 800lm | Status, Helligkeit, Farbtemperatur
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
