@@ -12,6 +12,15 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'Fire'
         ],
+    ],
+    'COSensor-EM' => [
+        'CO' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Alert',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'CO'
+        ],
     ]
 ];
-

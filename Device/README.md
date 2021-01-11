@@ -58,6 +58,7 @@ IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, Dimme
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
 IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Status, Helligkeit
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
+IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | MS01 | SNZB-03 | Status
@@ -65,7 +66,9 @@ Sonoff | DS01 | SNZB-04 | Bewegung
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
 Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
-
+Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
+LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
+Blitzwolf | TS0121 | Blitzwolf SHP13 | Status
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
