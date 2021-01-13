@@ -66,6 +66,7 @@ Sonoff | MS01 | SNZB-03 | Status
 Sonoff | DS01 | SNZB-04 | Bewegung
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
 Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur
+Lidl | TS1001 | Livarno Lux Remote Control Dimmer | Status, DimmerStepDown, DimmerStepUp
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
