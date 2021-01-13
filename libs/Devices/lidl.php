@@ -77,7 +77,7 @@ return [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => 'T2M.TogglePower',
-            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
             'SearchString'           => 'Power'
