@@ -72,31 +72,31 @@ return [
             'ActionCommand'          => 'CT',
             'SearchString'           => 'CT'
         ],
-        'TS1001' => [
-            'Power' => [
-                'Name'                   => 'State',
-                'VariableProfile'        => 'T2M.TogglePower',
-                'VariableType'           => VARIABLETYPE_BOOLEAN,
-                'Action'                 => false,
-                'ActionCommand'          => '',
-                'SearchString'           => 'Power'
-            ],
-            'DimmerStepUp' => [
-                'Name'                   => 'DimmerStepUp',
-                'VariableProfile'        => '',
-                'VariableType'           => VARIABLETYPE_INTEGER,
-                'Action'                 => false,
-                'ActionCommand'          => '',
-                'SearchString'           => 'DimmerStepUp'
-            ],
-            'DimmerStepDown' => [
-                'Name'                   => 'DimmerStepDown',
-                'VariableProfile'        => '',
-                'VariableType'           => VARIABLETYPE_INTEGER,
-                'Action'                 => false,
-                'ActionCommand'          => '',
-                'SearchString'           => 'DimmerStepDown'
-            ],
-        ]
+    ],
+    'TS1001' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => 'T2M.TogglePower',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Power'
+        ],
+        'DimmerStepUp' => [
+            'Name'                   => 'DimmerStepUp',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStepUp'
+        ],
+        'DimmerStepDown' => [
+            'Name'                   => 'DimmerStepDown',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStepDown'
+        ],
     ]
 ];
