@@ -41,4 +41,14 @@ return [
             'SearchString'           => 'Occupancy'
         ],
     ],
+    'WB01' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => 'T2M.Sonoff.Power',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Power'
+        ],
+    ],
 ];
