@@ -80,7 +80,7 @@ class Zigbee2TasmotaDevice extends Devices
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
                     $Payload = json_decode($Buffer->Payload);
-                    if (property_exists($Payload, 'ZbReceived')) {
+                    if (property_exists($Payload, 'ZbReceived') || (property_exists($Payload, 'ZbLight'))) {
                         $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
                         if (is_object($Payload)) {
                             if (property_exists($Payload, 'BatteryVoltage') && ($this->ReadPropertyBoolean('showbattery'))) {
@@ -179,7 +179,13 @@ class Zigbee2TasmotaDevice extends Devices
                                                     break;
                                             }
                                           break;
-                                    default:
+                                        case 'Dimmer':
+                                            $this->SetValue('Dimmer', $Payload->Dimmer);
+                                            if ($this->GetIDForIdent('Color')) {
+                                                $this->readAttributes('{"X":true,"Y":true}');
+                                            }
+                                            break;
+                                        default:
                                         if ($this->GetIDForIdent($key)) {
                                             $this->SetValue($key, $Payload->{$key});
                                         } else {
@@ -195,7 +201,6 @@ class Zigbee2TasmotaDevice extends Devices
             }
         }
     }
-    //}
 
     public function RequestAction($Ident, $Value)
     {
@@ -239,6 +244,9 @@ class Zigbee2TasmotaDevice extends Devices
                 break;
             default:
                 $this->sendCommand($SendType, $Command, $Value);
+                if ($Ident) {
+                    $this->RequestLightState(); //To get tight color in IPS
+                }
         }
     }
 
@@ -265,6 +273,20 @@ class Zigbee2TasmotaDevice extends Devices
         $Data['Buffer'] = json_encode($Buffer);
 
         $this->SendDebug('JSON sendCommand', json_encode($Data), 0);
+        $this->SendDataToParent(json_encode($Data));
+    }
+
+    private function readAttributes($Value)
+    {
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+        $Buffer['Topic'] = 'ZbSend';
+        $ZbSend['device'] = $this->ReadPropertyString('Device');
+        $ZbSend['read'] = $Value;
+
+        $Buffer['Payload'] = json_encode($ZbSend);
+        $Data['Buffer'] = json_encode($Buffer);
+
+        $this->SendDebug('JSON readAttributes', json_encode($Data), 0);
         $this->SendDataToParent(json_encode($Data));
     }
 
