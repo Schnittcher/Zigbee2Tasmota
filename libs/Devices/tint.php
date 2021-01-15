@@ -46,13 +46,21 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'Power'
         ],
-        'Dimmer' => [
-            'Name'                   => 'Brightness',
-            'VariableProfile'        => 'T2M.Intensity.254',
+        'DimmerStepDown' => [
+            'Name'                   => 'DimmerStepDown',
+            'VariableProfile'        => '',
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'Dimmer'
+            'SearchString'           => 'DimmerStepDown'
+        ],
+        'DimmerStepUp' => [
+            'Name'                   => 'DimmerStepUp',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStepUp'
         ],
         'CT' => [
             'Name'                   => 'Color Temperature',
@@ -80,7 +88,7 @@ return [
         ],
         'MullerLightMode' => [
             'Name'                   => 'Müller Light Mode',
-            'VariableProfile'        => 'HexColor',
+            'VariableProfile'        => '',
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
