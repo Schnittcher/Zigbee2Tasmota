@@ -345,7 +345,7 @@ class Zigbee2TasmotaDevice extends Devices
         }
         IPS_SetVariableProfileDigits('T2M.Intensity.254', 0);
         IPS_SetVariableProfileIcon('T2M.Intensity.254', 'Intensity');
-        IPS_SetVariableProfileText('T2M.Intensity.254', '', '');
+        IPS_SetVariableProfileText('T2M.Intensity.254', '', ' %');
         IPS_SetVariableProfileValues('T2M.Intensity.254', 0, 254, 1);
     }
 }
