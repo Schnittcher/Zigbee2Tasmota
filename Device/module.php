@@ -94,11 +94,16 @@ class Zigbee2TasmotaDevice extends Devices
                             }
 
                             $model = $this->ReadPropertyString('Model');
-                            foreach ($this->Devices[$model] as $key => $device) {
+                            foreach ($this->Devices[strval($model)] as $key => $device) {
                                 if (property_exists($Payload, $device['SearchString'])) {
                                     switch ($key) {
                                         case 'Color':
-                                                $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
+                                                $cie['x'] = $Payload->X;
+                                                $cie['y'] = $Payload->Y;
+                                                $cie['bri'] = $this->GetValue('Dimmer');
+                                                $dec = $this->CieToDec($cie);
+                                                //$RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
+                                                $this->SetValue('Color', $dec);
                                                 $this->SetValue('Color', hexdec($RGB));
                                                 break;
                                         case 'ColorX':
