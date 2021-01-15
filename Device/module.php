@@ -269,7 +269,7 @@ class Zigbee2TasmotaDevice extends Devices
         $Buffer['Topic'] = 'ZbSend';
 
         $ZbSend['device'] = $this->ReadPropertyString('Device');
-        $ZbSend[$Type][$Command] = json_encode($Value);
+        $ZbSend[$Type][$Command] = $Value;
 
         $Buffer['Payload'] = json_encode($ZbSend);
         $Data['Buffer'] = json_encode($Buffer);
@@ -283,7 +283,7 @@ class Zigbee2TasmotaDevice extends Devices
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbSend';
         $ZbSend['device'] = $this->ReadPropertyString('Device');
-        $ZbSend['read'] = $Value;
+        $ZbSend['read'] = json_encode($Value);
 
         $Buffer['Payload'] = json_encode($ZbSend);
         $Data['Buffer'] = json_encode($Buffer);
