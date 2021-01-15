@@ -14,7 +14,7 @@ return [
         ],
         'Dimmer' => [
             'Name'                   => 'Brightness',
-            'VariableProfile'        => '~Intensity.255',
+            'VariableProfile'        => 'T2M.Intensity.254',
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => 'tasmota',
             'ActionCommand'          => 'Dimmer',
