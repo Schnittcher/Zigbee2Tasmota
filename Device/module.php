@@ -340,8 +340,8 @@ class Zigbee2TasmotaDevice extends Devices
         IPS_SetVariableProfileText('T2M.ColorTemperature', '', ' Mired');
         IPS_SetVariableProfileValues('T2M.ColorTemperature', 153, 500, 1);
 
-        if (!IPS_VariableProfileExists('T2M.ColorTemperature')) {
-            IPS_CreateVariableProfile('T2M.ColorTemperature', 1);
+        if (!IPS_VariableProfileExists('T2M.Intensity.254')) {
+            IPS_CreateVariableProfile('T2M.Intensity.254', 1);
         }
         IPS_SetVariableProfileDigits('T2M.Intensity.254', 0);
         IPS_SetVariableProfileIcon('T2M.Intensity.254', 'Intensity');
