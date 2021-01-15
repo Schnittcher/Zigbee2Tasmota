@@ -17,6 +17,8 @@
       "State": "Status",
       "Brightness": "Helligkeit",
       "Color": "Farbe",
+      "Color X": "Farbe X",
+      "Color Y": "Farbe Y",
       "Motion": "Bewegung",
       "Alarm": "Alarm",
       "Temperature": "Temperatur",
@@ -52,7 +54,9 @@
       "Battery Voltage": "Batteriespannung",
       "Target Temperature": "Solltemperatur",
       "Tamper": "Manipuliert",
-      "Pressure": "Luftdruck"
+      "Pressure": "Luftdruck",
+      "Müller Light Mode" : "Müller Licht Modus",
+      "Group" : "Gruppe"
     }
   }
 }
