@@ -48,7 +48,7 @@ return [
         ],
         'Dimmer' => [
             'Name'                   => 'Brightness',
-            'VariableProfile'        => '~Intensity.255',
+            'VariableProfile'        => '~Intensity.254',
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
