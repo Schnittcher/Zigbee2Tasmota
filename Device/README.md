@@ -62,6 +62,7 @@ IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerM
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
+Sonoff | 66666 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | MS01 | SNZB-03 | Status
 Sonoff | DS01 | SNZB-04 | Bewegung
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
@@ -72,6 +73,8 @@ Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
 Blitzwolf | TS0121 | Blitzwolf SHP13 | Status
 LINKIND | LINKIND bulb E27 9W A19 800lm | LINKIND bulb E27 9W A19 800lm | Status, Helligkeit, Farbtemperatur
+Müller Licht | Müller Licht Tint LED RGB bulb | ZBT-ExtendedColor | Status, Helligkeit, Farbtemperatur, Farbe
+Müller Licht | Müller-Licht Tint Fernbedienung | ZBT-Remote-ALL-RGBW | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, Gruppe, Müller Licht Modus
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.

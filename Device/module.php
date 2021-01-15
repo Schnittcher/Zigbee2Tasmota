@@ -96,13 +96,21 @@ class Zigbee2TasmotaDevice extends Devices
                             $model = $this->ReadPropertyString('Model');
                             foreach ($this->Devices[$model] as $key => $device) {
                                 if (property_exists($Payload, $device['SearchString'])) {
-                                    //if ($key == $device['SearchString']) { // when key and SearchString are equal SetValue - else possible conversion
-//                                    $this->SetValue($key, $Payload->{$key});
-                                    //} else {
                                     switch ($key) {
                                         case 'Color':
-                                          $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
-                                          $this->SetValue('Color', hexdec($RGB));
+                                            switch ($device['SearchString']) {
+                                                case 'X':
+                                                    $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
+                                                    $this->SetValue('Color', hexdec($RGB));
+                                                    break;
+                                                case 'Color':
+                                                    $this->SetValue('ColorX', $Payload->Color[0]);
+                                                    $this->SetValue('ColorY', $Payload->Color[1]);
+                                                    break;
+                                                case 'default':
+                                                    $this->SendDebug('Invalid Color SearchString', $device['SearchString'], 0);
+                                                    break;
+                                            }
                                         break;
                                         case 'AqaraVibrationMode':
                                             switch ($Payload->AqaraVibrationMode) {
