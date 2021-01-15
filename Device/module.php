@@ -98,13 +98,8 @@ class Zigbee2TasmotaDevice extends Devices
                                 if (property_exists($Payload, $device['SearchString'])) {
                                     switch ($key) {
                                         case 'Color':
-                                                $cie['x'] = $Payload->X;
-                                                $cie['y'] = $Payload->Y;
-                                                $cie['bri'] = $this->GetValue('Dimmer');
-                                                $dec = $this->CieToDec($cie);
-                                                //$RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
-                                                $this->SetValue('Color', $dec);
-                                                //$this->SetValue('Color', hexdec($RGB));
+                                                $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
+                                                $this->SetValue('Color', hexdec($RGB));
                                                 break;
                                         case 'ColorX':
                                             $this->SetValue('ColorX', $Payload->Color[0]);
