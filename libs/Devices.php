@@ -20,7 +20,8 @@ class Devices extends IPSModule
             include('Devices/heiman.php'),
             include('Devices/ledvance.php'),
             include('Devices/blitzwolf.php'),
-            include('Devices/linkind.php')
+            include('Devices/linkind.php'),
+            include('Devices/tint.php')
         );
     }
 }
