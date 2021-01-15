@@ -182,7 +182,9 @@ class Zigbee2TasmotaDevice extends Devices
                                         case 'Dimmer':
                                             $this->SetValue('Dimmer', $Payload->Dimmer);
                                             if ($this->GetIDForIdent('Color')) {
-                                                $this->readAttributes('{"X":true,"Y":true}');
+                                                $ReadValues['X'] = true;
+                                                $ReadValues['Y'] = true;
+                                                $this->readAttributes($ReadValues);
                                             }
                                             break;
                                         default:
@@ -267,9 +269,9 @@ class Zigbee2TasmotaDevice extends Devices
         $Buffer['Topic'] = 'ZbSend';
 
         $ZbSend['device'] = $this->ReadPropertyString('Device');
-        $ZbSend[$Type][$Command] = $Value;
+        $ZbSend[$Type][$Command] = json_encode($Value);
 
-        $Buffer['Payload'] = $ZbSend;
+        $Buffer['Payload'] = json_encode($ZbSend);
         $Data['Buffer'] = json_encode($Buffer);
 
         $this->SendDebug('JSON sendCommand', json_encode($Data), 0);
