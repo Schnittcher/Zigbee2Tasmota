@@ -56,7 +56,7 @@ return [
         ],
         'CT' => [
             'Name'                   => 'Color Temperature',
-            'VariableProfile'        => 'T2M.ColorTemperature',
+            'VariableProfile'        => 'T2M.ColorTemperature.370',
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => 'tasmota',
             'ActionCommand'          => 'CT',
