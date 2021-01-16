@@ -73,7 +73,8 @@ Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
 Blitzwolf | TS0121 | Blitzwolf SHP13 | Status
 LINKIND | LINKIND bulb E27 9W A19 800lm | LINKIND bulb E27 9W A19 800lm | Status, Helligkeit, Farbtemperatur
-Müller Licht | Müller Licht Tint LED RGB bulb | ZBT-ExtendedColor | Status, Helligkeit, Farbtemperatur, Farbe
+Müller Licht | Müller Licht Tint LED RGB Bulb | ZBT-ExtendedColor | Status, Helligkeit, Farbtemperatur, Farbe
+Müller Licht | Müller Licht Tint LED Bulb | ZBT-ColorTemperature | Status, Helligkeit, Farbtemperatur
 Müller Licht | Müller-Licht Tint Fernbedienung | ZBT-Remote-ALL-RGBW | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, Gruppe, Müller Licht Modus
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.

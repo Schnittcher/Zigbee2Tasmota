@@ -37,6 +37,32 @@ return [
             'SearchString'           => 'X'
         ],
     ],
+    'ZBT-ColorTemperature' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+        'Dimmer' => [
+            'Name'                   => 'Brightness',
+            'VariableProfile'        => 'T2M.Intensity.254',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Dimmer',
+            'SearchString'           => 'Dimmer'
+        ],
+        'CT' => [
+            'Name'                   => 'Color Temperature',
+            'VariableProfile'        => 'T2M.ColorTemperature',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'CT',
+            'SearchString'           => 'CT'
+        ],
+    ],
     'ZBT-Remote-ALL-RGBW' => [
         'Power' => [
             'Name'                   => 'State',
