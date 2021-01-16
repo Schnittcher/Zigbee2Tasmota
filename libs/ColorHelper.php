@@ -82,22 +82,22 @@ trait ColorHelper
     {
         $cie['z'] = 1 - $cie['x'] - $cie['y'];
 
-        $red      = $cie['x'] *  1.65649 + $cie['y'] * -0.35485 + $cie['z'] * -0.25504;
-        $green    = $cie['x'] * -0.7072  + $cie['y'] *  1.6554  + $cie['z'] *  0.03615;
-        $blue     = $cie['x'] *  0.05171 + $cie['y'] * -0.12137 + $cie['z'] *  1.01153;
+        $red = $cie['x'] * 1.65649 + $cie['y'] * -0.35485 + $cie['z'] * -0.25504;
+        $green = $cie['x'] * -0.7072 + $cie['y'] * 1.6554 + $cie['z'] * 0.03615;
+        $blue = $cie['x'] * 0.05171 + $cie['y'] * -0.12137 + $cie['z'] * 1.01153;
 
-        $korr     = pow($cie['bri'],2.4)/max($red, $green, $blue);
+        $korr = pow($cie['bri'], 2.4) / max($red, $green, $blue);
 
-        $red      = ($red   > 0) ? round(pow($red  *$korr, 1/2.4)) : 0;
-        $green    = ($green > 0) ? round(pow($green*$korr, 1/2.4)) : 0;
-        $blue     = ($blue  > 0) ? round(pow($blue *$korr, 1/2.4)) : 0;
+        $red = ($red > 0) ? round(pow($red * $korr, 1 / 2.4)) : 0;
+        $green = ($green > 0) ? round(pow($green * $korr, 1 / 2.4)) : 0;
+        $blue = ($blue > 0) ? round(pow($blue * $korr, 1 / 2.4)) : 0;
         $this->SendDebug('CieToDec(RGB)', 'R: ' . $red . ' G: ' . $green . ' B: ' . $blue, 0);
 
-		$hexred	  = (strlen(dechex($red))<2) ? "0".dechex($red) : dechex($red);
-		$hexgreen = (strlen(dechex($green))<2) ? "0".dechex($green) : dechex($green);
-		$hexblue  = (strlen(dechex($blue))<2) ? "0".dechex($blue) : dechex($blue);
+        $hexred = (strlen(dechex($red)) < 2) ? '0' . dechex($red) : dechex($red);
+        $hexgreen = (strlen(dechex($green)) < 2) ? '0' . dechex($green) : dechex($green);
+        $hexblue = (strlen(dechex($blue)) < 2) ? '0' . dechex($blue) : dechex($blue);
 
-        $dec      = hexdec($hexred.$hexgreen.$hexblue);
+        $dec = hexdec($hexred . $hexgreen . $hexblue);
 
         return $dec;
     }
