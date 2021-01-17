@@ -161,7 +161,7 @@ return [
             'SearchString'           => 'DimmerStop'
         ],
     ],
-    'TRADFRI bulb E27 CWS opal 600l' => [
+    'TRADFRI bulb E27 CWS opal 600lm' => [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
