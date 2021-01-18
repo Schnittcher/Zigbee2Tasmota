@@ -53,6 +53,7 @@ Philips HUE | LCT001 | Hue White and Color Ambiance (2012) | Status, Helligkeit,
 Philips HUE | LWB010 | Hue White | Status, Helligkeit
 Philips HUE | LTW012 | HUE White Ambiance E14 LED Kerze | Status, Helligkeit, Farbtemperatur
 Philips HUE | RWL021 | HUE Dimmer Switch (EU) | Status, DimmerStepDown, DimmerStepUp
+Philips HUE | SML001 | HUE Motion Sensor | Bewegung, Beleuchtungsstärke, Temperatur
 IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
