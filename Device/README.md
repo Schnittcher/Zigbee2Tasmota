@@ -58,6 +58,7 @@ IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
 IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Status, Helligkeit
+IKEA | TRADFRI Driver 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
 IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
 IKEA | TRADFRI bulb E27 CWS opal 600lm | TRADFRI bulb E27 CWS opal 600lm |Status, Helligkeit, Farbtemperatur, Farbe
