@@ -177,11 +177,6 @@ class Zigbee2TasmotaDevice extends Devices
                                           break;
                                         case 'Dimmer':
                                             $this->SetValue('Dimmer', $Payload->Dimmer);
-                                            if ($this->GetIDForIdent('Color')) {
-                                                $ReadValues['X'] = true;
-                                                $ReadValues['Y'] = true;
-                                                $this->readAttributes($ReadValues);
-                                            }
                                             break;
                                         default:
                                         if ($this->GetIDForIdent($key)) {
