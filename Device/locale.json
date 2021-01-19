@@ -57,7 +57,9 @@
       "Tamper": "Manipuliert",
       "Pressure": "Luftdruck",
       "Müller Light Mode" : "Müller Licht Modus",
-      "Group" : "Gruppe"
+      "Group" : "Gruppe",
+      "Rotate": "Drehen",
+      "Fall": "Fallen"
     }
   }
 }
