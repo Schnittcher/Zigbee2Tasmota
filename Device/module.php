@@ -173,6 +173,9 @@ class Zigbee2TasmotaDevice extends Devices
                                                 case 'shake':
                                                     $this->SetValue('AqaraCubeAction', 5);
                                                     break;
+                                                case 'fall':
+                                                    $this->SetValue('AqaraCubeAction', 6);
+                                                    break;
                                             }
                                           break;
                                         case 'Dimmer':
@@ -345,6 +348,7 @@ class Zigbee2TasmotaDevice extends Devices
             $Associations[] = [3, $this->Translate('flip180'), '', -1];
             $Associations[] = [4, $this->Translate('tap'), '', -1];
             $Associations[] = [5, $this->Translate('shake'), '', -1];
+            $Associations[] = [6, $this->Translate('fall'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.AqaraCube', '', '', '', $Associations);
         }
         if (!IPS_VariableProfileExists('T2M.ColorTemperature')) {
