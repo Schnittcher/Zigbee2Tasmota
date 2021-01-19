@@ -13,7 +13,9 @@
       "Reload Device List": "Aktualisiere Geräteliste",
       "Forget Device": "Lösche Gerät (Tasmota unpair)",
       "Delete": "Löschen",
-      "Devicename": "Gerätename"
+      "Devicename": "Gerätename",
+      "Devices": "Geräte",
+      "Update in progress. Please wait.": "Update läuft. Bitte warten."
     }
   }
 }

@@ -20,6 +20,7 @@ class Zigbee2TasmotaBridge extends IPSModule
         $this->RegisterPropertyString('FullTopic', '%prefix%/%topic%');
         $this->RegisterPropertyBoolean('MessageRetain', false);
         $this->SetBuffer('pairedDevices', '{}');
+        $this->SetBuffer('countPairedDevices', 0);
     }
 
     public function ApplyChanges()
@@ -84,7 +85,10 @@ class Zigbee2TasmotaBridge extends IPSModule
 
             $Values[] = $AddValue;
         }
-        $Form['actions'][1]['values'] = $Values;
+        $Form['actions'][1]['items'][1]['caption'] = $this->GetBuffer('countPairedDevices');
+        $Form['actions'][3]['values'] = $Values;
+
+        $this->LogMessage(print_r($Form, true), KL_NOTIFY);
         return json_encode($Form);
     }
 
@@ -120,7 +124,13 @@ class Zigbee2TasmotaBridge extends IPSModule
                         $this->SetBuffer('pairedDevices', json_encode($Devices));
                     }
                     $this->SendDebug('Paired Devices', json_encode($Devices), 0);
-                    $this->ReloadForm();
+
+                    $this->UpdateFormField('PopupProgressbar', 'visible', true);
+                    $this->UpdateFormField('UpdateProgress', 'current', count($Devices));
+                    $this->UpdateFormField('UpdateProgress', 'caption', count($Devices) . ' / ' . $this->GetBuffer('countPairedDevices'));
+                    if ($this->GetBuffer('countPairedDevices') == count($Devices)) {
+                        $this->ReloadForm();
+                    }
                 }
             }
             if (fnmatch('*/RESULT', $Buffer->Topic)) {
@@ -128,6 +138,11 @@ class Zigbee2TasmotaBridge extends IPSModule
                 $Payload = json_decode($Buffer->Payload);
 
                 if (is_object($Payload)) {
+                    if (property_exists($Payload, 'ZbStatus0')) {
+                        $this->UpdateFormField('lblCountDevices', 'caption', $Payload->ZbStatus0->TotalDevices);
+                        $this->UpdateFormField('UpdateProgress', 'maximum', $Payload->ZbStatus0->TotalDevices);
+                        $this->SetBuffer('countPairedDevices', $Payload->ZbStatus0->TotalDevices);
+                    }
                     if (property_exists($Payload, 'ZbState')) {
                         $this->SendDebug('Topic: Result ZbState', $Payload->ZbState->Status, 0);
 
@@ -154,10 +169,23 @@ class Zigbee2TasmotaBridge extends IPSModule
 
     public function reloadDevices()
     {
+        $this->countPairedDevices();
         $this->SetBuffer('pairedDevices', '{}');
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
 
         $Buffer['Topic'] = 'Zbinfo';
+        $Buffer['Payload'] = '';
+
+        $Data['Buffer'] = json_encode($Buffer);
+        $this->SendDataToParent(json_encode($Data));
+    }
+
+    public function countPairedDevices()
+    {
+        $this->SetBuffer('countPairedDevices', 0);
+        $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
+
+        $Buffer['Topic'] = 'ZbStatus0';
         $Buffer['Payload'] = '';
 
         $Data['Buffer'] = json_encode($Buffer);

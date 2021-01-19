@@ -22,6 +22,40 @@
         }
       ]
     },
+    { 
+      "type": "RowLayout",
+      "items": [
+          {
+              "type": "Label",
+              "caption": "Devices"
+          },{
+              "type": "Label",
+              "name": "lblCountDevices",
+              "caption": "Unknown"
+          }
+      ]
+    },
+    {
+      "type": "PopupAlert",
+      "name": "PopupProgressbar",
+      "visible": false,
+      "popup": {
+          "items": [
+            {
+              "type": "Label",
+              "caption": "Update in progress. Please wait."
+            },
+            {
+              "type": "ProgressBar",
+              "name": "UpdateProgress",
+              "minimum": 0,
+              "maximum": 0,
+              "current": 0,
+              "caption": ""
+            }
+          ]
+      }
+    },
     {
       "type": "Configurator",
       "name": "Configurator",
