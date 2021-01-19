@@ -88,7 +88,6 @@ class Zigbee2TasmotaBridge extends IPSModule
         $Form['actions'][1]['items'][1]['caption'] = $this->GetBuffer('countPairedDevices');
         $Form['actions'][3]['values'] = $Values;
 
-        $this->LogMessage(print_r($Form, true), KL_NOTIFY);
         return json_encode($Form);
     }
 
