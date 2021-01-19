@@ -84,6 +84,39 @@ return [
             'SearchString'           => 'AqaraCubeFromSide'
         ],
     ],
+    'lumi.sensor_cube.aqgl01' => [
+        'AqaraCubeAction' => [
+            'Name'                   => 'Action',
+            'VariableProfile'        => 'T2M.AqaraCube',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'AqaraCube'
+        ],
+        'AqaraCubeSide' => [
+            'Name'                   => 'Side',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'AqaraCubeSide'
+        ],
+        'AqaraCubeFromSide' => [
+            'Name'                   => 'From Side',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'AqaraCubeFromSide'
+        ],
+        'AqaraRotate' => [
+            'Name'                   => 'Rotate',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_FLOAT,
+            'Action'                 => false,
+            'SearchString'           => 'AqaraRotate'
+        ]
+    ],
     'lumi.sen_ill.mgl01' => [
         'Illuminance' => [
             'Name'                   => 'Illuminance',
