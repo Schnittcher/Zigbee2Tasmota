@@ -31,6 +31,7 @@ Xiaomi | lumi.weather | Aqara Temperature, Humidity and Pressure Sensor | Temper
 Xiaomi | lumi.sensor_magnet | Aqara Fenster- / Türkontakt | Status
 Xiaomi | lumi.sensor_magnet.aq2 | Aqara Fenster- / Türkontakt | Status
 Xiaomi | lumi.sensor_cube | Aqara Cube Controller | Aktion, Seite, Von Seite
+Xiaomi | lumi.sensor_cube.aqgl01 | Aqara Cube Controller | Aktion, Seite, Von Seite, Drehen
 Xiaomi | lumi.sen_ill.mgl01' | Mijia Light Intensity Sensor | Beleuchtungsstärke
 Xiaomi | lumi.sensor_motion | Aqara Human Body Motion and Illuminance Sensor | Bewegung
 Xiaomi | lumi.sensor_motion.aq2 | Aqara Human Body Motion and Illuminance Sensor | Bewegung, Beleuchtungsstärke
@@ -58,6 +59,7 @@ IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
 IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Status, Helligkeit
+IKEA | TRADFRI Driver 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Status, Helligkeit
 IKEA | TRADFRI Driver 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
 IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
@@ -74,6 +76,7 @@ Lidl | TS1001 | Livarno Lux Remote Control Dimmer | Status, DimmerStepDown, Dimm
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
+LEDVANCE | CLA60 RGBW Z3 | Osram Smart+ Classic E27 Multicolor | Status, Helligkeit, Farbe, Farbtemperatur
 Blitzwolf | TS0121 | Blitzwolf SHP13 | Status
 LINKIND | LINKIND bulb E27 9W A19 800lm | LINKIND bulb E27 9W A19 800lm | Status, Helligkeit, Farbtemperatur
 Müller Licht | Müller Licht Tint LED RGB Bulb | ZBT-ExtendedColor | Status, Helligkeit, Farbtemperatur, Farbe
