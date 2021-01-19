@@ -62,6 +62,7 @@ IKEA | TRADFRI transformer 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Stat
 IKEA | TRADFRI Driver 10W | TRÅDFRI Treiber für Fernbedienung, 10W | Status, Helligkeit
 IKEA | TRADFRI Driver 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
 IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligkeit, Farbtemperatur
+IKEA | TRADFRI bulb E27 WW 806lm | TRÅDFRI LED-Leuchtmittel E27 806 lm | Status, Helligkeit
 IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
 IKEA | TRADFRI bulb E27 CWS opal 600lm | TRADFRI bulb E27 CWS opal 600lm |Status, Helligkeit, Farbtemperatur, Farbe
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
