@@ -41,7 +41,9 @@ class Zigbee2TasmotaDevice extends Devices
         $this->MaintainVariable('LinkQuality', $this->Translate('Link Quality'), 1, '', 0, $this->ReadPropertyBoolean('showlinkquality') == true);
 
         $model = $this->ReadPropertyString('Model');
-
+        if (is_numeric($model)) {
+            $model = (integer)$model;
+        }
         if (array_key_exists($model, $this->Devices)) {
             foreach ($this->Devices[$model] as $key => $device) {
                 switch ($device['VariableType']) {

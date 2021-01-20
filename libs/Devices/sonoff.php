@@ -21,7 +21,7 @@ return [
             'SearchString'           => 'Humidity'
         ],
     ],
-    '66666' => [
+    66666 => [
         'Temperature' => [
             'Name'                   => 'Temperature',
             'VariableProfile'        => '~Temperature',
