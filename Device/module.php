@@ -42,8 +42,8 @@ class Zigbee2TasmotaDevice extends Devices
 
         $model = $this->ReadPropertyString('Model');
         if (is_numeric($model)) {
-            $model = 'Z2TSymcon-'.$model;
-            IPS_LogMessage('print',print_r($this->Devices,true));
+            $model = 'Z2TSymcon-' . $model;
+            IPS_LogMessage('print', print_r($this->Devices, true));
         }
         if (array_key_exists($model, $this->Devices)) {
             foreach ($this->Devices[$model] as $key => $device) {
@@ -97,6 +97,10 @@ class Zigbee2TasmotaDevice extends Devices
                             }
 
                             $model = $this->ReadPropertyString('Model');
+                            if (is_numeric($model)) {
+                                $model = 'Z2TSymcon-' . $model;
+                                IPS_LogMessage('print', print_r($this->Devices, true));
+                            }
                             foreach ($this->Devices[strval($model)] as $key => $device) {
                                 if (property_exists($Payload, $device['SearchString'])) {
                                     switch ($key) {
