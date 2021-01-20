@@ -21,7 +21,8 @@ class Devices extends IPSModule
             include('Devices/ledvance.php'),
             include('Devices/blitzwolf.php'),
             include('Devices/linkind.php'),
-            include('Devices/tint.php')
+            include('Devices/tint.php'),
+            include('Devices/sunricher.php')
         );
     }
 }
