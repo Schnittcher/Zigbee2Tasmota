@@ -42,7 +42,7 @@ return [
     'DS01' => [
         'Contact' => [
             'Name'                   => 'State',
-            'VariableProfile'        => '~Window',
+            'VariableProfile'        => '~Window.Reversed',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
