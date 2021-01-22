@@ -73,7 +73,7 @@ return [
         'HueMove' => [
             'Name'                   => 'HueMove',
             'VariableProfile'        => '',
-            'VariableType'           => VARIABLETYPE_INTEGR,
+            'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
             'SearchString'           => 'HueMove'
