@@ -84,6 +84,8 @@ Müller Licht | Müller Licht Tint LED RGB Bulb | ZBT-ExtendedColor | Status, He
 Müller Licht | Müller Licht Tint LED Bulb | ZBT-ColorTemperature | Status, Helligkeit, Farbtemperatur
 Müller Licht | Müller-Licht Tint Fernbedienung | ZBT-Remote-ALL-RGBW | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, Gruppe, Müller Licht Modus
 Sunricher | Synergy 21 LED Controller EOS 10 ZigBee CV Controller+Netzteil 4-Kanal 100W RGB-W 12V | RGB-CCT | Status, Helligkeit, Farbtemperatur, Farbe
+Sunricher | Synergy 21 LED Controller EOS 10 ZigBee CV Controller+Netzteil 4-Kanal 100W RGB-W 12V | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes
+ | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, HueMove, DimmerStop, DimmerMove
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
