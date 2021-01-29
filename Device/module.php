@@ -341,9 +341,9 @@ class Zigbee2TasmotaDevice extends Devices
         }
         if (!IPS_VariableProfileExists('T2M.Sonoff.Power')) {
             $Associations = [];
-            $Associations[] = [0, $this->Translate('Single'), '', -1];
+            $Associations[] = [0, $this->Translate('Hold'), '', -1];
             $Associations[] = [1, $this->Translate('Double'), '', -1];
-            $Associations[] = [2, $this->Translate('Hold'), '', -1];
+            $Associations[] = [2, $this->Translate('Single'), '', -1];
             $this->RegisterProfileIntegerEx('T2M.Sonoff.Power', '', '', '', $Associations);
         }
         if (!IPS_VariableProfileExists('T2M.AqaraCube')) {

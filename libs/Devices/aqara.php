@@ -83,6 +83,13 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'AqaraCubeFromSide'
         ],
+        'AqaraRotate' => [
+            'Name'                   => 'Rotate',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_FLOAT,
+            'Action'                 => false,
+            'SearchString'           => 'AqaraRotate'
+        ],
     ],
     'lumi.sensor_cube.aqgl01' => [
         'AqaraCubeAction' => [
@@ -182,6 +189,14 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'Occupancy'
         ],
+        'Fire' => [
+            'Name'                   => 'State',
+            'VariableProfile'    => '~Alert',
+            'VariableType'      => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'  => '',
+            'SearchString'         => 'Fire'
+            ],
     ],
     'lumi.lock.v1' => [
         'SmokeDensity' => [

@@ -30,13 +30,13 @@ Xiaomi | lumi.sensor_wleak.aq1 | Aqara Water Leak Sensor | Alarm
 Xiaomi | lumi.weather | Aqara Temperature, Humidity and Pressure Sensor | Temperatur, Luftfeuchte
 Xiaomi | lumi.sensor_magnet | Aqara Fenster- / Türkontakt | Status
 Xiaomi | lumi.sensor_magnet.aq2 | Aqara Fenster- / Türkontakt | Status
-Xiaomi | lumi.sensor_cube | Aqara Cube Controller | Aktion, Seite, Von Seite
+Xiaomi | lumi.sensor_cube | Aqara Cube Controller | Aktion, Seite, Von Seite, Drehen
 Xiaomi | lumi.sensor_cube.aqgl01 | Aqara Cube Controller | Aktion, Seite, Von Seite, Drehen
 Xiaomi | lumi.sen_ill.mgl01' | Mijia Light Intensity Sensor | Beleuchtungsstärke
 Xiaomi | lumi.sensor_motion | Aqara Human Body Motion and Illuminance Sensor | Bewegung
 Xiaomi | lumi.sensor_motion.aq2 | Aqara Human Body Motion and Illuminance Sensor | Bewegung, Beleuchtungsstärke
 Xiaomi | lumi.sensor_swit | Aqara Wireless Mini Switch | Status
-Xiaomi | lumi.sensor_smoke | Honeywell Fire Alarm Smoke Detector | Rauchtidchte, Bewegung
+Xiaomi | lumi.sensor_smoke | Honeywell Fire Alarm Smoke Detector | Rauchtidchte, Bewegung, State
 Xiaomi | lumi.lock.v1 | Vima Smart Lock Cylinder | 
 Xiaomi | lumi.sens | Mijia Temperature & Humidity Sensor | Temperatur, Luftfeuchte
 Xiaomi | lumi.sensor_ht | Mijia Temperature & Humidity Sensor | Temperatur, Luftfeuchte
@@ -86,6 +86,7 @@ Müller Licht | Müller-Licht Tint Fernbedienung | ZBT-Remote-ALL-RGBW | Status,
 Sunricher | Synergy 21 LED Controller EOS 10 ZigBee CV Controller+Netzteil 4-Kanal 100W RGB-W 12V | RGB-CCT | Status, Helligkeit, Farbtemperatur, Farbe
 Sunricher | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes
  | ZGRC-TEUR-002 | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, HueMove, DimmerStop, DimmerMove
+ Legrand | Micromodule switch | Micromodule switch | Status
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.
