@@ -191,12 +191,12 @@ return [
         ],
         'Fire' => [
             'Name'                   => 'State',
-            'VariableProfile'    => '~Alert',
-            'VariableType'      => VARIABLETYPE_BOOLEAN,
+            'VariableProfile'        => '~Alert',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
-            'ActionCommand'  => '',
-            'SearchString'         => 'Fire'
-            ],
+            'ActionCommand'          => '',
+            'SearchString'           => 'Fire'
+        ],
     ],
     'lumi.lock.v1' => [
         'SmokeDensity' => [
