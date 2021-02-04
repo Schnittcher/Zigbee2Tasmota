@@ -280,4 +280,22 @@ return [
             'SearchString'           => 'action'
         ],
     ],
+    'lumi.sensor_switch.aq2' => [
+        'click' => [
+            'Name'                   => 'Click',
+            'VariableProfile'        => 'T2M.Aqara.Click',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'click'
+        ],
+        'action' => [
+            'Name'                   => 'Action',
+            'VariableProfile'        => 'T2M.Aqara.Action',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'action'
+        ],
+    ],
 ];

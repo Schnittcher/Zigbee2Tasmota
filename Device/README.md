@@ -42,6 +42,7 @@ Xiaomi | lumi.sens | Mijia Temperature & Humidity Sensor | Temperatur, Luftfeuch
 Xiaomi | lumi.sensor_ht | Mijia Temperature & Humidity Sensor | Temperatur, Luftfeuchte
 Xiaomi | lumi.vibration.aq1 | Aqara Vibration Sensor | Vibration
 Xiaomi | lumi.remote.b1acn01 | Aqara Wireless Mini Switch | Klick, Aktion
+Xiaomi | lumi.sensor_switch.aq2 | Aqara Wireless Mini Switch | Klick, Aktion
 OSRAM | Plug 01 | Smart+ Plug | Status
 OSRAM | Gardenpole RGBW-Lightify | LIGHTIFY Gardenpole | Status, Helligkeit, Farbe, Farbtemperatur
 OSRAM | Classic A60 RGBW | Classic A60 RGBW | Status, Helligkeit, Farbe, Farbtemperatur
