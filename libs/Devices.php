@@ -23,7 +23,8 @@ class Devices extends IPSModule
             include('Devices/linkind.php'),
             include('Devices/tint.php'),
             include('Devices/sunricher.php'),
-            include('Devices/legrand.php')
+            include('Devices/legrand.php'),
+            include('Devices/paulmann.php')
         );
     }
 }
