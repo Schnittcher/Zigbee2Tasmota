@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 return [
-    'Micromodule switch' => [
+    ' Micromodule switch' => [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
@@ -11,5 +11,15 @@ return [
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ]
+    ],
+    ' Connected outlet' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
     ]
 ];

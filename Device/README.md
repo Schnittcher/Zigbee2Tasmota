@@ -55,6 +55,7 @@ Philips HUE | LWB010 | Hue White | Status, Helligkeit
 Philips HUE | LTW012 | HUE White Ambiance E14 LED Kerze | Status, Helligkeit, Farbtemperatur
 Philips HUE | RWL021 | HUE Dimmer Switch (EU) | Status, DimmerStepDown, DimmerStepUp
 Philips HUE | SML001 | HUE Motion Sensor | Bewegung, Beleuchtungsstärke, Temperatur
+Philips HUE | LWA001 | Philips Hue White Ambiance E27 LED Lampe | Status, Helligkeit
 IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
@@ -65,6 +66,7 @@ IKEA | TRADFRI bulb E14 WS 470lm | LED-Leuchtmittel E14 470 lm | Status, Helligk
 IKEA | TRADFRI bulb E27 WW 806lm | TRÅDFRI LED-Leuchtmittel E27 806 lm | Status, Helligkeit
 IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
 IKEA | TRADFRI bulb E27 CWS opal 600lm | TRADFRI bulb E27 CWS opal 600lm |Status, Helligkeit, Farbtemperatur, Farbe
+IKEA | TRADFRI control outlet | Tradfri Control Outlet | Status
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
@@ -87,6 +89,7 @@ Sunricher | Synergy 21 LED Controller EOS 10 ZigBee CV Controller+Netzteil 4-Kan
 Sunricher | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes
  | ZGRC-TEUR-002 | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, HueMove, DimmerStop, DimmerMove
  Legrand | Micromodule switch | Micromodule switch | Status
+ Legrand | Connected outlet | Connected outlet | Status
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
 Wenn ich dieser Geräte dem Modul hinzufügen soll, dann benötige ich ein Debug von dem Gerät.

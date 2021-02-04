@@ -249,4 +249,14 @@ return [
             'SearchString'           => 'Dimmer'
         ],
     ],
+    'TRADFRI control outlet' => [
+        'Power' => [
+            'Name'            => 'State',
+            'VariableProfile' => '~Switch',
+            'VariableType'    => VARIABLETYPE_BOOLEAN,
+            'Action'          => 'tasmota',
+            'ActionCommand'   => 'Power',
+            '‚SearchString'   => 'Power'
+        ]
+    ],
 ];
