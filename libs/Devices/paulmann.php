@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 return [
-    '500.48' => [
+    'Z2TSymcon-500.48' => [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
