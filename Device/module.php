@@ -207,6 +207,9 @@ class Zigbee2TasmotaDevice extends Devices
     public function RequestAction($Ident, $Value)
     {
         $model = $this->ReadPropertyString('Model');
+        if (is_numeric($model)) {
+            $model = 'Z2TSymcon-' . $model;
+        }
         $Command = $this->Devices[$model][$Ident]['ActionCommand'];
         $Action = $this->Devices[$model][$Ident]['Action'];
         $this->SendDebug('Action', $Command, 0);
