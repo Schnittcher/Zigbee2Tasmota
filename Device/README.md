@@ -74,9 +74,11 @@ Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | 66666 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | MS01 | SNZB-03 | Status
 Sonoff | DS01 | SNZB-04 | Bewegung
+Sonoff | 01MINIZB | ZBMINI | Status
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
 Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur
 Lidl | TS1001 | Livarno Lux Remote Control Dimmer | Status, DimmerStepDown, DimmerStepUp
+Lidl | TS011F | SILVERCREST® Steckdose Zwischenstecker, »Zigbee Smart Home« | Status
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status

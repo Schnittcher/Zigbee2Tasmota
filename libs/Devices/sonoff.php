@@ -69,4 +69,14 @@ return [
             'SearchString'           => 'Power'
         ],
     ],
+    '01MINIZB' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+    ]
 ];

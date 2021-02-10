@@ -98,5 +98,15 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'DimmerStepDown'
         ],
+    ],
+    'TS011F' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
     ]
 ];
