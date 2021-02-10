@@ -256,7 +256,7 @@ return [
             'VariableType'    => VARIABLETYPE_BOOLEAN,
             'Action'          => 'tasmota',
             'ActionCommand'   => 'Power',
-            'SearchString'   => 'Power'
+            'SearchString'    => 'Power'
         ]
     ],
 ];
