@@ -14,7 +14,7 @@ return [
         ]
     ],
     'TS0601' => [
-        'Temperature' => [
+        'LocalTemperature' => [
             'Name'                   => 'Temperature',
             'VariableProfile'        => '~Temperature',
             'VariableType'           => VARIABLETYPE_FLOAT,
@@ -22,7 +22,7 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'LocalTemperature'
         ],
-        'TargetTemperature' => [
+        'TuyaTempTarget' => [
             'Name'                   => 'Target Temperature',
             'VariableProfile'        => '~Temperature',
             'VariableType'           => VARIABLETYPE_FLOAT,
