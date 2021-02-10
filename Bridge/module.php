@@ -219,6 +219,7 @@ class Zigbee2TasmotaBridge extends IPSModule
         $Data['Buffer'] = json_encode($Buffer, JSON_UNESCAPED_SLASHES);
 
         $this->SendDataToParent(json_encode($Data));
+        $this->reloadDevices();
     }
 
     private function getDeviceInstances($Device)
