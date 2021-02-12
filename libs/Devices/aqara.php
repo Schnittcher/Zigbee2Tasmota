@@ -281,7 +281,7 @@ return [
         ],
     ],
     'lumi.sensor_switch.aq2' => [
-        'power' => [
+        'Power' => [
             'Name'                   => 'Power',
             'VariableProfile'        => '',
             'VariableType'           => VARIABLETYPE_INTEGER,
