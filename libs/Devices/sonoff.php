@@ -78,5 +78,15 @@ return [
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ],
+    ],
+    'BASICZBR3' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
     ]
 ];

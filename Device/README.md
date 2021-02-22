@@ -75,6 +75,7 @@ Sonoff | 66666 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | MS01 | SNZB-03 | Status
 Sonoff | DS01 | SNZB-04 | Bewegung
 Sonoff | 01MINIZB | ZBMINI | Status
+Sonoff | BASICZBR3 | Sonoff BASICZBR3 | Status
 Lidl | TY0202 | SILVERCREST® Bewegungsmelder »Zigbee Smart Home«, Infrarot-Sensor, Anti-Manipulationsalarm | Bewegung, Manipuliert
 Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur
 Lidl | TS0505A | LIVARNO LUX® Leuchtmittel RGB, dimmbar, »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur, Farbe
