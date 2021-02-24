@@ -68,6 +68,7 @@ IKEA | TRADFRI bulb E27 WW 806lm | TRÅDFRI LED-Leuchtmittel E27 806 lm | Status
 IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
 IKEA | TRADFRI bulb E27 CWS opal 600lm | TRADFRI bulb E27 CWS opal 600lm |Status, Helligkeit, Farbtemperatur, Farbe
 IKEA | TRADFRI control outlet | Tradfri Control Outlet | Status
+IKEA | TRADFRI SHORTCUT Button |TRADFRI SHORTCUT Button | Status
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte

@@ -259,4 +259,14 @@ return [
             'SearchString'    => 'Power'
         ]
     ],
+    'TRADFRI SHORTCUT Button' => [
+        'Power' => [
+            'Name'            => 'State',
+            'VariableProfile' => '~Switch',
+            'VariableType'    => VARIABLETYPE_BOOLEAN,
+            'Action'          => 'tasmota',
+            'ActionCommand'   => 'Power',
+            'SearchString'    => 'Power'
+        ]
+    ],
 ];
