@@ -58,6 +58,8 @@ Philips HUE | LTW012 | HUE White Ambiance E14 LED Kerze | Status, Helligkeit, Fa
 Philips HUE | RWL021 | HUE Dimmer Switch (EU) | Status, DimmerStepDown, DimmerStepUp
 Philips HUE | SML001 | HUE Motion Sensor | Bewegung, Beleuchtungsstärke, Temperatur
 Philips HUE | LWA001 | Philips Hue White Ambiance E27 LED Lampe | Status, Helligkeit
+Philips HUE | 4090431P9 | Philips Hue White & Col. Amb. LED Tischleuchte | Status, Helligkeit, Farbe, Farbtemperatur
+Philips HUE | LLC010 | Philips Hue Iris | Status, Helligkeit, Farbe, Farbtemperatur
 IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
@@ -69,7 +71,8 @@ IKEA | TRADFRI bulb E27 WW 806lm | TRÅDFRI LED-Leuchtmittel E27 806 lm | Status
 IKEA | SYMFONISK Sound Controller | SYMFONISK Sound Controller | Status, DimmerMove, DimmerStop
 IKEA | TRADFRI bulb E27 CWS opal 600lm | TRADFRI bulb E27 CWS opal 600lm |Status, Helligkeit, Farbtemperatur, Farbe
 IKEA | TRADFRI control outlet | Tradfri Control Outlet | Status
-IKEA | TRADFRI SHORTCUT Button |TRADFRI SHORTCUT Button | Status
+IKEA | TRADFRI SHORTCUT Button | TRADFRI SHORTCUT Button | Status
+IKEA | TRADFRI bulb GU10 W 400lm | TRADFRI bulb GU10 W 400lm | Status, Helligkeit
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
