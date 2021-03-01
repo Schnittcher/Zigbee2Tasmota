@@ -52,6 +52,7 @@ Philips HUE | LCD014 | Hue White and Color Ambiance (2016) | Status, Helligkeit,
 Philips HUE | LCD010 | Hue White and Color Ambiance (2016) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCT007 | Hue White and Color Ambiance (2015) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCT001 | Hue White and Color Ambiance (2012) | Status, Helligkeit, Farbe, Farbtemperatur
+Philips HUE | LCT012 | Hue White and Color Ambiance | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LWB010 | Hue White | Status, Helligkeit
 Philips HUE | LTW012 | HUE White Ambiance E14 LED Kerze | Status, Helligkeit, Farbtemperatur
 Philips HUE | RWL021 | HUE Dimmer Switch (EU) | Status, DimmerStepDown, DimmerStepUp
