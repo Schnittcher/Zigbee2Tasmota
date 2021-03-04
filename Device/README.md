@@ -47,6 +47,7 @@ OSRAM | Plug 01 | Smart+ Plug | Status
 OSRAM | Gardenpole RGBW-Lightify | LIGHTIFY Gardenpole | Status, Helligkeit, Farbe, Farbtemperatur
 OSRAM | Classic A60 RGBW | Classic A60 RGBW | Status, Helligkeit, Farbe, Farbtemperatur
 OSRAM | Classic A60 W clear - LIGHTIFY | Classic A60 W clear - LIGHTIFY | Status, Helligkeit
+OSRAM | CLA60 RGBW OSRAM | CLA60 RGBW OSRAM | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCT015 | Hue White and Color Ambiance (2017) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCD014 | Hue White and Color Ambiance (2016) | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LCD010 | Hue White and Color Ambiance (2016) | Status, Helligkeit, Farbe, Farbtemperatur
