@@ -380,13 +380,5 @@ return [
             'ActionCommand'          => 'Color',
             'SearchString'           => 'X'
         ],
-        'CT' => [
-            'Name'                   => 'Color Temperature',
-            'VariableProfile'        => 'T2M.ColorTemperature',
-            'VariableType'           => VARIABLETYPE_INTEGER,
-            'Action'                 => 'tasmota',
-            'ActionCommand'          => 'CT',
-            'SearchString'           => 'CT'
-        ],
     ],
 ];
