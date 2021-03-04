@@ -82,118 +82,128 @@ class Zigbee2TasmotaDevice extends Devices
             if (property_exists($Buffer, 'Topic')) {
                 if (fnmatch('*/SENSOR', $Buffer->Topic)) {
                     $Payload = json_decode($Buffer->Payload);
-                    if (property_exists($Payload, 'ZbReceived') || (property_exists($Payload, 'ZbLight'))) {
-                        $Payload = json_decode($Buffer->Payload)->ZbReceived->{$device}; //get Device Payload
-                        if (is_object($Payload)) {
-                            if (property_exists($Payload, 'BatteryVoltage') && ($this->ReadPropertyBoolean('showbattery'))) {
-                                $this->SetValue('BatteryVoltage', $Payload->BatteryVoltage);
-                            }
-                            if (property_exists($Payload, 'BatteryPercentage') && ($this->ReadPropertyBoolean('showbattery'))) {
-                                $this->SetValue('BatteryPercentage', $Payload->BatteryPercentage);
-                            }
-                            if (property_exists($Payload, 'LinkQuality') && ($this->ReadPropertyBoolean('showlinkquality'))) {
-                                $this->SetValue('LinkQuality', $Payload->LinkQuality);
-                            }
+                    $receivedDevices = null;
+                    if (property_exists($Payload, 'ZbReceived')) {
+                        $receivedDevices = $Payload->ZbReceived;
+                    } elseif (property_exists($Payload, 'ZbLight')) {
+                        $receivedDevices = $Payload->ZbLight;
+                    }
 
-                            $model = $this->ReadPropertyString('Model');
-                            if (is_numeric($model)) {
-                                $model = 'Z2TSymcon-' . $model;
-                                IPS_LogMessage('print', print_r($this->Devices, true));
-                            }
-                            foreach ($this->Devices[strval($model)] as $key => $device) {
-                                if (property_exists($Payload, $device['SearchString'])) {
-                                    switch ($key) {
-                                        case 'Color':
-                                                $RGB = ltrim($this->CIEToRGB($Payload->X, $Payload->Y, $this->GetValue('Dimmer'), true), '#');
-                                                //$this->SetValue('Color', hexdec($RGB));
-                                                $this->SetValue('Color', hexdec($Payload->RGB));
+                    if (is_object($receivedDevices)) {
+                        foreach ($receivedDevices as $receivedDevice) {
+                            if ($receivedDevice->Name = $device) {
+                                if (is_object($receivedDevice)) {
+                                    if (property_exists($receivedDevice, 'BatteryVoltage') && ($this->ReadPropertyBoolean('showbattery'))) {
+                                        $this->SetValue('BatteryVoltage', $receivedDevice->BatteryVoltage);
+                                    }
+                                    if (property_exists($receivedDevice, 'BatteryPercentage') && ($this->ReadPropertyBoolean('showbattery'))) {
+                                        $this->SetValue('BatteryPercentage', $receivedDevice->BatteryPercentage);
+                                    }
+                                    if (property_exists($receivedDevice, 'LinkQuality') && ($this->ReadPropertyBoolean('showlinkquality'))) {
+                                        $this->SetValue('LinkQuality', $receivedDevice->LinkQuality);
+                                    }
+
+                                    $model = $this->ReadPropertyString('Model');
+                                    if (is_numeric($model)) {
+                                        $model = 'Z2TSymcon-' . $model;
+                                    }
+
+                                    foreach ($this->Devices[strval($model)] as $key => $device) {
+                                        if (property_exists($receivedDevice, $device['SearchString'])) {
+                                            switch ($key) {
+                                                case 'Color':
+                                                        $RGB = ltrim($this->CIEToRGB($receivedDevice->X, $receivedDevice->Y, $this->GetValue('Dimmer'), true), '#');
+                                                        //$this->SetValue('Color', hexdec($RGB));
+                                                        $this->SetValue('Color', hexdec($receivedDevice->RGB));
+                                                        break;
+                                                case 'ColorX':
+                                                    $this->SetValue('ColorX', $receivedDevice->Color[0]);
+                                                    break;
+                                                case 'ColorY':
+                                                    $this->SetValue('ColorY', $receivedDevice->Color[1]);
+                                                    break;
+                                                case 'AqaraVibrationMode':
+                                                    switch ($receivedDevice->AqaraVibrationMode) {
+                                                        case 'vibrate':
+                                                            $this->SetValue('AqaraVibrationMode', 0);
+                                                            break;
+                                                        case 'tilt':
+                                                            $this->SetValue('AqaraVibrationMode', 1);
+                                                            break;
+                                                        case 'drop':
+                                                            $this->SetValue('AqaraVibrationMode', 2);
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 'action':
+                                                    switch ($receivedDevice->action) {
+                                                        case 'hold':
+                                                            $this->SetValue('action', 0);
+                                                            break;
+                                                        case 'release':
+                                                            $this->SetValue('action', 1);
+                                                            break;
+                                                        default:
+                                                            $this->SendDebug('Invalid Action', $receivedDevice->action, 0);
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 'click':
+                                                    switch ($receivedDevice->click) {
+                                                        case 'single':
+                                                            $this->SetValue('click', 0);
+                                                            break;
+                                                        case 'double':
+                                                            $this->SetValue('click', 1);
+                                                            break;
+                                                        case 'triple':
+                                                            $this->SetValue('click', 2);
+                                                            break;
+                                                        case 'quad':
+                                                            $this->SetValue('click', 4);
+                                                            break;
+                                                        default:
+                                                            $this->SendDebug('Invalid Click', $receivedDevice->click, 0);
+                                                            break;
+                                                    }
+                                                    break;
+                                                case 'AqaraCubeAction':
+                                                    switch ($receivedDevice->AqaraCube) {
+                                                        case 'wakeup':
+                                                            $this->SetValue('AqaraCubeAction', 0);
+                                                            break;
+                                                        case 'slide':
+                                                            $this->SetValue('AqaraCubeAction', 1);
+                                                            break;
+                                                        case 'flip90':
+                                                            $this->SetValue('AqaraCubeAction', 2);
+                                                            break;
+                                                        case 'flip180':
+                                                            $this->SetValue('AqaraCubeAction', 3);
+                                                            break;
+                                                        case 'tap':
+                                                            $this->SetValue('AqaraCubeAction', 4);
+                                                            break;
+                                                        case 'shake':
+                                                            $this->SetValue('AqaraCubeAction', 5);
+                                                            break;
+                                                        case 'fall':
+                                                            $this->SetValue('AqaraCubeAction', 6);
+                                                            break;
+                                                    }
+                                                  break;
+                                                case 'Dimmer':
+                                                    $this->SetValue('Dimmer', $receivedDevice->Dimmer);
+                                                    break;
+                                                default:
+                                                if ($this->GetIDForIdent($key)) {
+                                                    $this->SetValue($key, $receivedDevice->{$key});
+                                                } else {
+                                                    $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
+                                                }
                                                 break;
-                                        case 'ColorX':
-                                            $this->SetValue('ColorX', $Payload->Color[0]);
-                                            break;
-                                        case 'ColorY':
-                                            $this->SetValue('ColorY', $Payload->Color[1]);
-                                            break;
-                                        case 'AqaraVibrationMode':
-                                            switch ($Payload->AqaraVibrationMode) {
-                                                case 'vibrate':
-                                                    $this->SetValue('AqaraVibrationMode', 0);
-                                                    break;
-                                                case 'tilt':
-                                                    $this->SetValue('AqaraVibrationMode', 1);
-                                                    break;
-                                                case 'drop':
-                                                    $this->SetValue('AqaraVibrationMode', 2);
-                                                    break;
                                             }
-                                            break;
-                                        case 'action':
-                                            switch ($Payload->action) {
-                                                case 'hold':
-                                                    $this->SetValue('action', 0);
-                                                    break;
-                                                case 'release':
-                                                    $this->SetValue('action', 1);
-                                                    break;
-                                                default:
-                                                    $this->SendDebug('Invalid Action', $Payload->action, 0);
-                                                    break;
-                                            }
-                                            break;
-                                        case 'click':
-                                            switch ($Payload->click) {
-                                                case 'single':
-                                                    $this->SetValue('click', 0);
-                                                    break;
-                                                case 'double':
-                                                    $this->SetValue('click', 1);
-                                                    break;
-                                                case 'triple':
-                                                    $this->SetValue('click', 2);
-                                                    break;
-                                                case 'quad':
-                                                    $this->SetValue('click', 4);
-                                                    break;
-                                                default:
-                                                    $this->SendDebug('Invalid Click', $Payload->click, 0);
-                                                    break;
-                                            }
-                                            break;
-                                        case 'AqaraCubeAction':
-                                            switch ($Payload->AqaraCube) {
-                                                case 'wakeup':
-                                                    $this->SetValue('AqaraCubeAction', 0);
-                                                    break;
-                                                case 'slide':
-                                                    $this->SetValue('AqaraCubeAction', 1);
-                                                    break;
-                                                case 'flip90':
-                                                    $this->SetValue('AqaraCubeAction', 2);
-                                                    break;
-                                                case 'flip180':
-                                                    $this->SetValue('AqaraCubeAction', 3);
-                                                    break;
-                                                case 'tap':
-                                                    $this->SetValue('AqaraCubeAction', 4);
-                                                    break;
-                                                case 'shake':
-                                                    $this->SetValue('AqaraCubeAction', 5);
-                                                    break;
-                                                case 'fall':
-                                                    $this->SetValue('AqaraCubeAction', 6);
-                                                    break;
-                                            }
-                                          break;
-                                        case 'Dimmer':
-                                            $this->SetValue('Dimmer', $Payload->Dimmer);
-                                            break;
-                                        default:
-                                        if ($this->GetIDForIdent($key)) {
-                                            $this->SetValue($key, $Payload->{$key});
-                                        } else {
-                                            $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
                                         }
-                                        break;
                                     }
                                 }
                             }
