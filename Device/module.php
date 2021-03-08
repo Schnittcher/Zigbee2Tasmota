@@ -197,6 +197,8 @@ class Zigbee2TasmotaDevice extends Devices
                                                     break;
                                                 default:
                                                 if ($this->GetIDForIdent($key)) {
+                                                    $this->SendDebug('SetValue Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
+                                                    $this->SendDebug('SetValue Value', $receivedDevice->{$key}, 0);
                                                     $this->SetValue($key, $receivedDevice->{$key});
                                                 } else {
                                                     $this->SendDebug('Unkown Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);
