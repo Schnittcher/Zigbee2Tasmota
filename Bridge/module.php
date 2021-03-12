@@ -44,13 +44,13 @@ class Zigbee2TasmotaBridge extends IPSModule
         $Values = [];
 
         foreach ($Devices as $Device) {
-            $instanceID = $this->getDeviceInstances($Device['Device']); //0; $this->getAnelInstances($Device['IP']);
-
             if (array_key_exists('Name', $Device)) {
                 $Name = $Device['Name'];
             } else {
                 $Name = '';
             }
+
+            $instanceID = $this->getDeviceInstances($Name); //0; $this->getAnelInstances($Device['IP']);
 
             if (array_key_exists('ModelId', $Device)) {
                 $ModelId = $Device['ModelId'];
@@ -77,7 +77,7 @@ class Zigbee2TasmotaBridge extends IPSModule
                 [
                     'moduleID'      => '{7FB10079-784C-EC79-4425-2941D23EEAFA}',
                     'configuration' => [
-                        'Device'    => $Device['Device'],
+                        'Device'    => $Name, //$Device['Device'],
                         'Model'     => $ModelId
                     ]
                 ],

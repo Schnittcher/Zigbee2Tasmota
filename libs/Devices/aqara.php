@@ -280,6 +280,40 @@ return [
             'SearchString'           => 'action'
         ],
     ],
+    'lumi.remote.b286acn01' => [
+        'click' => [
+            'Name'                   => 'Click 1',
+            'VariableProfile'        => 'T2M.Aqara.Click',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'click'
+        ],
+        'click2' => [
+            'Name'                   => 'Click 2',
+            'VariableProfile'        => 'T2M.Aqara.Click',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'click'
+        ],
+        'action' => [
+            'Name'                   => 'Action 1',
+            'VariableProfile'        => 'T2M.Aqara.Action',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'click'
+        ],
+        'action2' => [
+            'Name'                   => 'Action 2',
+            'VariableProfile'        => 'T2M.Aqara.Action',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'click'
+        ],
+    ],
     'lumi.sensor_switch.aq2' => [
         'Power' => [
             'Name'                   => 'Power',
