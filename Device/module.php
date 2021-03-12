@@ -136,7 +136,6 @@ class Zigbee2TasmotaDevice extends Devices
                                                     }
                                                     break;
                                                 case 'action':
-                                                    if ($receivedDevice->Endpoint == 1) {
                                                         switch ($receivedDevice->action) {
                                                         case 'hold':
                                                             $this->SetValue('action', 0);
@@ -148,22 +147,8 @@ class Zigbee2TasmotaDevice extends Devices
                                                             $this->SendDebug('Invalid Action', $receivedDevice->action, 0);
                                                             break;
                                                         }
-                                                    } else {
-                                                        switch ($receivedDevice->action) {
-                                                            case 'hold':
-                                                                $this->SetValue('action' . $receivedDevice->Endpoint, 0);
-                                                                break;
-                                                            case 'release':
-                                                                $this->SetValue('action' . $receivedDevice->Endpoint, 1);
-                                                                break;
-                                                            default:
-                                                                $this->SendDebug('Invalid Action', $receivedDevice->action . $receivedDevice->Endpoint, 0);
-                                                                break;
-                                                            }
-                                                    }
                                                     break;
                                                 case 'click':
-                                                    if ($receivedDevice->Endpoint == 1) {
                                                         switch ($receivedDevice->click) {
                                                             case 'single':
                                                                 $this->SetValue('click', 0);
@@ -181,25 +166,6 @@ class Zigbee2TasmotaDevice extends Devices
                                                                 $this->SendDebug('Invalid Click', $receivedDevice->click, 0);
                                                                 break;
                                                         }
-                                                    } else {
-                                                        switch ($receivedDevice->click) {
-                                                            case 'single':
-                                                                $this->SetValue('click' . $receivedDevice->Endpoint, 0);
-                                                                break;
-                                                            case 'double':
-                                                                $this->SetValue('click' . $receivedDevice->Endpoint, 1);
-                                                                break;
-                                                            case 'triple':
-                                                                $this->SetValue('click' . $receivedDevice->Endpoint, 2);
-                                                                break;
-                                                            case 'quad':
-                                                                $this->SetValue('click.$receivedDevice->Endpoint', 4);
-                                                                break;
-                                                            default:
-                                                                $this->SendDebug('Invalid Click', $receivedDevice->click . $receivedDevice->Endpoint, 0);
-                                                                break;
-                                                        }
-                                                    }
                                                     break;
                                                 case 'AqaraCubeAction':
                                                     switch ($receivedDevice->AqaraCube) {
