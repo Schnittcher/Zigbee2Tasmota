@@ -105,6 +105,7 @@ Sunricher | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes
  Paulmann | 500.48 | YourLED Dimming and Switching Controller 60W | Status, Dimmer
 Innr | RB 185 C | Innr RB 185 C | Status, Helligkeit, Farbtemperatur, Farbe
 Gierier | TS0121 | Smart Power Stecker  | Status
+Gierier | TS0001 | Smart Licht Schalter Modul  | Status
 
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.
