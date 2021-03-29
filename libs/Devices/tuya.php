@@ -32,7 +32,7 @@ return [
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ]
-    ],   
+    ],
     'TS0601' => [
         'LocalTemperature' => [
             'Name'                   => 'Temperature',
@@ -50,5 +50,16 @@ return [
             'ActionCommand'          => 'TuyaTempTarget',
             'SearchString'           => 'TuyaTempTarget'
         ],
-    ]
+    ],
+    'TS130F' => [
+        'CurrentPositionLiftPercentage' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Intensity.100',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'CurrentPositionLiftPercentage',
+            'SearchString'           => 'CurrentPositionLiftPercentage'
+        ]
+    ],
+
 ];

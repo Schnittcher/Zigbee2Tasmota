@@ -76,6 +76,7 @@ IKEA | TRADFRI control outlet | Tradfri Control Outlet | Status
 IKEA | TRADFRI SHORTCUT Button | TRADFRI SHORTCUT Button | Status
 IKEA | TRADFRI bulb GU10 W 400lm | TRADFRI bulb GU10 W 400lm | Status, Helligkeit
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
+TuYA | TS130F | TuYa TS130F | Aktuelle Position
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | 66666 | SNZB-02 | Temperatur, Luftfeuchte
