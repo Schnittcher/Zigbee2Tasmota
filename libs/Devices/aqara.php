@@ -295,7 +295,7 @@ return [
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'click'
+            'SearchString'           => 'click2'
         ],
         'action' => [
             'Name'                   => 'Action 1',
@@ -303,7 +303,7 @@ return [
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'click'
+            'SearchString'           => 'action'
         ],
         'action2' => [
             'Name'                   => 'Action 2',
@@ -311,7 +311,7 @@ return [
             'VariableType'           => VARIABLETYPE_INTEGER,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'click'
+            'SearchString'           => 'action2'
         ],
     ],
     'lumi.sensor_switch.aq2' => [
