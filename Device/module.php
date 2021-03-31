@@ -148,6 +148,19 @@ class Zigbee2TasmotaDevice extends Devices
                                                             break;
                                                         }
                                                     break;
+                                                case 'action2':
+                                                    switch ($receivedDevice->action2) {
+                                                    case 'hold':
+                                                        $this->SetValue('action', 0);
+                                                        break;
+                                                    case 'release':
+                                                        $this->SetValue('action', 1);
+                                                        break;
+                                                    default:
+                                                        $this->SendDebug('Invalid Action 2', $receivedDevice->action2, 0);
+                                                        break;
+                                                    }
+                                                break;
                                                 case 'click':
                                                         switch ($receivedDevice->click) {
                                                             case 'single':
@@ -167,6 +180,25 @@ class Zigbee2TasmotaDevice extends Devices
                                                                 break;
                                                         }
                                                     break;
+                                                case 'click2':
+                                                    switch ($receivedDevice->click) {
+                                                        case 'single':
+                                                            $this->SetValue('click2', 0);
+                                                            break;
+                                                        case 'double':
+                                                            $this->SetValue('click2', 1);
+                                                            break;
+                                                        case 'triple':
+                                                            $this->SetValue('click2', 2);
+                                                            break;
+                                                        case 'quad':
+                                                            $this->SetValue('click2', 4);
+                                                            break;
+                                                        default:
+                                                            $this->SendDebug('Invalid Click 2', $receivedDevice->click2, 0);
+                                                            break;
+                                                    }
+                                                break;
                                                 case 'AqaraCubeAction':
                                                     switch ($receivedDevice->AqaraCube) {
                                                         case 'wakeup':
