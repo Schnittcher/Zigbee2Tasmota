@@ -181,7 +181,7 @@ class Zigbee2TasmotaDevice extends Devices
                                                         }
                                                     break;
                                                 case 'click2':
-                                                    switch ($receivedDevice->click) {
+                                                    switch ($receivedDevice->click2) {
                                                         case 'single':
                                                             $this->SetValue('click2', 0);
                                                             break;
