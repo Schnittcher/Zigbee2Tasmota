@@ -151,10 +151,10 @@ class Zigbee2TasmotaDevice extends Devices
                                                 case 'action2':
                                                     switch ($receivedDevice->action2) {
                                                     case 'hold':
-                                                        $this->SetValue('action', 0);
+                                                        $this->SetValue('action2', 0);
                                                         break;
                                                     case 'release':
-                                                        $this->SetValue('action', 1);
+                                                        $this->SetValue('action2', 1);
                                                         break;
                                                     default:
                                                         $this->SendDebug('Invalid Action 2', $receivedDevice->action2, 0);
