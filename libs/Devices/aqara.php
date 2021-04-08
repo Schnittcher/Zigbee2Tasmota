@@ -324,4 +324,22 @@ return [
             'SearchString'           => 'Power'
         ]
     ],
+    'lumi.relay.c2acn01' => [
+        'Power' => [
+            'Name'                   => 'State 1',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+        'Power2' => [
+            'Name'                   => 'State 2',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power2',
+            'SearchString'           => 'Power2'
+        ],
+    ],
 ];

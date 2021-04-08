@@ -44,6 +44,7 @@ Xiaomi | lumi.vibration.aq1 | Aqara Vibration Sensor | Vibration
 Xiaomi | lumi.remote.b1acn01 | Aqara Wireless Mini Switch | Klick, Aktion
 Xiaomi | lumi.sensor_switch.aq2 | Aqara Wireless Mini Switch | Status
 Xiaomi | lumi.remote.b286acn01 | Aquara Wireless Remote Switch (Double Rocker) | Klick, Aktion
+Xiaomi | lumi.relay.c2acn01 | Aqara 2 Way Control Module Wireless Relay | Status1, Status2
 OSRAM | Plug 01 | Smart+ Plug | Status
 OSRAM | Gardenpole RGBW-Lightify | LIGHTIFY Gardenpole | Status, Helligkeit, Farbe, Farbtemperatur
 OSRAM | Classic A60 RGBW | Classic A60 RGBW | Status, Helligkeit, Farbe, Farbtemperatur
