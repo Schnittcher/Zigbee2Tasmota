@@ -291,6 +291,17 @@ class Zigbee2TasmotaDevice extends Devices
                 }
                 $this->sendCommand($SendType, $Command, $Value);
                 break;
+                case 'Power2':
+                    switch ($Value) {
+                        case true:
+                            $Value = 'ON';
+                            break;
+                        case false:
+                            $Value = 'OFF';
+                            break;
+                    }
+                    $this->sendCommand($SendType, $Command, $Value);
+                    break;
             default:
                 $this->sendCommand($SendType, $Command, $Value);
                 if ($Ident) {
