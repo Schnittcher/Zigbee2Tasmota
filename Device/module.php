@@ -256,6 +256,11 @@ class Zigbee2TasmotaDevice extends Devices
         }
         $Command = $this->Devices[$model][$Ident]['ActionCommand'];
         $Action = $this->Devices[$model][$Ident]['Action'];
+        if (array_key_exists('Endpoint', $this->Devices[$model][$Ident])) {
+            $Endpoint = $this->Devices[$model][$Ident]['Endpoint'];
+        } else {
+            $Endpoint = 1;
+        }
         $this->SendDebug('Action', $Command, 0);
 
         $SendType = '';
@@ -300,7 +305,8 @@ class Zigbee2TasmotaDevice extends Devices
                             $Value = 'OFF';
                             break;
                     }
-                    $this->sendCommand($SendType, $Command, $Value);
+                    //Endpoint 2 wegen Power2
+                    $this->sendCommand($SendType, $Command, $Value, $Endpoint);
                     break;
             default:
                 $this->sendCommand($SendType, $Command, $Value);
@@ -321,12 +327,13 @@ class Zigbee2TasmotaDevice extends Devices
         $this->SendDataToParent(json_encode($Data));
     }
 
-    private function sendCommand($Type, $Command, $Value)
+    private function sendCommand($Type, $Command, $Value, $Endpoint = 1)
     {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbSend';
 
         $ZbSend['device'] = $this->ReadPropertyString('Device');
+        $ZbSend['Endpoint'] = strval($Endpoint);
         $ZbSend[$Type][$Command] = $Value;
 
         $Buffer['Payload'] = json_encode($ZbSend);

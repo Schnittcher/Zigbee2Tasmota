@@ -339,7 +339,8 @@ return [
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power2',
-            'SearchString'           => 'Power2'
+            'SearchString'           => 'Power2',
+            'Endpoint'               => 2
         ],
     ],
 ];
