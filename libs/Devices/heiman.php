@@ -22,5 +22,15 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'CO'
         ],
-    ]
+    ],
+    'SmokeSensor-EM' => [
+        'Fire' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Alert',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Fire'
+        ],
+    ],
 ];

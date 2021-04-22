@@ -91,6 +91,7 @@ Lidl | TS0505A | LIVARNO LUX® Leuchtmittel RGB, dimmbar, »Zigbee Smart Home« 
 Lidl | TS1001 | Livarno Lux Remote Control Dimmer | Status, DimmerStepDown, DimmerStepUp
 Lidl | TS011F | SILVERCREST® Steckdose Zwischenstecker, »Zigbee Smart Home« | Status
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
+Schwaiger / Heiman | SmokeSensor-EM | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status
 LEDVANCE | CLA60 RGBW Z3 | Osram Smart+ Classic E27 Multicolor | Status, Helligkeit, Farbe, Farbtemperatur
