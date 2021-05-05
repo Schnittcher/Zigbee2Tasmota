@@ -25,7 +25,8 @@ class Devices extends IPSModule
             include('Devices/sunricher.php'),
             include('Devices/legrand.php'),
             include('Devices/paulmann.php'),
-            include('Devices/innr.php')
+            include('Devices/innr.php'),
+            include('Devices/gledopto.php')
         );
     }
 }
