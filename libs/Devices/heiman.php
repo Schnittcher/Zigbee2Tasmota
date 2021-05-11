@@ -23,6 +23,16 @@ return [
             'SearchString'           => 'CO'
         ],
     ],
+    'COSensor-EF-3.0' => [
+        'CO' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Alert',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'CO'
+        ],
+    ],
     'SmokeSensor-EM' => [
         'Fire' => [
             'Name'                   => 'State',
