@@ -50,6 +50,14 @@ return [
             'ActionCommand'          => 'TuyaTempTarget',
             'SearchString'           => 'TuyaTempTarget'
         ],
+        'TuyaValvePosition' => [
+            'Name'                   => 'Valve Position',
+            'VariableProfile'        => '~Intensity.100',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'TuyaValvePosition'
+        ],
     ],
     'TS130F' => [
         'CurrentPositionLiftPercentage' => [
