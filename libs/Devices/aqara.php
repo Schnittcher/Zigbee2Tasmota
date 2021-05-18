@@ -338,7 +338,7 @@ return [
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => 'tasmota',
-            'ActionCommand'          => 'Power2',
+            'ActionCommand'          => 'Power',
             'SearchString'           => 'Power2',
             'Endpoint'               => 2
         ],
