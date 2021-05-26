@@ -67,7 +67,8 @@
       "Rotate": "Drehen",
       "Fall": "Fallen",
       "Current Position": "Aktuelle Positon",
-      "Valve Position": "Ventilstellung"
+      "Valve Position": "Ventilstellung",
+      "Valve": "Ventilstellung"
     }
   }
 }
