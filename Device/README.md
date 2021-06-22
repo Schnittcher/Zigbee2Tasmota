@@ -2,9 +2,12 @@
 Diese Instanz stellt die Geräte dar, welche mit der Bridge gepairt sind.
 
 ## Inhaltverzeichnis
-1. [Konfiguration](#1-konfiguration)
-2. [Funktionen](#2-funktionen)
-3. [Unterstützte Geräte](#3-unterstützte-geräte)
+- [Device](#device)
+  - [Inhaltverzeichnis](#inhaltverzeichnis)
+  - [1. Konfiguration](#1-konfiguration)
+  - [2. Funktionen](#2-funktionen)
+    - [RequestAction($VariableID, $Value)](#requestactionvariableid-value)
+  - [3. Unterstützte Geräte](#3-unterstützte-geräte)
 
 ## 1. Konfiguration
 
@@ -76,6 +79,7 @@ IKEA | TRADFRI bulb E27 CWS opal 600lm | TRADFRI bulb E27 CWS opal 600lm |Status
 IKEA | TRADFRI control outlet | Tradfri Control Outlet | Status
 IKEA | TRADFRI SHORTCUT Button | TRADFRI SHORTCUT Button | Status
 IKEA | TRADFRI bulb GU10 W 400lm | TRADFRI bulb GU10 W 400lm | Status, Helligkeit
+IKEA | TRADFRI bulb E27 W opal 1000lm | TRADFRI bulb E27 W opal 1000lm | Status, Helligkeit
 TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 TuYa | TS0601 | TS0601 | Temperatur, Solltemperatur, Ventilstellung
 TuYa | TS130F | TuYa TS130F | Aktuelle Position
@@ -92,6 +96,7 @@ Lidl | TS0502A | LIVARNO LUX® Leuchtmittel Lichtfarbensteuerung »Zigbee Smart 
 Lidl | TS0505A | LIVARNO LUX® Leuchtmittel RGB, dimmbar, »Zigbee Smart Home« | Status, Helligkeit, Farbtemperatur, Farbe
 Lidl | TS1001 | Livarno Lux Remote Control Dimmer | Status, DimmerStepDown, DimmerStepUp
 Lidl | TS011F | SILVERCREST® Steckdose Zwischenstecker, »Zigbee Smart Home« | Status
+Lidl | TS0601 | Bewässerungscomputer/Magnetventil | Status
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
 Schwaiger / Heiman | SmokeSensor-EM | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
@@ -110,6 +115,8 @@ Sunricher | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes
  Legrand | Connected outlet | Connected outlet | Status
  Paulmann | 500.48 | YourLED Dimming and Switching Controller 60W | Status, Dimmer
 Innr | RB 185 C | Innr RB 185 C | Status, Helligkeit, Farbtemperatur, Farbe
+Innr | RB 175 C | Innr RB 175 C | Status, Helligkeit
+Innr | RB 285 C | Innr RB 285 C | Status, Helligkeit, Farbtemperatur, Farbe
 Gierier | TS0121 | Smart Power Stecker  | Status
 Gierier | TS0001 | Smart Licht Schalter Modul  | Status
 Gledopto | GL-SD-001 | GLEDOPTO Zigbee 3,0 Triac AC Dimmer | Status, Helligkeit
