@@ -84,6 +84,7 @@ TuYa | TS0011 | TuYa Valve TS0011 | Bewegung
 TuYa | TS0601 | TS0601 | Temperatur, Solltemperatur, Ventilstellung
 TuYa | TS130F | TuYa TS130F | Aktuelle Position
 TuYa | TS0501B | Zigbee smart mini led strip controller single color | Status, Helligkeit
+TuYA | TS0044 | TUYA ZIGBEE 4 Gang Szene Schalter Smart Home Batterie Switch APP Fernbedienung | Status 1, Status 2, Status 3, Status 4
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | 66666 | SNZB-02 | Temperatur, Luftfeuchte

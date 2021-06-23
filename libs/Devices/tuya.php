@@ -87,4 +87,38 @@ return [
         'ActionCommand'          => 'Dimmer',
         'SearchString'           => 'Dimmer'
     ],
+    'TS0044' => [
+        'LidlPower1' => [
+            'Name'                   => 'State 1',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'LidlPower1'
+        ],
+        'LidlPower2' => [
+            'Name'                   => 'State 2',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'LidlPower2',
+        ],
+        'LidlPower3' => [
+            'Name'                   => 'State 3',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'LidlPower3',
+        ],
+        'LidlPower4' => [
+            'Name'                   => 'State 4',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'LidlPower4',
+        ],
+    ],
 ];
