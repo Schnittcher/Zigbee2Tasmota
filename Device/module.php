@@ -230,13 +230,13 @@ class Zigbee2TasmotaDevice extends Devices
                                                 case 'LidlPower1':
                                                     $this->SetValue('LidlPower1', true);
                                                     break;
-                                                case 'LidlPower22':
+                                                case 'LidlPower2':
                                                     $this->SetValue('LidlPower2', true);
                                                     break;
-                                                case 'LidlPower33':
+                                                case 'LidlPower3':
                                                     $this->SetValue('LidlPower3', true);
                                                     break;
-                                                case 'LidlPower44':
+                                                case 'LidlPower4':
                                                     $this->SetValue('LidlPower4', true);
                                                     break;
                                                 default:
