@@ -227,6 +227,18 @@ class Zigbee2TasmotaDevice extends Devices
                                                 case 'Dimmer':
                                                     $this->SetValue('Dimmer', $receivedDevice->Dimmer);
                                                     break;
+                                                case 'LidlPower1':
+                                                    $this->SetValue('LidlPower1', true);
+                                                    break;
+                                                case 'LidlPower22':
+                                                    $this->SetValue('LidlPower2', true);
+                                                    break;
+                                                case 'LidlPower33':
+                                                    $this->SetValue('LidlPower3', true);
+                                                    break;
+                                                case 'LidlPower44':
+                                                    $this->SetValue('LidlPower4', true);
+                                                    break;
                                                 default:
                                                 if ($this->GetIDForIdent($key)) {
                                                     $this->SendDebug('SetValue Key / SearchString', 'Key:' . $key . ' / SearchString: ' . $device['SearchString'], 0);

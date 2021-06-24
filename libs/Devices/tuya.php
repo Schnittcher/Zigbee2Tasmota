@@ -102,7 +102,7 @@ return [
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'LidlPower2',
+            'SearchString'           => 'LidlPower22',
         ],
         'LidlPower3' => [
             'Name'                   => 'State 3',
@@ -110,7 +110,7 @@ return [
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'LidlPower3',
+            'SearchString'           => 'LidlPower33',
         ],
         'LidlPower4' => [
             'Name'                   => 'State 4',
@@ -118,7 +118,7 @@ return [
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => false,
             'ActionCommand'          => '',
-            'SearchString'           => 'LidlPower4',
+            'SearchString'           => 'LidlPower44',
         ],
     ],
 ];
