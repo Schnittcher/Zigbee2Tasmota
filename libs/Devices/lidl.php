@@ -143,14 +143,14 @@ return [
             'SearchString'           => 'X'
         ],
     ],
-    'TS0601' => [
+    'TS0601_TZE200_htnnfasr' => [
         'Power' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Switch',
             'VariableType'           => VARIABLETYPE_BOOLEAN,
             'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
-            'SearchString'           => 'Power'
+            'SearchString'           => 'Power',
         ],
     ],
 ];
