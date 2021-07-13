@@ -77,15 +77,15 @@ return [
             'Action'                 => 'tasmota',
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
-        ]
-    ],
-    'Dimmer' => [
-        'Name'                   => 'Brightness',
-        'VariableProfile'        => '~Intensity.255',
-        'VariableType'           => VARIABLETYPE_INTEGER,
-        'Action'                 => 'tasmota',
-        'ActionCommand'          => 'Dimmer',
-        'SearchString'           => 'Dimmer'
+        ],
+        'Dimmer' => [
+            'Name'                   => 'Brightness',
+            'VariableProfile'        => '~Intensity.255',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Dimmer',
+            'SearchString'           => 'Dimmer'
+        ],
     ],
     'TS0044' => [
         'LidlPower1' => [
@@ -119,6 +119,16 @@ return [
             'Action'                 => false,
             'ActionCommand'          => '',
             'SearchString'           => 'LidlPower44',
+        ],
+    ],
+    'TS0101_TZ3210_eymunffl' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
         ],
     ],
 ];
