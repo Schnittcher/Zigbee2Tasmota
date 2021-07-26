@@ -339,7 +339,7 @@ class Zigbee2TasmotaDevice extends Devices
         $this->SendDataToParent(json_encode($Data));
     }
 
-    public function sendCommand($Type, $Command, $Value)
+    private function sendCommand($Type, $Command, $Value)
     {
         $Data['DataID'] = '{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}';
         $Buffer['Topic'] = 'ZbSend';
