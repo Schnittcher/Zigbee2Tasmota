@@ -73,15 +73,14 @@ class Zigbee2TasmotaBridge extends IPSModule
                 'instanceID'                    => $instanceID
             ];
 
-            $AddValue['create'] = [
+            $AddValue['create'] =
                 [
                     'moduleID'      => '{7FB10079-784C-EC79-4425-2941D23EEAFA}',
                     'configuration' => [
                         'Device'    => $Name, //$Device['Device'],
                         'Model'     => $ModelId
                     ]
-                ],
-            ];
+                ];
 
             $Values[] = $AddValue;
         }
