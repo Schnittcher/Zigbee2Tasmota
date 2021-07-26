@@ -101,6 +101,7 @@ Lidl | TS011F | SILVERCREST® Steckdose Zwischenstecker, »Zigbee Smart Home« |
 Lidl | TS0601 | Bewässerungscomputer/Magnetventil | Status
 Schwaiger / Heiman | SMOK_YDLV10 | Rauchmelder | Status
 Schwaiger / Heiman | SmokeSensor-EM | Rauchmelder | Status
+Schwaiger / Heiman | SmokeSensor-EF-3.0 | Rauchmelder | Status
 Schwaiger / Heiman | COSensor-EM | Carbon Monoxide Detector | Status
 Heiman | COSensor-EF-3.0 | Carbon Monoxide Detector | Status
 LEDVANCE | Plug Z3 | SMART+ ZB PLUG EU | Status

@@ -43,4 +43,14 @@ return [
             'SearchString'           => 'Fire'
         ],
     ],
+    '    SmokeSensor-EF-3.0' => [
+        'Fire' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Alert',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Fire'
+        ],
+    ],
 ];
