@@ -43,7 +43,7 @@ return [
             'SearchString'           => 'Fire'
         ],
     ],
-    '    SmokeSensor-EF-3.0' => [
+    'SmokeSensor-EF-3.0' => [
         'Fire' => [
             'Name'                   => 'State',
             'VariableProfile'        => '~Alert',
