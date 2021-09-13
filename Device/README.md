@@ -123,6 +123,7 @@ Innr | RB 285 C | Innr RB 285 C | Status, Helligkeit, Farbtemperatur, Farbe
 Gierier | TS0121 | Smart Power Stecker  | Status
 Gierier | TS0001 | Smart Licht Schalter Modul  | Status
 Gledopto | GL-SD-001 | GLEDOPTO Zigbee 3,0 Triac AC Dimmer | Status, Helligkeit
+OSRAM | Lightify Switch Mini | Lightify Switch Mini | Status, Helligkeit,  DimmerStop, DimmerMove
 
 
 Geräte, welche nicht in dieser Liste aufgeführt sind, werden nicht mit dem Modul funktionieren.

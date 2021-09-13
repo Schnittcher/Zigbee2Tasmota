@@ -132,5 +132,39 @@ return [
             'ActionCommand'          => 'CT',
             'SearchString'           => 'CT'
         ]
-    ]
+    ],
+    'Lightify Switch Mini' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => 'T2M.TogglePower',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Power'
+        ],
+        'Dimmer' => [
+            'Name'                   => 'Brightness',
+            'VariableProfile'        => '~Intensity.255',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Dimmer'
+        ],
+        'DimmerMove' => [
+            'Name'                   => 'DimmerMove',
+            'VariableProfile'        => 'T2M.IKEA.DimmerMove',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerMove'
+        ],
+        'DimmerStop' => [
+            'Name'                   => 'DimmerStop',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => '',
+            'ActionCommand'          => '',
+            'SearchString'           => 'DimmerStop'
+        ],
+    ],
 ];
