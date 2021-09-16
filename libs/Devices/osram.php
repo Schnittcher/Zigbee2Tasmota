@@ -166,5 +166,13 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'DimmerStop'
         ],
+        'HueMove' => [
+            'Name'                   => 'HueMove',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => '',
+            'ActionCommand'          => '',
+            'SearchString'           => 'HueMove'
+        ],
     ],
 ];
