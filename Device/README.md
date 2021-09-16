@@ -66,6 +66,7 @@ Philips HUE | SML001 | HUE Motion Sensor | Bewegung, Beleuchtungsstärke, Temper
 Philips HUE | LWA001 | Philips Hue White Ambiance E27 LED Lampe | Status, Helligkeit
 Philips HUE | 4090431P9 | Philips Hue White & Col. Amb. LED Tischleuchte | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LLC010 | Philips Hue Iris | Status, Helligkeit, Farbe
+Philips HUE | LCL001 | Philips Hue Lightstrip Plus | Status, Helligkeit, Farbe, Farbtemperatur
 IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
@@ -112,18 +113,16 @@ Müller Licht | Müller Licht Tint LED RGB Bulb | ZBT-ExtendedColor | Status, He
 Müller Licht | Müller Licht Tint LED Bulb | ZBT-ColorTemperature | Status, Helligkeit, Farbtemperatur
 Müller Licht | Müller-Licht Tint Fernbedienung | ZBT-Remote-ALL-RGBW | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, Gruppe, Müller Licht Modus
 Sunricher | Synergy 21 LED Controller EOS 10 ZigBee CV Controller+Netzteil 4-Kanal 100W RGB-W 12V | RGB-CCT | Status, Helligkeit, Farbtemperatur, Farbe
-Sunricher | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes
- | ZGRC-TEUR-002 | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, HueMove, DimmerStop, DimmerMove
- Legrand | Micromodule switch | Micromodule switch | Status
- Legrand | Connected outlet | Connected outlet | Status
- Paulmann | 500.48 | YourLED Dimming and Switching Controller 60W | Status, Dimmer
+Sunricher | Synergy 21 LED Controller EOS 10 ZigBee Remote Touch RGBW 4scenes | ZGRC-TEUR-002 | Status, Helligkeit, Farbtemperatur, Farbe X, Farbe Y, HueMove, DimmerStop, DimmerMove
+Legrand | Micromodule switch | Micromodule switch | Status
+Legrand | Connected outlet | Connected outlet | Status
+Paulmann | 500.48 | YourLED Dimming and Switching Controller 60W | Status, Dimmer
 Innr | RB 185 C | Innr RB 185 C | Status, Helligkeit, Farbtemperatur, Farbe
 Innr | RB 175 C | Innr RB 175 C | Status, Helligkeit
 Innr | RB 285 C | Innr RB 285 C | Status, Helligkeit, Farbtemperatur, Farbe
 Gierier | TS0121 | Smart Power Stecker  | Status
 Gierier | TS0001 | Smart Licht Schalter Modul  | Status
 Gledopto | GL-SD-001 | GLEDOPTO Zigbee 3,0 Triac AC Dimmer | Status, Helligkeit
-OSRAM | Lightify Switch Mini | Lightify Switch Mini | Status, Helligkeit,  DimmerStop, DimmerMove
 OSRAM | Lightify Switch Mini | Lightify Switch Mini | Status, Helligkeit,  DimmrStop, DimmerMove, HueMove
 
 
