@@ -120,6 +120,7 @@ Paulmann | 500.48 | YourLED Dimming and Switching Controller 60W | Status, Dimme
 Innr | RB 185 C | Innr RB 185 C | Status, Helligkeit, Farbtemperatur, Farbe
 Innr | RB 175 C | Innr RB 175 C | Status, Helligkeit
 Innr | RB 285 C | Innr RB 285 C | Status, Helligkeit, Farbtemperatur, Farbe
+Innr | SP 220 | Innr SP 220 | Status
 Gierier | TS0121 | Smart Power Stecker  | Status
 Gierier | TS0001 | Smart Licht Schalter Modul  | Status
 Gledopto | GL-SD-001 | GLEDOPTO Zigbee 3,0 Triac AC Dimmer | Status, Helligkeit
