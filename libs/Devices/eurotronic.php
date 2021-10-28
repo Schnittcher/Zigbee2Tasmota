@@ -28,5 +28,13 @@ return [
             'ActionCommand'          => '',
             'SearchString'           => 'PIHeatingDemand'
         ],
+        'LocalTemperatureCalibration' => [
+            'Name'                   => 'Temperature Calibration',
+            'VariableProfile'        => '~Temperature',
+            'VariableType'           => VARIABLETYPE_FLOAT,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'LocalTemperatureCalibration'
+        ]
     ]
 ];
