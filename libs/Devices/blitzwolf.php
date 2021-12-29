@@ -12,5 +12,22 @@ return [
             'ActionCommand'          => 'Power',
             'SearchString'           => 'Power'
         ],
+        'ActivePower' => [
+            'Name'                   => 'ActivePower',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_FLOAT,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'ActivePower'
+        ],
+        'RMSVoltage' => [
+            'Name'                   => 'RMSVoltage',
+            'VariableProfile'        => '',
+            'VariableType'           => VARIABLETYPE_FLOAT,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'RMSVoltage'
+        ],
     ]
+
 ];
