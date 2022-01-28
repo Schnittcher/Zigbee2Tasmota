@@ -143,6 +143,40 @@ return [
             'SearchString'           => 'X'
         ],
     ],
+    'TS0505B' => [
+        'Power' => [
+            'Name'                   => 'State',
+            'VariableProfile'        => '~Switch',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Power',
+            'SearchString'           => 'Power'
+        ],
+        'Dimmer' => [
+            'Name'                   => 'Brightness',
+            'VariableProfile'        => '~Intensity.255',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Dimmer',
+            'SearchString'           => 'Dimmer'
+        ],
+        'CT' => [
+            'Name'                   => 'Color Temperature',
+            'VariableProfile'        => 'T2M.ColorTemperature',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'CT',
+            'SearchString'           => 'CT'
+        ],
+        'Color' => [
+            'Name'                   => 'Color',
+            'VariableProfile'        => 'HexColor',
+            'VariableType'           => VARIABLETYPE_INTEGER,
+            'Action'                 => 'tasmota',
+            'ActionCommand'          => 'Color',
+            'SearchString'           => 'X'
+        ],
+    ],
     'TS0601_TZE200_htnnfasr' => [
         'Power' => [
             'Name'                   => 'State',
@@ -154,4 +188,3 @@ return [
         ],
     ],
 ];
-
