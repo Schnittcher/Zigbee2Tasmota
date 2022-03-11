@@ -1,15 +1,30 @@
 {
-    "elements":
-    [
-      { "type": "ValidationTextBox", "name": "Device", "caption": "Device" },
-      { "type": "ValidationTextBox", "name": "Model", "caption": "Model"},
-      {
-        "type": "ExpansionPanel",
-        "caption": "Expert settings",
-        "items": [
-          { "type": "CheckBox", "name": "showbattery", "caption": "Show Battery" },
-          { "type": "CheckBox", "name": "showlinkquality", "caption": "Show Link Quality" }
-        ]
-    }
+    "elements": [
+        {
+            "type": "ValidationTextBox",
+            "name": "Device",
+            "caption": "Device"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "Model",
+            "caption": "Model"
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "Expert settings",
+            "items": [
+                {
+                    "type": "CheckBox",
+                    "name": "showbattery",
+                    "caption": "Show Battery"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "showlinkquality",
+                    "caption": "Show Link Quality"
+                }
+            ]
+        }
     ]
 }

@@ -1,9 +1,9 @@
 {
-	"id": "{B0005B58-D8E4-46F7-B6AF-5E465E836128}",
-	"author": "Kai Schnittcher",
-	"name": "Zigbee 2 Tasmota",
-	"url": "https://github.com/Schnittcher/Tasmota2Zigbee",
-	"version": "1.2.4",
-	"build": 0,
-	"date": 0
+    "id": "{B0005B58-D8E4-46F7-B6AF-5E465E836128}",
+    "author": "Kai Schnittcher",
+    "name": "Zigbee 2 Tasmota",
+    "url": "https://github.com/Schnittcher/Tasmota2Zigbee",
+    "version": "1.2.4",
+    "build": 0,
+    "date": 0
 }

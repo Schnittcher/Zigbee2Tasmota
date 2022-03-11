@@ -1,117 +1,121 @@
 {
-    "actions":
-    [
-      { 
-        "type": "RowLayout",
-        "items": [
-            {
-                "type": "Label",
-                "caption": "Paring Mode:"
-            },{
-                "type": "Label",
-                "name": "lblParingMode",
-                "caption": "Unknown"
-            },{
-              "type": "Button",
-              "caption": "Activate Pairing Mode",
-              "onClick": "Z2T_Paring($id,1);"
-          },{
-            "type": "Button",
-            "caption": "Deactivate Pairing Mode",
-            "onClick": "Z2T_Paring($id,0);"
-        }
-      ]
-    },
-    { 
-      "type": "RowLayout",
-      "items": [
-          {
-              "type": "Label",
-              "caption": "Devices"
-          },{
-              "type": "Label",
-              "name": "lblCountDevices",
-              "caption": "Unknown"
-          }
-      ]
-    },
-    {
-      "type": "PopupAlert",
-      "name": "PopupProgressbar",
-      "visible": false,
-      "popup": {
-          "items": [
-            {
-              "type": "Label",
-              "caption": "Update in progress. Please wait."
-            },
-            {
-              "type": "ProgressBar",
-              "name": "UpdateProgress",
-              "minimum": 0,
-              "maximum": 0,
-              "current": 0,
-              "caption": ""
+    "actions": [
+        {
+            "type": "RowLayout",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "Paring Mode:"
+                },
+                {
+                    "type": "Label",
+                    "name": "lblParingMode",
+                    "caption": "Unknown"
+                },
+                {
+                    "type": "Button",
+                    "caption": "Activate Pairing Mode",
+                    "onClick": "Z2T_Paring($id,1);"
+                },
+                {
+                    "type": "Button",
+                    "caption": "Deactivate Pairing Mode",
+                    "onClick": "Z2T_Paring($id,0);"
+                }
+            ]
+        },
+        {
+            "type": "RowLayout",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "Devices"
+                },
+                {
+                    "type": "Label",
+                    "name": "lblCountDevices",
+                    "caption": "Unknown"
+                }
+            ]
+        },
+        {
+            "type": "PopupAlert",
+            "name": "PopupProgressbar",
+            "visible": false,
+            "popup": {
+                "items": [
+                    {
+                        "type": "Label",
+                        "caption": "Update in progress. Please wait."
+                    },
+                    {
+                        "type": "ProgressBar",
+                        "name": "UpdateProgress",
+                        "minimum": 0,
+                        "maximum": 0,
+                        "current": 0,
+                        "caption": ""
+                    }
+                ]
             }
-          ]
-      }
-    },
-    {
-      "type": "Configurator",
-      "name": "Configurator",
-      "caption": "Zigbee Devices",
-      "delete": true,
-      "sort": {
-        "column": "Device",
-        "direction": "ascending"
-      },
-      "columns": [
-        {
-          "caption": "Device",
-          "name": "Device",
-          "width": "150px"
         },
         {
-          "caption": "Devicename",
-          "name": "name",
-          "width": "auto"
+            "type": "Configurator",
+            "name": "Configurator",
+            "caption": "Zigbee Devices",
+            "delete": true,
+            "sort": {
+                "column": "Device",
+                "direction": "ascending"
+            },
+            "columns": [
+                {
+                    "caption": "Device",
+                    "name": "Device",
+                    "width": "150px"
+                },
+                {
+                    "caption": "Devicename",
+                    "name": "name",
+                    "width": "auto"
+                },
+                {
+                    "caption": "ModelID",
+                    "name": "ModelID",
+                    "width": "550px"
+                },
+                {
+                    "caption": "Manufacturer",
+                    "name": "Manufacturer",
+                    "width": "250px"
+                }
+            ],
+            "values": []
         },
         {
-          "caption": "ModelID",
-          "name": "ModelID",
-          "width": "550px"
+            "type": "Button",
+            "caption": "Reload Device List",
+            "onClick": "Z2T_reloadDevices($id);"
         },
         {
-          "caption": "Manufacturer",
-          "name": "Manufacturer",
-          "width": "250px"
+            "type": "RowLayout",
+            "items": [
+                {
+                    "type": "ValidationTextBox",
+                    "name": "DeviceName",
+                    "caption": "Devicename"
+                },
+                {
+                    "type": "Button",
+                    "caption": "Ändern",
+                    "onClick": "Z2T_UpdateName($id,$Configurator['Device'],$DeviceName);"
+                }
+            ]
+        },
+        {
+            "type": "Button",
+            "caption": "Forget Device",
+            "onClick": "Z2T_forgetDevice($id,$Configurator['Device']);"
         }
-      ],
-      "values": []
-    },
-    {
-      "type": "Button",
-      "caption": "Reload Device List",
-      "onClick": "Z2T_reloadDevices($id);"
-    },
-    { 
-      "type": "RowLayout",
-      "items": [
-          {
-              "type": "ValidationTextBox",
-              "name": "DeviceName",
-              "caption": "Devicename"
-          },{
-              "type": "Button",
-              "caption": "Ändern",
-              "onClick": "Z2T_UpdateName($id,$Configurator['Device'],$DeviceName);"
-          }
-      ]
-  },
-    {
-      "type": "Button",
-      "caption": "Forget Device",
-      "onClick": "Z2T_forgetDevice($id,$Configurator['Device']);"
-    }
     ]
 }

@@ -3,7 +3,9 @@
     "name": "Zigbee2TasmotaConnect",
     "type": 2,
     "vendor": "",
-    "aliases": ["Zigbee2Tasmota Connect"],
+    "aliases": [
+        "Zigbee2Tasmota Connect"
+    ],
     "parentRequirements": [
         "{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}",
         "{97475B04-67C3-A74D-C970-E9409B0EFA1D}"

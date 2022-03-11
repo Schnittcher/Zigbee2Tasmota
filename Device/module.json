@@ -3,7 +3,9 @@
     "name": "Zigbee2TasmotaDevice",
     "type": 3,
     "vendor": "",
-    "aliases": ["Zigbee2Tasmota Device"],
+    "aliases": [
+        "Zigbee2Tasmota Device"
+    ],
     "parentRequirements": [
         "{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}"
     ],

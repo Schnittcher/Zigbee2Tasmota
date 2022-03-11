@@ -3,7 +3,9 @@
     "name": "Zigbee2TasmotaBridge",
     "type": 4,
     "vendor": "",
-    "aliases": ["Zigbee2Tasmota Bridge"],
+    "aliases": [
+        "Zigbee2Tasmota Bridge"
+    ],
     "parentRequirements": [
         "{91D0FFCD-72C7-EDD1-8525-4348DAD309BA}"
     ],
