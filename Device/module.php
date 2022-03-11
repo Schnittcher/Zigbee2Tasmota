@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../libs/VariableProfileHelper.php';
+require_once __DIR__ . '/../libs/vendor/SymconModulHelper/VariableProfileHelper.php';
 require_once __DIR__ . '/../libs/ColorHelper.php';
 require_once __DIR__ . '/../libs/Functions.php';
 require_once __DIR__ . '/../libs/Devices.php';
