@@ -87,6 +87,7 @@ TuYa | TS130F | TuYa TS130F | Aktuelle Position
 TuYa | TS0501B | Zigbee smart mini led strip controller single color | Status, Helligkeit
 TuYa | TS0044 | TUYA ZIGBEE 4 Gang Szene Schalter Smart Home Batterie Switch APP Fernbedienung | Status 1, Status 2, Status 3, Status 4
 TuYa | TS0101_TZ3210_eymunffl | Magnetventil Woox | Status
+TuYa | TS0202 | TS0202 | Bewegung
 Sonoff | WB01 | SNZB-01 | Status
 Sonoff | TH01 | SNZB-02 | Temperatur, Luftfeuchte
 Sonoff | 66666 | SNZB-02 | Temperatur, Luftfeuchte

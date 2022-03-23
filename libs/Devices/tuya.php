@@ -131,4 +131,14 @@ return [
             'SearchString'           => 'Power'
         ],
     ],
+    'TS0202' => [
+        'Occupancy' => [
+            'Name'                   => 'Occupancy',
+            'VariableProfile'        => '~Motion',
+            'VariableType'           => VARIABLETYPE_BOOLEAN,
+            'Action'                 => false,
+            'ActionCommand'          => '',
+            'SearchString'           => 'Occupancy'
+        ],
+    ],
 ];
