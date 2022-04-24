@@ -67,6 +67,7 @@ Philips HUE | LWA001 | Philips Hue White Ambiance E27 LED Lampe | Status, Hellig
 Philips HUE | 4090431P9 | Philips Hue White & Col. Amb. LED Tischleuchte | Status, Helligkeit, Farbe, Farbtemperatur
 Philips HUE | LLC010 | Philips Hue Iris | Status, Helligkeit, Farbe
 Philips HUE | LCL001 | Philips Hue Lightstrip Plus | Status, Helligkeit, Farbe, Farbtemperatur
+Philips HUE | 929002966501 | Philips Hue 929002966501 | Status, Helligkeit, Farbe, Farbtemperatur
 IKEA | TRADFRI on/off switch | TRÅDFRI Kabelloser Dimmer | Status, DimmerMove
 IKEA | TRADFRI remote control | TRÅDFRI Fernbedienung | Status, DimmerUp, DimmerStepDown, Pfeil Klick, DimmerMove
 IKEA | TRADFRI transformer 30W | TRÅDFRI Treiber für Fernbedienung, 30W | Status, Helligkeit
