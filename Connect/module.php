@@ -44,7 +44,7 @@ class Zigbee2TasmotaConnect extends IPSModule
         switch ($data->DataID) {
             case '{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}': // MQTT Server
                 $Buffer['Topic'] = $data->Topic;
-                $Buffer['Payload'] = $data->Payload;
+                $Buffer['Payload'] = utf8_decode($data->Payload);
                 break;
             case '{DBDA9DF7-5D04-F49D-370A-2B9153D00D9B}': //MQTT Client
                 $Buffer = $data->Buffer;
